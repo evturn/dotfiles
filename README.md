@@ -63,10 +63,15 @@ $ subl ~/.gitconfig
 ```
 $ ssh-keygen -t rsa -b 4096 -C dudeman@aol.com
 ```
+
 > Enter file in which to save the key (/Users/dudeman/.ssh/id_rsa): [Press enter]
+
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
+
 > Enter same passphrase again: [Type passphrase again]
+
 > dd:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa dudeman@aol.com
+
 ```
 $ eval "$(ssh-agent -s)"
 $ ssh-add ~/.ssh/id_rsa
@@ -76,7 +81,9 @@ $ ssh-add ~/.ssh/id_rsa
 ```
 pbcopy < ~/.ssh/id_rsa.pub
 ```
+
 > http://github.com -> settings -> ssh keys [Paste key]
+
 ```
 ssh -T git@github.com
 ```
@@ -86,6 +93,7 @@ ssh -T git@github.com
 ```
 https://nodejs.org/download/
 ```
+
 > Universal
 
 ```
@@ -102,9 +110,11 @@ export PATH="$HOME/.node/bin:$PATH"
 $ brew install mongodb
 $ ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
 $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-
+```
+```
 $ export PATH="/Users/dudeman/mongodb/bin:$PATH"
-
+```
+```
 $ sudo mkdir data/db
 $ mongod --dbpath data/db
 ```
@@ -115,7 +125,9 @@ $ mongod --dbpath data/db
 http://redis.io/download
 ```
 > [Click link] http://download.redis.io/redis-stable.tar.gz.
+
 > Move folder to /src directory
+
 ```
 $ cd ~/src/redis
 $ make
@@ -136,13 +148,17 @@ alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 ## Sourced Scripts
 
 > https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+
 ```
 touch ~/.git-completion.bash
 ```
+
 > [Paste]
+
 ```
 subl ~/.bash_profile
 ```
+
 *Git branch notifications*
 ```
 if [ -f ~/.bash_prompt.sh ]; then
