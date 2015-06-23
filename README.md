@@ -88,6 +88,14 @@ https://nodejs.org/download/
 ```
 > Universal
 
+```
+echo prefix=~/.node >> ~/.npmrc
+```
+```
+export PATH="/usr/local/bin:/user/local/sbin:$PATH"
+export PATH="$HOME/.node/bin:$PATH"
+```
+
 ## MongoDB
 
 ```
