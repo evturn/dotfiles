@@ -128,7 +128,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
-alias chrome='open-a "Google Chrome"'
+alias chrome='open -a "Google Chrome"'
 alias show_files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 ```
