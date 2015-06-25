@@ -106,13 +106,17 @@ $ subl ~/.gitconfig
 $ ssh-keygen -t rsa -b 4096 -C dudeman@aol.com
 ```
 
-> Enter file in which to save the key (/Users/dudeman/.ssh/id_rsa): [Press enter]
+`Enter file in which to save the key (/Users/dudeman/.ssh/id_rsa):`
+> [Press enter]
 
-> Enter passphrase (empty for no passphrase): [Type a passphrase]
+`Enter passphrase (empty for no passphrase):`
+> [Type a passphrase]
 
-> Enter same passphrase again: [Type passphrase again]
+`Enter same passphrase again:`
+> [Type passphrase again]
 
-> dd:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa dudeman@aol.com
+`dd:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa dudeman@aol.com`
+> [Copy key]
 
 ```
 $ eval "$(ssh-agent -s)"
@@ -124,7 +128,9 @@ $ ssh-add ~/.ssh/id_rsa
 $ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
-> http://github.com -> settings -> ssh keys [Paste key]
+> http://github.com -> settings -> ssh keys 
+
+> [Paste key]
 
 ```
 $ ssh -T git@github.com
@@ -191,6 +197,7 @@ alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 ## Sourced Scripts
 
 > https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+
 > [Copy] entire file
 
 ```
@@ -202,13 +209,13 @@ touch ~/.git-completion.bash
 subl ~/.bash_profile
 ```
 
-*Git branch notifications*
+#### Git branch notifications*
 ```
 if [ -f ~/.bash_prompt.sh ]; then
   source ~/.bash_prompt.sh
 fi
 ```
-*Git completion support*
+#### Git completion support*
 ```
 if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
