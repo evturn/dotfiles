@@ -2,9 +2,7 @@
 
 ## Xcode
 
-```
-https://itunes.apple.com/us/app/xcode/id497799835?mt=12
-```
+> https://itunes.apple.com/us/app/xcode/id497799835?mt=12
 
 ## Homebrew
 
@@ -12,12 +10,22 @@ https://itunes.apple.com/us/app/xcode/id497799835?mt=12
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+## Bash Profile
+
+`$ touch ~/.bash_profile`
+
 ## Sublime Text 2
+
+#### subl alias in bash
+
+> Open .bash_profile with Sublime
 
 ```
 export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export EDITOR='subl -w'
 ```
+
+> [Paste]
 
 ```
 $ sudo rm -rf /usr/local/bin/subl
@@ -28,7 +36,7 @@ $ subl .
 
 #### Package Control
 
-> View > Show Console
+> View -> Show Console
 
 ```
 import urllib2,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
@@ -56,13 +64,16 @@ import urllib2,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a309809
 $ brew install git
 ```
 
+#### Global config & bash highlighter
+
 ```
 $ git config --global user.name dudeman
 $ git config --global user.email dudeman@aol.com
 $ subl ~/.gitconfig
 ```
 
-#### Write in Sublime and save
+> In Sublime
+
 ```
 [user]
     name = hl
@@ -84,6 +95,8 @@ $ subl ~/.gitconfig
     default = current
 ```
 
+> [Paste]
+
 #### Generate SSH
 ```
 $ ssh-keygen -t rsa -b 4096 -C dudeman@aol.com
@@ -104,13 +117,13 @@ $ ssh-add ~/.ssh/id_rsa
 
 #### Link GitHub
 ```
-pbcopy < ~/.ssh/id_rsa.pub
+$ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 > http://github.com -> settings -> ssh keys [Paste key]
 
 ```
-ssh -T git@github.com
+$ ssh -T git@github.com
 ```
 
 ## Node.js
@@ -119,15 +132,19 @@ ssh -T git@github.com
 https://nodejs.org/download/
 ```
 
-> Universal
+> [Click] Universal
 
 ```
-echo prefix=~/.node >> ~/.npmrc
+$ echo prefix=~/.node >> ~/.npmrc
 ```
+
+> Write in .bash_profile
+
 ```
 export PATH="/usr/local/bin:/user/local/sbin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 ```
+> [Paste]
 
 ## MongoDB
 
@@ -146,10 +163,7 @@ $ mongod --dbpath data/db
 
 ## Redis
 
-```
-http://redis.io/download
-```
-> [Click link] http://download.redis.io/redis-stable.tar.gz.
+> http://download.redis.io/redis-stable.tar.gz.
 
 > Move folder to /src directory
 
@@ -173,6 +187,7 @@ alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 ## Sourced Scripts
 
 > https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+> Copy entire file
 
 ```
 touch ~/.git-completion.bash
