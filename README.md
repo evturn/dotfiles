@@ -32,7 +32,6 @@ $ sudo rm -rf /usr/local/bin/subl
 $ sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin
 $ subl .
 ```
-> Restart Sublime
 
 #### Package Control
 
@@ -43,6 +42,7 @@ import urllib2,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a309809
 ```
 
 > [Paste] in Sublime Console
+
 > Restart Sublime
 
 #### HTML syntax highlighting for `type="text/template"`
