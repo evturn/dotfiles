@@ -194,6 +194,11 @@ alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 ```
 > [Paste] in .bash_profile
 
+#### Show directory in bash
+
+`export PS1='\u$ \w\n'`
+> [Paste] in .bash_profile
+
 ## Sourced Scripts
 
 > https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
