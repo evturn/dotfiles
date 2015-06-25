@@ -181,8 +181,10 @@ $ cd ~/src/redis
 $ make
 ```
 
-## Aliases
+## Customize Bash
 
+## Aliases
+`subl ~/.bash_profile`
 ```
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -194,27 +196,28 @@ alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 ```
 > [Paste] in .bash_profile
 
-#### Show directory in bash
-
-`export PS1='\u$ \w\n'`
-> [Paste] in .bash_profile
-
-## Sourced Scripts
-
+#### Git autocompletion
 > https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 
 > [Copy] entire file
 
-```
-touch ~/.git-completion.bash
-```
+`touch ~/.git-completion.bash`
 > [Paste] in .git-completion.bash
 
+
+#### Bash Prompt
+> https://gist.github.com/evturn/3aac79d424959482e996
+
+> [Copy] entire file
+
 ```
-subl ~/.bash_profile
+touch ~/.bash_prompt.sh
+subl ~/.bash_prompt.sh
 ```
+> [Paste]
 
 #### Git branch notifications
+`subl ~/.bash_profile`
 ```
 if [ -f ~/.bash_prompt.sh ]; then
   source ~/.bash_prompt.sh
