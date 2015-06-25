@@ -209,13 +209,13 @@ touch ~/.git-completion.bash
 subl ~/.bash_profile
 ```
 
-#### Git branch notifications*
+#### Git branch notifications
 ```
 if [ -f ~/.bash_prompt.sh ]; then
   source ~/.bash_prompt.sh
 fi
 ```
-#### Git completion support*
+#### Git completion support
 ```
 if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
