@@ -161,13 +161,13 @@ $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 ```
 
 ```
-export PATH="/Users/dudeman/mongodb/bin:$PATH"
+export PATH="/Users/src/dudeman/mongodb/bin:$PATH"
 ```
 > [Paste in .bash_profile]
 
 ```
-$ sudo mkdir data/db
-$ mongod --dbpath data/db
+$ sudo mkdir ~/src/mongodb/data/db
+$ mongod --dbpath /src/mongodb/data/db
 ```
 
 ## Redis
