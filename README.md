@@ -1,84 +1,85 @@
-# OSX Dev Environment Installation
+## OSX Dev Environment Installation
 
 ## Xcode
 
-> https://itunes.apple.com/us/app/xcode/id497799835?mt=12
+[Download](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
 ## Homebrew
 
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-## Bash Profile
-
-`$ touch ~/.bash_profile`
 
 ## Sublime Text 2
 
-#### subl alias in bash
+##### `subl` alias in bash
 
-> Open .bash_profile with Sublime
+In your ~/.bash_profile:
 
 ```
 export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export EDITOR='subl -w'
 ```
 
-> [Paste] in .bash_profile
-
+```bash
+sudo rm -rf /usr/local/bin/subl
+sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin
 ```
-$ sudo rm -rf /usr/local/bin/subl
-$ sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin
-$ subl .
-```
+`subl .` Test to see it works
 
-#### Package Control
 
-> View -> Show Console
+##### Package Control
+
+In Sublime `View` > `Show Console`
+
+Paste the following command:
 
 ```
 import urllib2,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
 ```
 
-> [Paste] in Sublime Console
+Restart to see changes
 
-> Restart Sublime
+##### HTML syntax highlighting for `type="text/template"`
 
-#### HTML syntax highlighting for `type="text/template"`
+In Sublime `Packages` > `Preferences` > `Browse Packages` > `HTML/HTML.tmLanguage`
 
-> Packages -> Preferences -> Browse Packages -> HTML/HTML.tmLanguage
+Change line 286 from:
 
-> Change line 286 from:
+```
+<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)</string>
+```
 
-`<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)</string>`
+to
 
-> to
+```
+<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)(?!.*type=["']text/template['"])</string>
+```
 
-`<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)(?!.*type=["']text/template['"])</string>`
-
-> Restart Sublime
+Restart to see changes
 
 ## Git
 
-```
-$ brew install git
-```
-
-#### Global config & bash highlighter
-
-```
-$ git config --global user.name dudeman
-$ git config --global user.email dudeman@aol.com
+```bash
+brew install git
 ```
 
-> [Copy] below
+##### Global config
+
+```bash
+git config --global user.name <USERNAME>
+git config --global user.email <EMAIL@WHATEVER.com>
+```
+
+##### Bash highlighter
+
+In ~/.gitconfig:
 
 ```
 [user]
     name = hl
-    email = dudeman@aol.com
-    name = Dude Man
+    email = <EMAIL@WHATEVER.com>
+    name = <YOURNAME>
 [color]
     ui = always
 [color "branch"]
@@ -94,97 +95,99 @@ $ git config --global user.email dudeman@aol.com
 [push]
     default = current
 ```
-```
-$ touch ~/.gitconfig
-$ subl ~/.gitconfig
-```
 
-> [Paste] in .gitconfig
+##### Linking GitHub SSH Keys
 
-#### Generate SSH
-```
-$ ssh-keygen -t rsa -b 4096 -C dudeman@aol.com
+```bash
+ssh-keygen -t rsa -b 4096 -C <EMAIL@WHATEVER.com>
 ```
 
-`Enter file in which to save the key (/Users/dudeman/.ssh/id_rsa):`
-> [Press enter]
-
-`Enter passphrase (empty for no passphrase):`
-> [Type a passphrase]
-
-`Enter same passphrase again:`
-> [Type passphrase again]
-
-`dd:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa dudeman@aol.com`
-> [Copy key]
-
-```
-$ eval "$(ssh-agent -s)"
-$ ssh-add ~/.ssh/id_rsa
+Press enter for the following prompts
+```bash
+Enter file in which to save the key (/Users/<USER>/.ssh/id_rsa):
+// press enter
+Enter passphrase (empty for no passphrase):
+// press enter
+Enter same passphrase again:
+// press enter
 ```
 
-#### Link GitHub
-```
-$ pbcopy < ~/.ssh/id_rsa.pub
-```
+Copy your key
 
-> http://github.com -> settings -> ssh keys 
-
-> [Paste key]
-
-```
-$ ssh -T git@github.com
+```bash
+dd:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa:00:aa <EMAIL@WHATEVER.com>
 ```
 
-## Node.js
-
-> https://nodejs.org/download/
-
-> [Click] Universal
-
-```
-$ echo prefix=~/.node >> ~/.npmrc
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
 ```
 
+On github.com `settings` > `ssh keys`
+
+Paste key and save
+
+Return to command line
+
+```bash
+ssh -T git@github.com
 ```
+
+## Node
+
+Installing nvm
+
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+. ~/.nvm/nvm.sh
+```
+
+In ~/.bash_profile:
+
+```
+source $(brew --prefix nvm)/nvm.sh
 export PATH="/usr/local/bin:/user/local/sbin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
+export NVM_DIR="~/.nvm"
 ```
-> [Paste] in .bash_profile
 
 ## MongoDB
 
+```bash
+brew install mongodb
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 ```
-$ brew install mongodb
-$ ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
-$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-```
+
+In ~/.bash_profile:
 
 ```
 export PATH="/Users/src/dudeman/mongodb/bin:$PATH"
 ```
-> [Paste in .bash_profile]
 
-```
-$ sudo mkdir ~/src/mongodb/data/db
-$ mongod --dbpath /src/mongodb/data/db
+In command line:
+
+```bash
+sudo mkdir ~/src/mongodb/data/db
+mongod --dbpath /src/mongodb/data/db
 ```
 
 ## Redis
 
-> http://download.redis.io/redis-stable.tar.gz.
+[Download](http://download.redis.io/redis-stable.tar.gz)
 
-> Move folder to /src directory
+Inside redis directory:
 
+```bash
+make
 ```
-$ cd ~/src/redis
-$ make
-```
 
-## Customize Bash
 
-## Aliases
-`subl ~/.bash_profile`
+## Bash Aliases
+
+In ~/.bash_profile:
+
 ```
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -194,39 +197,35 @@ alias chrome='open -a "Google Chrome"'
 alias show_files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide_files='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 ```
-> [Paste] in .bash_profile
 
-#### Git autocompletion
-> https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+##### Git autocompletion
 
-> [Copy] entire file
+[Gist](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
 
-`touch ~/.git-completion.bash`
-> [Paste] in .git-completion.bash
+Paste in ~/.git-completion.bash
 
+##### Git branch notifications
 
-#### Bash Prompt
-> https://gist.github.com/evturn/3aac79d424959482e996
+In ~/.bash_profile:
 
-> [Copy] entire file
-
-```
-touch ~/.bash_prompt.sh
-subl ~/.bash_prompt.sh
-```
-> [Paste]
-
-#### Git branch notifications
-`subl ~/.bash_profile`
 ```
 if [ -f ~/.bash_prompt.sh ]; then
   source ~/.bash_prompt.sh
 fi
 ```
-#### Git completion support
+
+##### Git completion support
+
+In ~/.bash_profile:
+
 ```
 if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
 fi
 ```
-> [Paste] in .bash_profile
+
+##### Bash Prompt Hightlighter
+
+[Gist](https://gist.github.com/evturn/3aac79d424959482e996)
+
+Paste in ~/.bash_prompt.sh
