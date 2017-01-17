@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+#                _   _
+#    _ __   __ _| |_| |__
+#   | '_ \ / _` | __| '_ \
+#   | |_) | (_| | |_| | | |
+#   | .__/ \__,_|\__|_| |_|
+#   |_|
+
+export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH="/usr/local/bin:/user/local/sbin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$HOME/.node/bin:$PATH"
+export PATH="/Users/ev/src/mongodb/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"

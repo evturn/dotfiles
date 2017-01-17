@@ -1,0 +1,13 @@
+
+
+#    _               _       _             _
+#   | |__  _   _ ___| |__   | | ___   __ _(_)_ __
+#   | '_ \| | | / __| '_ \  | |/ _ \ / _` | | '_ \
+#   | | | | |_| \__ | | | | | | (_) | (_| | | | | |
+#   |_| |_|\__,_|___|_| |_| |_|\___/ \__, |_|_| |_|
+#                                    |___/
+
+# The mere presence of this file in the home directory disables the system
+# copyright notice, the date and time of the last login, the message of the
+# day as well as other information that may otherwise appear on login.
+# See `man login`.

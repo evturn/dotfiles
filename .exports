@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+#    _______  ______   ___  ____ _____ ____
+#   | ____\ \/ |  _ \ / _ \|  _ |_   _/ ___|
+#   |  _|  \  /| |_) | | | | |_) || | \___ \
+#   | |___ /  \|  __/| |_| |  _ < | |  ___) |
+#   |_____/_/\_|_|    \___/|_| \_\|_| |____/
+#
+
+# Make Sublime Text the default editor.
+export EDITOR='subl -w'
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history;
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768';
+# Default to dev environment if not set
+export NODE_ENV="development";
+
+
+# Expose Android SDK path
+export ANDROID_HOME="/usr/local/opt/android-sdk";
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md=$(tput setaf 136);
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+# Expose Node Version Manager path
+export NVM_DIR=$(readlink "$HOME/.nvm");
+source ~/.nvm/nvm.sh
+nvm use 7
+nvm alias default node
