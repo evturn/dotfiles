@@ -241,3 +241,13 @@ function o() {
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Show a macOS notification when a terminal task is done
+function y() {
+  previous=$?
+  if [ $previous -eq 0 ]; then
+    osascript -e "display notification \"Done\" with title \"Terminal Task\"" && say "ok, it is done";
+  else
+    osascript -e "display notification \"Failed\" with title \"Terminal Task\"" && say "oh nose, it failed";
+  fi
+}
