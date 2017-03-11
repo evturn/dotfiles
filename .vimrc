@@ -81,6 +81,8 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▹'
 let g:NERDTreeDirArrowCollapsible = '▿'
 
+let $PATH .= (":" . $HOME . "/.cabal/bin") " PATH for cabal (Haskell)
+
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
