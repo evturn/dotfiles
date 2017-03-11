@@ -1,0 +1,62 @@
+{
+  "Seti_ClosedFolder_anim": true,
+  "Seti_SB_big": true,
+  "Seti_accent_yellow": true,
+  "Seti_alt_tree_row": true,
+  "Seti_bold_slctdtab_labels": true,
+  "Seti_indigo_scrollbar": true,
+  "Seti_indigo_tabclose": true,
+  "Seti_sb_tree_miny": true,
+  "Seti_show_group_arrows": true,
+  "Seti_sidebar_font_Hack": true,
+  "Seti_top_heading_small": true,
+  "Seti_yellow_label": true,
+  "Seti_yellow_statusbar": true,
+  "always_show_minimap_viewport": false,
+  "auto_complete_commit_on_tab": true,
+  "caret_extra_bottom": 0,
+  "caret_extra_width": 2,
+  "caret_style": "phase",
+  "close_windows_when_empty": true,
+  "color_scheme": "Packages/Ev/Color Blind.tmTheme",
+  "create_window_at_startup": false,
+  "drag_text": false,
+  "draw_indent_guides": true,
+  "draw_white_space": "all",
+  "ensure_newline_at_eof_on_save": false,
+  "font_face": "Operator Mono",
+  "font_size": 14,
+  "highlight_line": false,
+  "hot_exit": true,
+  "ignored_packages":
+  [
+    "Elm Language Support",
+    "Markdown",
+    "Vintage"
+  ],
+  "indent_to_bracket": false,
+  "index_exclude_patterns":
+  [
+    "*.log",
+    "*.css"
+  ],
+  "match_brackets": true,
+  "match_brackets_square": true,
+  "match_selection": true,
+  "open_files_in_new_window": false,
+  "remember_open_files": false,
+  "rulers":
+  [
+    100
+  ],
+  "scroll_past_end": true,
+  "show_definitions": false,
+  "show_line_endings": true,
+  "show_tab_close_buttons": true,
+  "tab_size": 2,
+  "theme": "Seti.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_automatic_white_space": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": false
+}
