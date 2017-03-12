@@ -59,12 +59,17 @@ set incsearch                           " Highlight dynamically as pattern is ty
 set laststatus=2                        " Always show status line
 set mouse=a                             " Enable mouse in all modes
 set noerrorbells                        " Disable error bells
+set visualbell t_vb=                    " turn off error beep/flash
+set belloff=all
+set novisualbell                        " turn off visual bell
 set nostartofline                       " Don’t reset cursor to start of line when moving around.
 set shortmess=atI                       " Don’t show the intro message when starting Vim
 set showmode                            " Show the current mode
 set title                               " Show the filename in the window titlebar
 set showcmd                             " Show the (partial) command as it’s being typed
 set scrolloff=3                         " Start scrolling three lines before the horizontal window border
+
+autocmd! GUIEnter * set vb t_vb=
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
