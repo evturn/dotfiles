@@ -32,6 +32,7 @@
   [
     "Elm Language Support",
     "Markdown",
+    "SublimeHaskell",
     "Vintage"
   ],
   "indent_to_bracket": false,
