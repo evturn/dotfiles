@@ -45,7 +45,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AsAAAAAAAAEBCAAoADXxART3BlcmF0b3JNb25vLUJvbGTSExQVFlokY2xhc3Nu
+	YXNzI0AyAAAAAAAAEBCAAoADXxART3BlcmF0b3JNb25vLUJvbGTSExQVFlokY2xhc3Nu
 	YW1lWCRjbGFzc2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEa
 	G1Ryb290gAEIERojLTI3PEJLUltiaXJ0dniMkZylrK+4ys3SAAAAAAAAAQEAAAAAAAAA
 	HAAAAAAAAAAAAAAAAAAAANQ=
@@ -70,11 +70,25 @@
 	</data>
 	<key>ShouldLimitScrollback</key>
 	<integer>0</integer>
+	<key>ShowActiveProcessArgumentsInTabTitle</key>
+	<false/>
 	<key>ShowActiveProcessArgumentsInTitle</key>
+	<true/>
+	<key>ShowActiveProcessInTabTitle</key>
+	<true/>
+	<key>ShowActiveProcessInTitle</key>
+	<true/>
+	<key>ShowActivityIndicatorInTab</key>
 	<true/>
 	<key>ShowCommandKeyInTitle</key>
 	<false/>
 	<key>ShowDimensionsInTitle</key>
+	<true/>
+	<key>ShowRepresentedURLInTabTitle</key>
+	<true/>
+	<key>ShowRepresentedURLInTitle</key>
+	<true/>
+	<key>ShowRepresentedURLPathInTabTitle</key>
 	<true/>
 	<key>ShowRepresentedURLPathInTitle</key>
 	<false/>
@@ -111,14 +125,16 @@
 	<key>WindowTitle</key>
 	<string>ev terminal</string>
 	<key>columnCount</key>
-	<integer>80</integer>
+	<integer>94</integer>
 	<key>name</key>
 	<string>Ev</string>
 	<key>rowCount</key>
-	<integer>30</integer>
+	<integer>26</integer>
 	<key>shellExitAction</key>
 	<integer>2</integer>
 	<key>type</key>
 	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<false/>
 </dict>
 </plist>

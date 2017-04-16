@@ -18,7 +18,7 @@
   "caret_extra_width": 2,
   "caret_style": "phase",
   "close_windows_when_empty": true,
-  "color_scheme": "Packages/Ev/Color Blind.tmTheme",
+  "color_scheme": "Packages/User/SublimeLinter/Color Blind (SL).tmTheme",
   "create_window_at_startup": false,
   "drag_text": false,
   "draw_indent_guides": true,
