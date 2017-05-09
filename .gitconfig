@@ -8,6 +8,7 @@
 [alias]
     aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
     amend = commit --amend --reuse-message=HEAD
+    branches = "for-each-ref --sort='-committerdate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads"
     contributors = shortlog --summary --numbered
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
