@@ -49,5 +49,3 @@ export MANPAGER='less -X';
 # Expose Node Version Manager path
 export NVM_DIR=$(readlink "$HOME/.nvm");
 source ~/.nvm/nvm.sh
-nvm use 7
-nvm alias default node
