@@ -115,9 +115,9 @@ PS1+="\[${bold}\]\n";                             # newline
 PS1+="\[${userStyle}\]\u";                        # username
 PS1+="\[${white}\] in ";
 PS1+="\[${brblue}\]\w";                           # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${red}\]\" \"\[${brgreen}\]\")"; # Git repository details
+PS1+="\$(prompt_git \"\[${white}\] on \[${brblue}\]\" \"\[${red}\]\")"; # Git repository details
 PS1+="\n";
-PS1+="\[${white}\]\$ \[${reset}\]";               # `$` (and reset color)
+PS1+="\e[1;32m> \e[0m";               # `$` (and reset color)
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
