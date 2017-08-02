@@ -109,15 +109,16 @@ else
   hostStyle="${yellow}";
 fi;
 
-# Set the terminal title and prompt.
-PS1="\[\033]0;\W\007\]";                          # working directory base name
-PS1+="\[${bold}\]\n";                             # newline
-PS1+="\[${userStyle}\]\u";                        # username
+prompt="\[\e[1;32m\]> \[${reset}\]";
+
+PS1="\[\033]0;\W\007\]";             # working directory base name
+PS1+="\[${bold}\]\n";
+PS1+="\[${userStyle}\]\u";           # username
 PS1+="\[${white}\] in ";
-PS1+="\[${brblue}\]\w";                           # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${brblue}\]\" \"\[${red}\]\")"; # Git repository details
+PS1+="\[${brblue}\]\w";              # pwd
+PS1+="\$(prompt_git \"\[${white}\] on \[${brblue}\]\" \"\[${red}\]\")";
 PS1+="\n";
-PS1+="\e[1;32m> \e[0m";               # `$` (and reset color)
+PS1+="${prompt}"
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
