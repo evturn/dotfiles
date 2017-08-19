@@ -13,8 +13,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
-Plugin 'scrooloose/nerdtree'
-Plugin 'amadeus/vim-evokai'
 
 call vundle#end()
 """""""""""""""""""""""""""""""""
@@ -101,12 +99,3 @@ if has("autocmd")
 endif
 
 execute pathogen#infect()
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
