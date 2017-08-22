@@ -61,7 +61,7 @@ set showmode                            " Show the current mode
 set title                               " Show the filename in the window titlebar
 set showcmd                             " Show the (partial) command as it’s being typed
 set scrolloff=7                         " Start scrolling three lines before the horizontal window border
-
+let g:auto_type_info=0
 autocmd! GUIEnter * set vb t_vb=
 
 " Strip trailing whitespace (,ss)
