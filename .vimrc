@@ -23,12 +23,17 @@ set ttyfast
 set term=screen-256color
 set t_ut=
 set timeoutlen=50
-
+set synmaxcol=100
+set noautoread
 
 let g:auto_type_info=0
 let $PATH .= (":" . $HOME . "/.cabal/bin")
 
 colorscheme elflord
+
+syntax sync minlines=256
+
+autocmd FileType go set omnifunc=
 
 try
   source ~/.vim_runtime/my_configs.vim
