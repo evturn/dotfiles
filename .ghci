@@ -6,3 +6,6 @@
 --   /____/
 
 :set prompt "\ESC[1;32mλ> \ESC[0m\STX"
+:set -XFlexibleContexts
+:set -XFlexibleInstances
+:set -XMultiParamTypeClasses
