@@ -10,12 +10,16 @@ set nocompatible
 set runtimepath+=~/.vim
 
 syntax enable
+syntax sync minlines=256
 colorscheme elflord
 
 filetype plugin on
 filetype indent on
 
 set guifont=Operator\ Mono\ Bold\
+set synmaxcol=128
+set ttyfast
+set lazyredraw
 set shiftwidth=2
 set tabstop=2
 set cmdheight=2
