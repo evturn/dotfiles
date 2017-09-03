@@ -5,17 +5,26 @@
 "  (_|___/_/_/ /_/ /_/_/   \___/
 "
 
-
 set nocompatible
 set runtimepath+=~/.vim
 
-syntax enable
-syntax sync minlines=256
 colorscheme elflord
 
 filetype plugin on
 filetype indent on
 
+""""""""""""""""""""""""""""""
+" => syntax
+""""""""""""""""""""""""""""""
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
+syntax sync minlines=256
+
+""""""""""""""""""""""""""""""
+" => configs
+""""""""""""""""""""""""""""""
 set guifont=Operator\ Mono\ Bold\
 set synmaxcol=128
 set ttyfast
@@ -33,7 +42,7 @@ set t_vb=
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
 let s:runtime = expand('<sfile>:p:h')."/.vim"
-call pathogen#infect(s:runtime.'/plugins/{}')
+call pathogen#infect()
 call pathogen#helptags()
 
 """"""""""""""""""""""""""""""
