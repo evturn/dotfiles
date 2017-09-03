@@ -14,7 +14,7 @@
 #                          $$/
 
 # Make Sublime Text the default editor.
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;

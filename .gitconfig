@@ -38,7 +38,7 @@
     gpgsign = true
 
 [core]
-    editor = nvim
+    editor = vim
     precomposeunicode = false # Prevent showing files whose names contain non-ASCII symbols as unversioned.
 
 [diff]
