@@ -29,3 +29,5 @@ else
   fi;
 fi;
 unset doIt;
+
+reload;

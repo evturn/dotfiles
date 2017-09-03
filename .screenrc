@@ -15,3 +15,5 @@ defscrollback 32000
 defutf8 on
 
 term xterm-256color
+
+maptimeout 10
