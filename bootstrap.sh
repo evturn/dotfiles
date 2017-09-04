@@ -30,4 +30,3 @@ else
 fi;
 unset doIt;
 
-reload;
