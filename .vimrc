@@ -28,6 +28,9 @@ set showcmd
 set number
 set t_Co=256
 
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
 let g:netrw_list_hide='.*\.DS_Store$'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
