@@ -10,7 +10,7 @@
 set nocompatible
 set runtimepath+=~/.vim
 
-colorscheme elflord
+colorscheme ev
 
 filetype plugin on
 filetype indent on
@@ -25,6 +25,8 @@ set cmdheight=3
 set laststatus=2
 set nrformats=
 set showcmd
+set number
+set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => mappings
