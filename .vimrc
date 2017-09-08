@@ -21,12 +21,13 @@ execute pathogen#infect()
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set cmdheight=3
+set cmdheight=2
 set laststatus=2
 set nrformats=
 set showcmd
 set number
 set t_Co=256
+set fillchars+=vert:\ 
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -37,6 +38,11 @@ let g:netrw_list_hide='.*\.DS_Store$'
 " => mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-jsx
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
