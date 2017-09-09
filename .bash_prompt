@@ -116,7 +116,7 @@ PS1+="\[${bold}\]\n";
 PS1+="\[${userStyle}\]\u";           # username
 PS1+="\[${white}\] in ";
 PS1+="\[${brblue}\]\w";              # pwd
-PS1+="\$(prompt_git \"\[${white}\] on \[${brblue}\]\" \"\[${red}\]\")";
+PS1+="\$(prompt_git \"\[${white}\] on \[${brblue}\]\" \"\[\e[1;33m\]\")";
 PS1+="\n";
 PS1+="${prompt}"
 export PS1;
