@@ -9,6 +9,7 @@
 
 set nocompatible
 set runtimepath+=~/.vim
+set directory^=~/.vim/tmp//
 
 colorscheme ev
 
