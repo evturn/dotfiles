@@ -27,18 +27,29 @@ set laststatus=2
 set nrformats=
 set showcmd
 set number
+set autochdir
 set t_Co=256
 set fillchars+=vert:\ 
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => netrw
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_list_hide='.*\.DS_Store$'
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" `%%` expands path
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" `gf` opens a file in a vertical split when cursor is on a path
+nnoremap gf :vertical wincmd f<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-jsx
