@@ -109,16 +109,24 @@ else
   hostStyle="${yellow}";
 fi;
 
-prompt="\[\e[1;32m\]> \[${reset}\]";
+PS1="\[\033]0;\W\007\]";
 
-PS1="\[\033]0;\W\007\]";             # working directory base name
+# "<username> "
 PS1+="\[${bold}\]\n";
-PS1+="\[${userStyle}\]\u";           # username
+PS1+="\[${userStyle}\]\u";
+
+# " in "
 PS1+="\[${white}\] in ";
-PS1+="\[${brblue}\]\w";              # pwd
+
+# "<working directory>"
+PS1+="\[${brblue}\]\w";
+
+# " on <git branch> <git status>"
 PS1+="\$(prompt_git \"\[${white}\] on \[${brblue}\]\" \"\[\e[1;33m\]\")";
+
+# "<prompt> "
 PS1+="\n";
-PS1+="${prompt}"
+PS1+="\[\e[1;32m\]> ";
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
