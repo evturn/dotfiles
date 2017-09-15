@@ -16,6 +16,7 @@ colorscheme ev
 filetype plugin on
 filetype indent on
 syntax enable
+syntax sync minlines=256
 
 execute pathogen#infect()
 
@@ -30,6 +31,7 @@ set number
 set autochdir
 set t_Co=256
 set fillchars+=vert:\ 
+set synmaxcol=128
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
