@@ -28,6 +28,7 @@ set laststatus=2
 set nrformats=
 set showcmd
 set number
+set relativenumber
 set autochdir
 set t_Co=256
 set fillchars+=vert:\ 
