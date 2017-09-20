@@ -17,3 +17,5 @@ defutf8 on
 term xterm-256color
 
 maptimeout 10
+
+altscreen on
