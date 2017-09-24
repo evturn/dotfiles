@@ -34,26 +34,28 @@ highlight Label ctermfg=198
 highlight Tag ctermfg=198
 highlight type ctermfg=183
 highlight typedef ctermfg=183
-highlight Ignore ctermfg=244 ctermbg=232
-highlight MatchParen ctermfg=15
+highlight Ignore ctermfg=244 ctermbg=233
+highlight MatchParen ctermfg=87
 highlight ModeMsg ctermfg=15
 highlight Macro ctermfg=15
-highlight Error ctermfg=9
-highlight ErrorMsg ctermfg=9
+highlight Error ctermfg=9 ctermbg=233
+highlight ErrorMsg ctermfg=9 ctermbg=233
 highlight MoreMsg ctermfg=15
-highlight SpecialKey ctermfg=4
+highlight VertSplit ctermfg=233 ctermbg=233
+highlight SpecialKey ctermfg=11
 highlight SpecialChar ctermfg=33
 highlight PreProc ctermfg=42
 highlight PreCondit ctermfg=33
 highlight StorageClass ctermfg=33
-highlight Special ctermfg=240
+highlight Special ctermfg=81
 highlight NonText ctermfg=240
 highlight Folded ctermfg=240
-highlight Directory ctermfg=48 
+highlight Directory ctermfg=45 
+highlight netrwSpecial ctermfg=45
+highlight netrwClassify ctermfg=45
 highlight netrwExe ctermfg=240		
-" highlight DiffChange ctermfg=240
-" highlight netrwPlain ctermfg=81
-
+highlight netrwTreeBar ctermfg=240
+highlight netrwPlain ctermfg=51
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => jsx
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,7 +123,6 @@ highlight jsFloat ctermfg=141
 highlight jsFuncArgOperator ctermfg=202
 highlight jsFuncArgs ctermfg=202
 
-highlight VertSplit ctermfg=233 ctermbg=233
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => haskell

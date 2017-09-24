@@ -61,6 +61,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Remap line motion commands to operate on display lines
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
