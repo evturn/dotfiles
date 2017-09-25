@@ -33,6 +33,7 @@ set autochdir
 set t_Co=256
 set fillchars+=vert:\ 
 set synmaxcol=128
+set backspace=indent,eol,start
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -66,6 +67,10 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+" Remap `<Ctrl-D>` to ⌦
+imap <C-d> <Del>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -128,4 +133,3 @@ let g:haskell_indent_guard=2
 let g:haskell_indent_if=3
 let g:haskell_indent_in=1
 let g:haskell_indent_let=4
-

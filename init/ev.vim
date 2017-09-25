@@ -35,7 +35,7 @@ highlight Tag ctermfg=198
 highlight type ctermfg=183
 highlight typedef ctermfg=183
 highlight Ignore ctermfg=244 ctermbg=233
-highlight MatchParen ctermfg=87
+highlight MatchParen ctermfg=81 ctermbg=233 cterm=none
 highlight ModeMsg ctermfg=15
 highlight Macro ctermfg=15
 highlight Error ctermfg=9 ctermbg=233
