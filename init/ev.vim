@@ -49,7 +49,8 @@ highlight PreCondit ctermfg=33
 highlight StorageClass ctermfg=33
 highlight Special ctermfg=81
 highlight NonText ctermfg=240
-highlight Folded ctermfg=240
+highlight Folded ctermfg=240 ctermbg=235
+highlight FoldColumn ctermfg=240 ctermbg=233
 highlight Directory ctermfg=45 
 highlight netrwSpecial ctermfg=45
 highlight netrwClassify ctermfg=45
