@@ -95,16 +95,20 @@ let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'active': {
   \   'left': [ ['mode', 'paste'],
-  \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-  \   'right': [ ['percent'], ['lineinfo', 'filetype'] ]
+  \             ['fugitive', 'lineinfo'],
+  \             ['filename', 'modified'] ],
+  \   'right': [ ['percent'],
+  \              ['filetype'] ]
   \ },
   \ 'component': {
-  \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒 ":""}',
+  \   'filetype': '%{&filetype=="javascript.jsx"?"[JavaScipt]":&filetype==""?" [text]":" [".&ft."]"}',
   \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
   \ },
+  \ 'component_function': {
+  \
+  \ },
   \ 'component_visible_condition': {
-  \   'readonly': '(&filetype!="help"&& &readonly)',
   \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
@@ -112,10 +116,10 @@ let g:lightline = {
   \ 'subseparator': { 'left': ' ', 'right': ' ' }
   \ }
 
-let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
-let s:palette.inactive.middle = s:palette.normal.middle
-let s:palette.tabline.middle = s:palette.normal.middle
+" let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+" let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
+" let s:palette.inactive.middle = s:palette.normal.middle
+" let s:palette.tabline.middle = s:palette.normal.middle
 
 """"""""""""""""""""""""""""""
 " => haskell-vim
