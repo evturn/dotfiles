@@ -36,6 +36,10 @@ set synmaxcol=128
 set backspace=indent,eol,start
 set incsearch
 set shortmess=I
+set title
+set wildmode=longest,list
+set wildmenu
+set mouse=a
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"

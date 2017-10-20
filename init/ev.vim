@@ -41,7 +41,6 @@ highlight Macro ctermfg=15
 highlight Error ctermfg=9 ctermbg=233
 highlight ErrorMsg ctermfg=9 ctermbg=233
 highlight MoreMsg ctermfg=15
-highlight VertSplit ctermfg=233 ctermbg=233
 highlight SpecialKey ctermfg=11
 highlight SpecialChar ctermfg=33
 highlight PreProc ctermfg=42
@@ -52,10 +51,15 @@ highlight NonText ctermfg=240
 highlight Folded ctermfg=240 ctermbg=235
 highlight FoldColumn ctermfg=240 ctermbg=233
 highlight Directory ctermfg=45 
+highlight VertSplit ctermfg=240 ctermbg=233
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" => netrw
+"""""""""""""""""""""""""""""""""""""""""""""""""
 highlight netrwSpecial ctermfg=45
 highlight netrwClassify ctermfg=45
 highlight netrwExe ctermfg=240		
-highlight netrwTreeBar ctermfg=240
+highlight netrwTreeBar ctermfg=240 ctermbg=233
 highlight netrwPlain ctermfg=51
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => jsx
