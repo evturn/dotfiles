@@ -11,12 +11,12 @@ set nocompatible
 set runtimepath+=~/.vim
 set directory^=~/.vim/tmp//
 
-colorscheme ev
-
 filetype plugin on
 filetype indent on
 syntax enable
 syntax sync minlines=256
+
+colorscheme ev
 
 execute pathogen#infect()
 
@@ -34,6 +34,8 @@ set t_Co=256
 set fillchars+=vert:\ 
 set synmaxcol=128
 set backspace=indent,eol,start
+set incsearch
+set shortmess=I
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -41,12 +43,6 @@ let &t_ZR="\e[23m"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => remappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" `%%` expands path
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" `gf` opens a file in a vertical split when cursor is on a path
-nnoremap gf :vertical wincmd f<CR>
-
 " `[b` previous buffer
 " `]b` next buffer
 " `[B` first buffer
@@ -68,6 +64,12 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
+" `%%` expands path
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" `gf` opens a file in a vertical split when cursor is on a path
+"
+nnoremap gf :vertical wincmd f<CR>
 " Remap `<Ctrl-D>` to ⌦
 imap <C-d> <Del>
 
