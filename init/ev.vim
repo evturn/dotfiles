@@ -128,7 +128,6 @@ highlight jsFloat ctermfg=141
 highlight jsFuncArgOperator ctermfg=202
 highlight jsFuncArgs ctermfg=202
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => haskell
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -138,17 +137,31 @@ highlight haskellDecl ctermfg=198
 highlight haskellDeclKeyword ctermfg=198
 highlight haskellWhere ctermfg=198
 highlight haskellLet ctermfg=198
-highlight haskellIdentifier ctermfg=11
-
-highlight haskellRecordField ctermfg=42
-
-highlight haskellBottom ctermfg=48 cterm=underline
-
-highlight haskellPragma ctermfg=81
+highlight haskellParens ctermfg=198
 
 highlight haskellDefault ctermfg=15
+highlight haskellBlock ctermfg=15
+highlight haskellBrackets ctermfg=15
+
+highlight haskellIdentifier ctermfg=11
+highlight haskellPragma ctermfg=11 cterm=italic
+
+highlight haskellBottom ctermfg=48 cterm=underline
+highlight hsForeign ctermfg=48
 
 highlight haskellType ctermfg=81
+
+au FileType haskell call AdditionalHaskellHighlights()
+
+function! AdditionalHaskellHighlights() 
+  syntax    keyword haskellPragmaKey        LANGUAGE OPTIONS_GHC INLINE NOINLINE LINE contained
+  syntax    match   haskellPragmaArg        /\<[a-zA-Z_$][0-9a-zA-Z_$]*\>/ contained 
+  syntax    region  haskellPragmaDelim      start=+{-#+ end=+#-}+ contains=haskellPragmaKey,haskellPragmaArg
+
+  highlight link    haskellPragmaKey        hsForeign
+  highlight link    haskellPragmaArg        haskellPragma
+  highlight link    haskellPragmaDelim      haskellBrackets
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => sh.vim
