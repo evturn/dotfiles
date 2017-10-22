@@ -57,6 +57,31 @@ prompt_git() {
   fi;
 }
 
+
+##################################################
+# Forground Colors
+#
+# 30 Black
+# 31 Red
+# 32 Green
+# 33 Yellow
+# 34 Blue
+# 35 Purple
+# 36 Cyan
+# 37 White
+#
+# Background Colors
+# 40 Black
+# 41 Red
+# 42 Green
+# 43 Yellow
+# 44 Blue
+# 45 Purple
+# 46 Cyan
+# 47 White
+#
+##################################################
+
 if tput setaf 1 &> /dev/null; then
   tput sgr0; # reset colors
   bold=$(tput bold);
