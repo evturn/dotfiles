@@ -41,6 +41,9 @@ set wildmode=longest,list
 set wildmenu
 set mouse=r
 set clipboard=unnamed
+set fo-=r
+set listchars+=trail:·
+
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -48,6 +51,15 @@ let &t_ZR="\e[23m"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => remappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=','
+let maplocalleader=' '
+
+" nnoremap <leader>gps :Dispatch! git push<cr>
+" nnoremap <leader>gpl :Dispatch! git pull<cr>
+
+" Source ~/.vimrc while vim is open
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " `[b` previous buffer
 " `]b` next buffer
 " `[B` first buffer

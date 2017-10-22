@@ -137,7 +137,7 @@ highlight haskellDecl ctermfg=198
 highlight haskellDeclKeyword ctermfg=198
 highlight haskellWhere ctermfg=198
 highlight haskellLet ctermfg=198
-highlight haskellParens ctermfg=198
+highlight haskellParens ctermfg=15
 
 highlight haskellDefault ctermfg=15
 highlight haskellBlock ctermfg=15
