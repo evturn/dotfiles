@@ -105,20 +105,25 @@ username="${RED}";
 article="${WHITE}";
 symbol="${GREEN}";
 directory="${BLUE}";
-branch="${BLUE}";
-changes="${YELLOW}";
+branch="${RED}";
+changes="${GREEN}";
 
 ##################################################
 # COMMAND PROMPT
 ##################################################
 PS1="\[\033]0;\W\007\]";
-PS1+="\[${username}\]\u";
-PS1+="\[${article}\] in ";
+# PS1+="\[${username}\]\u";
+# PS1+="\[${article}\] in ";
 PS1+="\[${directory}\]\w";
 PS1+="\$(prompt_git \"\[${article}\] on \[${branch}\]\" \"\[${changes}\]\")";
 PS1+="\n";
-PS1+="\[${symbol}\]>  \[${RESET}\]";
+PS1+="\[${symbol}\]> \[${RESET}\]";
 export PS1;
+unset username
+unset article
+unset directory
+unset branch
+unset changes
 
 PS2="\[${YELLOW}\]→ \[${RESET}\]";
 export PS2;
