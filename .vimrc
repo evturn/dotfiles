@@ -39,7 +39,8 @@ set shortmess=I
 set title
 set wildmode=longest,list
 set wildmenu
-set mouse=a
+set mouse=r
+set clipboard=unnamed
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
