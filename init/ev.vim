@@ -41,7 +41,7 @@ highlight Macro ctermfg=15
 highlight Error ctermfg=9 ctermbg=233
 highlight ErrorMsg ctermfg=9 ctermbg=233
 highlight MoreMsg ctermfg=15
-highlight SpecialKey ctermfg=11
+highlight SpecialKey ctermfg=235
 highlight SpecialChar ctermfg=33
 highlight PreProc ctermfg=42
 highlight PreCondit ctermfg=33

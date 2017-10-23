@@ -41,9 +41,9 @@ set wildmode=longest,list
 set wildmenu
 set mouse=r
 set clipboard=unnamed
-set fo-=r
-set listchars+=trail:·
-
+set formatoptions-=cro
+set list
+set listchars=trail:·,space:·
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -53,9 +53,6 @@ let &t_ZR="\e[23m"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=','
 let maplocalleader=' '
-
-" nnoremap <leader>gps :Dispatch! git push<cr>
-" nnoremap <leader>gpl :Dispatch! git pull<cr>
 
 " Source ~/.vimrc while vim is open
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -89,7 +86,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
 " Remap `<Ctrl-D>` to ⌦
 imap <C-d> <Del>
-
+           
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
