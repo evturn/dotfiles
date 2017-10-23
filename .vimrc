@@ -44,6 +44,8 @@ set clipboard=unnamed
 set formatoptions-=cro
 set list
 set listchars=trail:·,space:·
+set textwidth=99
+set colorcolumn=-20,+1
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"

@@ -52,6 +52,7 @@ highlight Folded ctermfg=240 ctermbg=235
 highlight FoldColumn ctermfg=240 ctermbg=233
 highlight Directory ctermfg=45 
 highlight VertSplit ctermfg=240 ctermbg=233
+highlight ColorColumn ctermbg=234
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
