@@ -1,70 +1,77 @@
-#           _ _                   __ _
-#      __ _(_| |_ ___ ___  _ __  / _(_) __ _
-#     / _` | | __/ __/ _ \| '_ \| |_| |/ _` |
-#    | (_| | | || (_| (_) | | | |  _| | (_| |
-#   (_\__, |_|\__\___\___/|_| |_|_| |_|\__, |
-#     |___/                            |___/
-
+#  ┌─┐┬┌┬┐┌─┐┌─┐┌┐┌┌─┐┬┌─┐
+#  │ ┬│ │ │  │ ││││├┤ ││ ┬
+#  └─┘┴ ┴ └─┘└─┘┘└┘└  ┴└─┘
+#
+#
 [alias]
-    aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
-    amend = commit --amend --reuse-message=HEAD
-    branches = "for-each-ref --sort='-committerdate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads"
-    c = commit -S -m
-    contributors = shortlog --summary --numbered
-    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+  amend = commit --amend --reuse-message=HEAD
+  branches = "for-each-ref --sort='-committerdate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads"
+  c = commit -S -m
+  contributors = shortlog --summary --numbered
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+  l = !"git log --pretty='format:%n%Cblue %h   %Cgreen %s %Cblue%GK  %n Author:    %an %aD %n Committer: %cn %cD %n %cr' --shortstat"
 
 [color]
-    ui = always
+  ui = always
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+  current = green
+  local = red
+  remote = blue
+
+[color "decorate"]
+  HEAD = green
+  branch = red
+  remoteBranch = blue
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold # line info
-    old = red           # deletions
-    new = green         # additions
+  meta = white dim
+  commit = yellow
+  frag = blue
+  old = cyan
+  new = green
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 
 [commit]
-    gpgsign = true
+  gpgsign = true
 
 [core]
-    editor = vim
-    precomposeunicode = false # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+  editor = vim
+  precomposeunicode = false     # Don't show files named with non-ASCII symbols as unversioned
 
 [diff]
-    renames = copies          # Detect copies as well as renames
+  renames = copies              # Detect copies as well as renames
 
 [diff "bin"]
-    textconv = hexdump -v -C   # Use `hexdump` to diff binary files
+  textconv = hexdump -v -C      # Use `hexdump` to diff binary files
 
 [filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 
 [gpg]
-    program = gpg2
+  program = gpg2
 
 [help]
-    autocorrect = 1            # Automatically correct and execute mistyped commands
+  autocorrect = 1               # Automatically correct and execute mistyped commands
 
 [merge]
-    log = true                 # Include summaries of merged commits in newly created merge commit messages
+  log = true                    # Include summaries of merged commits in new merge commit messages
 
 [push]
-    default = current
+  default = current
 
 [user]
-    name = hl
-    email = evturn@gmail.com
-    name = Evan Turner
+  name = hl
+  email = evturn@gmail.com
+  name = Evan Turner
+
+[web]
+  brower = google-chrome
