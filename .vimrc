@@ -59,6 +59,9 @@ let maplocalleader=' '
 " Source ~/.vimrc while vim is open
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Open markdown preview in brower
+nnoremap <leader>md :InstantMarkdownPreview<cr>
+
 " `[b` previous buffer
 " `]b` next buffer
 " `[B` first buffer
@@ -84,11 +87,11 @@ nnoremap gj j
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " `gf` opens a file in a vertical split when cursor is on a path
-"
 nnoremap gf :vertical wincmd f<CR>
+
 " Remap `<Ctrl-D>` to ⌦
 imap <C-d> <Del>
-           
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,3 +158,10 @@ let g:haskell_indent_guard=2
 let g:haskell_indent_if=3
 let g:haskell_indent_in=1
 let g:haskell_indent_let=4
+
+
+""""""""""""""""""""""""""""""
+" => instant-markdown
+""""""""""""""""""""""""""""""
+let g:instant_markdown_autostart = 0      " launch preview when markdown file is opened
+
