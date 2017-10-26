@@ -4,12 +4,14 @@
 "   _| |/ / / / / / / / /  / /__
 "  (_|___/_/_/ /_/ /_/_/   \___/
 "
-"  Vim is sponsered by Diet Coke®
+"  Vim is sponsored by Diet Coke®
 "
 
 set nocompatible
 set runtimepath+=~/.vim
 set directory^=~/.vim/tmp//
+
+execute pathogen#infect()
 
 filetype plugin on
 filetype indent on
@@ -17,8 +19,6 @@ syntax enable
 syntax sync minlines=256
 
 colorscheme ev
-
-execute pathogen#infect()
 
 set expandtab
 set tabstop=2

@@ -16,7 +16,6 @@ function doIt() {
     --exclude "bootstrap.sh" \
     --exclude "README.md" \
     -avh --no-perms . ~;
-  rsync -avh init/ev.vim ~/.vim/colors/ev.vim;
   source ~/.bash_profile;
 }
 
