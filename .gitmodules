@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/vim-wakatime"]
 	path = .vim/bundle/vim-wakatime
 	url = git@github.com:wakatime/vim-wakatime.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
