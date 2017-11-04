@@ -60,6 +60,8 @@ highlight DiffAdd ctermfg=49 ctermbg=235
 highlight DiffChange ctermfg=49 ctermbg=235
 highlight DiffDelete ctermfg=198 ctermbg=235 cterm=italic
 highlight DiffText ctermfg=49 ctermbg=235
+highlight CursorLine ctermbg=233 cterm=none
+highlight CursorColumn ctermbg=233 cterm=none
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
