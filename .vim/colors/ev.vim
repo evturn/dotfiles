@@ -35,7 +35,7 @@ highlight Tag ctermfg=198
 highlight type ctermfg=183
 highlight typedef ctermfg=183
 highlight Ignore ctermfg=244 ctermbg=233
-highlight MatchParen ctermfg=81 ctermbg=233 cterm=none
+highlight MatchParen ctermfg=11 ctermbg=233 cterm=none
 highlight ModeMsg ctermfg=15
 highlight Macro ctermfg=15
 highlight Error ctermfg=9 ctermbg=233
@@ -47,19 +47,26 @@ highlight PreProc ctermfg=42
 highlight PreCondit ctermfg=33
 highlight StorageClass ctermfg=33
 highlight Special ctermfg=81
+highlight Search ctermbg=11 ctermfg=233 cterm=none
+highlight IncSearch cterm=underline
 highlight NonText ctermfg=240
 highlight Folded ctermfg=240 ctermbg=235
 highlight FoldColumn ctermfg=240 ctermbg=233
 highlight Directory ctermfg=45 
 highlight VertSplit ctermfg=240 ctermbg=233
 highlight ColorColumn ctermbg=234
+highlight Question ctermfg=49
+highlight DiffAdd ctermfg=49 ctermbg=235
+highlight DiffChange ctermfg=49 ctermbg=235
+highlight DiffDelete ctermfg=198 ctermbg=235 cterm=italic
+highlight DiffText ctermfg=49 ctermbg=235
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""
 highlight netrwSpecial ctermfg=45
 highlight netrwClassify ctermfg=45
-highlight netrwExe ctermfg=240		
+highlight netrwExe ctermfg=240
 highlight netrwTreeBar ctermfg=240 ctermbg=233
 highlight netrwPlain ctermfg=51
 """""""""""""""""""""""""""""""""""""""""""""""""
