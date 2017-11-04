@@ -46,7 +46,7 @@ set list
 set listchars=trail:·,space:·
 set textwidth=99
 set colorcolumn=-20,+1
-
+set guicursor=a:ver25
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
@@ -91,6 +91,9 @@ nnoremap gf :vertical wincmd f<CR>
 
 " Remap `<Ctrl-D>` to ⌦
 imap <C-d> <Del>
+
+" Clear search highlighting on escape
+nnoremap <silent> <esc> :noh<cr><esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
