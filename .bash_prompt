@@ -96,6 +96,7 @@ WHITE=$(tput setaf 15);
 BLUE=$(tput setaf 39);
 YELLOW="\e[1;33m"; 
 GREEN="\e[1;32m";
+GRAY=$(tput setaf 246);
 RESET=$(tput sgr0);
 
 ##################################################
@@ -103,10 +104,10 @@ RESET=$(tput sgr0);
 ##################################################
 username="${RED}";
 article="${WHITE}";
-symbol="${GREEN}";
+symbol="${YELLOW}";
 directory="${BLUE}";
-branch="${RED}";
-changes="${GREEN}";
+branch="${WHITE}";
+changes="${GRAY}";
 
 ##################################################
 # COMMAND PROMPT
@@ -115,7 +116,7 @@ PS1="\[\033]0;\W\007\]";
 # PS1+="\[${username}\]\u";
 # PS1+="\[${article}\] in ";
 PS1+="\[${directory}\]\w";
-PS1+="\$(prompt_git \"\[${article}\] on \[${branch}\]\" \"\[${changes}\]\")";
+PS1+="\$(prompt_git \"\[${article}\] \[${branch}\]\" \"\[${changes}\]\")";
 PS1+="\n";
 PS1+="\[${symbol}\]> \[${RESET}\]";
 export PS1;
