@@ -108,11 +108,12 @@ symbol="${YELLOW}";
 directory="${BLUE}";
 branch="${WHITE}";
 changes="${GRAY}";
+curs='\033]50;CursorShape=1\x7'
 
 ##################################################
 # COMMAND PROMPT
 ##################################################
-PS1="\[\033]0;\W\007\]";
+PS1="$curs\[\033]0;\W\007\]";
 # PS1+="\[${username}\]\u";
 # PS1+="\[${article}\] in ";
 PS1+="\[${directory}\]\w";
