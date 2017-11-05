@@ -1,8 +1,11 @@
 set background=dark
+
 highlight clear
+
 if has("syntax_on")
   syntax reset
 endif
+
 let g:colors_name = "Ev"
 
 " 8   #808080 Grey
@@ -27,7 +30,7 @@ let g:colors_name = "Ev"
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => Base
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight Normal ctermfg=15 ctermbg=233 guifg=#ffffff guibg=#262626
+" highlight Normal ctermfg=15 ctermbg=233 guifg=#ffffff guibg=#262626
 highlight LineNr ctermfg=240 ctermbg=233 guifg=#585858 guibg=#262626
 highlight Comment ctermfg=8 guifg=#808080
 highlight Number ctermfg=141 guifg=#af87ff
@@ -89,9 +92,9 @@ highlight netrwPlain ctermfg=51
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => jsx
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight xmlTag     ctermfg=198
-highlight xmlTagName ctermfg=198
-highlight xmlEndTag  ctermfg=198
+highlight xmlTag     ctermfg=198 guifg=#ff0087
+highlight xmlTagName ctermfg=198 guifg=#ff0087
+highlight xmlEndTag  ctermfg=198 guifg=#ff0087
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => javascript
@@ -156,25 +159,25 @@ highlight jsFuncArgs ctermfg=202
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => haskell
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight haskellKeyword ctermfg=198 guifg=#ff0087
-highlight haskellImportKeywords ctermfg=198 guifg=#ff0087
-highlight haskellDecl ctermfg=198 guifg=#ff0087
-highlight haskellDeclKeyword ctermfg=198 guifg=#ff0087
-highlight haskellWhere ctermfg=198 guifg=#ff0087
-highlight haskellLet ctermfg=198 guifg=#ff0087
-highlight haskellParens ctermfg=15 guifg=#ffffff
+highlight haskellKeyword ctermfg=198 guifg=deeppink1
+highlight haskellImportKeywords ctermfg=198 guifg=deeppink1
+highlight haskellDecl ctermfg=198 guifg=deeppink1
+highlight haskellDeclKeyword ctermfg=198 guifg=deeppink1
+highlight haskellWhere ctermfg=198 guifg=deeppink1
+highlight haskellLet ctermfg=198 guifg=deeppink1
+highlight haskellParens ctermfg=15 guifg=white
 
-highlight haskellDefault ctermfg=15 guifg=#ffffff
-highlight haskellBlock ctermfg=15 guifg=#ffffff
-highlight haskellBrackets ctermfg=15 guifg=#ffffff
+highlight haskellDefault ctermfg=15 guifg=white
+highlight haskellBlock ctermfg=15 guifg=white
+highlight haskellBrackets ctermfg=15 guifg=white
 
-highlight haskellIdentifier ctermfg=11 guifg=#ffff00
-highlight haskellPragma ctermfg=11 cterm=italic
+highlight haskellIdentifier ctermfg=11 guifg=yellow
+highlight haskellPragma ctermfg=11 cterm=italic guifg=yellow gui=italic
 
-highlight haskellBottom ctermfg=48 cterm=underline
-highlight hsForeign ctermfg=48
+highlight haskellBottom ctermfg=48 guifg=springgreen1 cterm=underline
+highlight hsForeign ctermfg=48 guifg=springgreen1
 
-highlight haskellType ctermfg=81 guifg=#5fd7ff
+highlight haskellType ctermfg=81 guifg=steelblue1
 
 au FileType haskell call AdditionalHaskellHighlights()
 

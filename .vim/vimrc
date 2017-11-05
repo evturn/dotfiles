@@ -46,7 +46,7 @@ set list
 set listchars=trail:·,space:·
 set textwidth=79
 set colorcolumn=+1
-set guicursor=a:ver25
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
