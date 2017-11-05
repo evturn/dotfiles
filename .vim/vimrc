@@ -47,7 +47,14 @@ set listchars=trail:·,space:·
 set textwidth=79
 set colorcolumn=+1
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-set termguicolors
+
+if has('nvim')
+  set termguicolors
+endif
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
