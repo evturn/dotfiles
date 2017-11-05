@@ -218,6 +218,16 @@ function a() {
 # given location
 function v() {
   if [ $# -eq 0 ]; then
+    vim -c "E";
+  else
+    vim "$@";
+  fi;
+}
+
+# `v` with no arguments opens the current directory in Vim, otherwise opens the
+# given location
+function n() {
+  if [ $# -eq 0 ]; then
     nvim -c "E";
   else
     nvim "$@";
