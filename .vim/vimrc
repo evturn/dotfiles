@@ -25,12 +25,12 @@ set tabstop=2
 set shiftwidth=2
 set cmdheight=2
 set laststatus=2
+set noshowmode
 set nrformats=
 set showcmd
 set number
 set relativenumber
 set autochdir
-set t_Co=256
 set fillchars+=vert:\ 
 set synmaxcol=128
 set backspace=indent,eol,start
@@ -52,6 +52,9 @@ if has('nvim')
   set termguicolors
 endif
 
+if !has('gui_running')
+  set t_Co=256
+endif
 """"""""""""""""""""""""""""""
 " => auto commands
 """"""""""""""""""""""""""""""
@@ -173,28 +176,25 @@ let g:instant_markdown_autostart = 0      " launch preview when markdown file is
 """"""""""""""""""""""""""""""
 let g:lightline = {
   \ 'colorscheme': 'wombat',
-  \ }
-
-let g:lightline = {
-  \ 'colorscheme': 'wombat',
   \ 'active': {
   \   'left': [ ['mode', 'paste'],
-  \             ['lineinfo', 'total', 'percent'],
+  \             ['lineinfo'],
+  \             ['absolutepath', 'modified'],
   \             ],
-  \   'right': [ ['fugitive'],
+  \   'right': [ 
+  \              ['lines'],
   \              ['filetype'],
-  \              ['filename'],
   \              ]
   \ },
   \ 'component': {
-  \   'filetype': '%{&ft=="javascript.jsx"?"[JavaScipt]":&ft==""?" [text]":&ft=="netrw"?"":" [".&ft."]"}',
-  \   'modified': '%{&ft=="help"?"":&modified?"+":&modifiable?"":"-"}',
+  \   'filetype': '%{&ft=="javascript.jsx"?"[JavaScipt]":&ft==""?"[text]":&ft=="netrw"?"":"[".&ft."]"}',
+  \   'modified': '%{&ft=="help"?"":&modified?"＋":&modifiable?"":"－"}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-  \   'filename': '%<%F',
-  \   'total':    '%L'
+  \   'lineinfo': '%3l ⌁ %-2v',
+  \   'lines': '%L ␤',
+  \   'absolutepath': '%<%F'
   \ },
   \ 'component_function': {
-  \
   \ },
   \ 'component_visible_condition': {
   \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
