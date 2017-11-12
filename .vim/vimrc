@@ -182,13 +182,13 @@ let g:lightline = {
   \             ['absolutepath', 'modified'],
   \             ],
   \   'right': [ 
-  \              ['lines'],
   \              ['filetype'],
+  \              ['lines'],
   \              ]
   \ },
   \ 'component': {
-  \   'filetype': '%{&ft=="javascript.jsx"?"[JavaScipt]":&ft==""?"[text]":&ft=="netrw"?"":"[".&ft."]"}',
-  \   'modified': '%{&ft=="help"?"":&modified?"＋":&modifiable?"":"－"}',
+  \   'filetype': '%{&ft=="javascript.jsx"?"javascript":&ft==""?"[text]":&ft=="netrw"?"":"".&ft.""}',
+  \   'modified': '%{&ft=="help"?"":&modified?"＋":&modifiable?"":"～"}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
   \   'lineinfo': '%3l ⌁ %-2v',
   \   'lines': '%L ␤',
