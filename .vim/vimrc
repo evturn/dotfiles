@@ -179,28 +179,36 @@ let g:lightline = {
   \ 'active': {
   \   'left': [ ['mode', 'paste'],
   \             ['lineinfo'],
-  \             ['absolutepath', 'modified'],
+  \             ['modified'],
   \             ],
   \   'right': [ 
   \              ['filetype'],
   \              ['lines'],
+  \              ['absolutepath'],
   \              ]
   \ },
   \ 'component': {
   \   'filetype': '%{&ft=="javascript.jsx"?"javascript":&ft==""?"[text]":&ft=="netrw"?"":"".&ft.""}',
-  \   'modified': '%{&ft=="help"?"":&modified?"＋":&modifiable?"":"～"}',
+  \   'modified': '%{&ft=="help"?"":&modified?"＋":""}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
   \   'lineinfo': '%3l ⌁ %-2v',
-  \   'lines': '%L ␤',
   \   'absolutepath': '%<%F'
   \ },
   \ 'component_function': {
+  \    'lines': 'LightlineLines',
   \ },
   \ 'component_visible_condition': {
-  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+  \   'modified': '(&filetype!="help"&&(&modified||&!modifiable))',
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
   \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '', 'right': '' }
   \ }
+
+function! LightlineLines()
+  let ex = &filetype ==# 'netrw'
+  let vl = ex ? '' : line('$')
+  let nl = ex ? '' : ' ␍'
+  return vl . nl
+endfunction
 
