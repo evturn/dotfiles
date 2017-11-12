@@ -183,18 +183,18 @@ let g:lightline = {
   \             ],
   \   'right': [ 
   \              ['filetype'],
-  \              ['lines'],
+  \              ['fugitive'],
   \              ['absolutepath'],
   \              ]
   \ },
   \ 'component': {
-  \   'filetype': '%{&ft=="javascript.jsx"?"javascript":&ft==""?"[text]":&ft=="netrw"?"":"".&ft.""}',
   \   'modified': '%{&ft=="help"?"":&modified?"＋":""}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-  \   'lineinfo': '%3l ⌁ %-2v',
+  \   'lineinfo': '%3l:%-1v ⌁ %L',
   \   'absolutepath': '%<%F'
   \ },
   \ 'component_function': {
+  \    'filetype': 'LightlineFiletype',
   \    'lines': 'LightlineLines',
   \ },
   \ 'component_visible_condition': {
@@ -208,7 +208,15 @@ let g:lightline = {
 function! LightlineLines()
   let ex = &filetype ==# 'netrw'
   let vl = ex ? '' : line('$')
-  let nl = ex ? '' : ' ␍'
-  return vl . nl
+  let nl = ex ? '' : '␍ '
+  return nl . vl
 endfunction
+
+function! LightlineFiletype()
+  return &filetype ==# 'netrw' ? '' :
+       \ &filetype ==# 'javascript.jsx' ? 'javascript' :
+       \ &filetype ==# '' ? 'text' :
+       \ &filetype
+endfunction
+
 
