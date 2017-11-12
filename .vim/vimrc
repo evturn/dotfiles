@@ -132,7 +132,7 @@ noremap <leader>re :Re<cr>
 """"""""""""""""""""""""""""""
 let g:netrw_list_hide='.*\.DS_Store$'
 let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+let g:netrw_liststyle = 0
 let g:netrw_altv = 1
 let g:netrw_preview = 1
 let g:netrw_use_errorwindow = 0
