@@ -34,7 +34,7 @@ let g:colors_name = "Ev"
 " => Base
 """""""""""""""""""""""""""""""""""""""""""""""""
 " highlight Normal ctermfg=15 ctermbg=233 guifg=white guibg=grey7
-highlight LineNr       ctermfg=240 ctermbg=233 guifg=grey35 guibg=grey7
+highlight LineNr       ctermfg=240 cterm=none  guifg=grey35 guibg=grey7
 highlight Comment      ctermfg=8               guifg=grey
 highlight Number       ctermfg=141             guifg=mediumpurple1
 highlight Float        ctermfg=141             guifg=mediumpurple1
@@ -74,8 +74,8 @@ highlight NonText      ctermfg=240             guifg=grey35
 highlight Folded       ctermfg=240 ctermbg=235 guifg=grey35 guibg=grey15
 highlight FoldColumn   ctermfg=240 ctermbg=233 guifg=grey35 guibg=grey7
 highlight Directory    ctermfg=45              guifg=turquoise2
-highlight VertSplit    ctermfg=240 ctermbg=233 guifg=grey9 guibg=grey7
-highlight ColorColumn  ctermbg=234                         guibg=grey3
+highlight VertSplit    ctermfg=240 cterm=none  guifg=grey9 guibg=grey7
+highlight ColorColumn  ctermfg=240 ctermbg=234                        guibg=grey3
 highlight Question     ctermfg=49              guifg=mediumspringgreen
 highlight DiffAdd      ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
 highlight DiffChange   ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15

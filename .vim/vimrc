@@ -29,7 +29,6 @@ set noshowmode
 set nrformats=
 set showcmd
 set number
-set relativenumber
 set autochdir
 set fillchars+=vert:\ 
 set synmaxcol=128
