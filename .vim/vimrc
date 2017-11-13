@@ -58,10 +58,12 @@ endif
 " => auto commands
 """"""""""""""""""""""""""""""
 " Revert cursor to terminal settings when exiting Vim
-au VimLeave * set guicursor=a:ver25-Cursor/lCursor
+autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
 
 " Disable automatic comment insertion on new lines
 autocmd FileType * setlocal formatoptions-=cro
+
+autocmd WinLeave * setlocal buftype=
 
 " Change cursor shape based on current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
