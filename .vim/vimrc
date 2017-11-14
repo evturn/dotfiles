@@ -63,7 +63,7 @@ autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
 " Disable automatic comment insertion on new lines
 autocmd FileType * setlocal formatoptions-=cro
 
-autocmd WinLeave * setlocal buftype=
+autocmd FileType netrw autocmd BufLeave <buffer> setlocal buftype=
 
 " Change cursor shape based on current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
