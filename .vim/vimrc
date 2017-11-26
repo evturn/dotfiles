@@ -85,6 +85,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Open markdown preview in brower
 nnoremap <leader>md :InstantMarkdownPreview<cr>
 
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gp :Git push origin master<cr>
+
 " `[b` previous buffer
 " `]b` next buffer
 " `[B` first buffer
@@ -138,7 +142,6 @@ let g:netrw_altv = 1
 let g:netrw_preview = 1
 let g:netrw_use_errorwindow = 0
 let g:netrw_fastbrowse = 0
-let g:netrw_winsize = 20
 let g:netrw_rmdir_cmd='rm -rf'
 let g:netrw_rmf_cmd = 'rm -rf'
 let g:netrw_localrmdir='rm -rf'
@@ -161,7 +164,7 @@ let g:haskell_indent_do = 3
 let g:haskell_indent_if = 0
 let g:haskell_indent_in = 1
 let g:haskell_indent_case = 2
-let g:haskell_indent_let = 0
+let g:haskell_indent_let = 4
 let g:haskell_indent_guard = 2
 let g:haskell_indent_where = 6
 let g:haskell_indent_before_where = 2
