@@ -23,6 +23,8 @@ export NODE_REPL_HISTORY_SIZE='32768';
 # Default to dev environment if not set
 export NODE_ENV="development";
 
+# Set variable for gtk-mac-integration for Threadscope
+export PKG_CONFIG_PATH="/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig"
 
 # Expose Android SDK path
 export ANDROID_HOME="/usr/local/opt/android-sdk";
