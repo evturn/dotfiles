@@ -27,8 +27,6 @@ export NODE_ENV="development";
 # Expose Android SDK path
 export ANDROID_HOME="/usr/local/opt/android-sdk";
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH="${PATH}:${ANDROID_HOME}/tools"
-export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
