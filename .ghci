@@ -1,8 +1,12 @@
---             __         _
---      ____ _/ /_  _____(_)
---     / __ `/ __ \/ ___/ /
---   _/ /_/ / / / / /__/ /
---  (_\__, /_/ /_/\___/_/
---   /____/
+import Text.Show.Pretty (ppShow)
+import qualified Language.Haskell.HsColour as HsColour
+import qualified Language.Haskell.HsColour.Colourise as HsColour
+import qualified Language.Haskell.HsColour.Output as HsColour
+
+let myColourPrefs = HsColour.defaultColourPrefs { HsColour.conid = [HsColour.Foreground HsColour.Yellow, HsColour.Bold], HsColour.conop = [HsColour.Foreground HsColour.Yellow], HsColour.string = [HsColour.Foreground HsColour.Green], HsColour.char = [HsColour.Foreground HsColour.Green], HsColour.number = [HsColour.Foreground HsColour.Blue, HsColour.Bold], HsColour.layout = [HsColour.Foreground HsColour.Red], HsColour.keyglyph = [HsColour.Foreground HsColour.Red], HsColour.definition = [HsColour.Foreground HsColour.Yellow], HsColour.keyword = [HsColour.Foreground HsColour.Red], HsColour.varid = [HsColour.Foreground HsColour.Red], HsColour.varop = [HsColour.Foreground HsColour.Red], HsColour.cpp = [HsColour.Foreground HsColour.Red], HsColour.variantselection = [HsColour.Foreground HsColour.Red], HsColour.selection = [HsColour.Foreground HsColour.Yellow] }
+
+let myPrint = putStrLn . HsColour.hscolour (HsColour.TTYg HsColour.XTerm256Compatible) myColourPrefs False False "" False . ppShow
+
+:set -interactive-print=myPrint
 
 :set prompt "\ESC[1;32mλ> \ESC[0m\STX"
