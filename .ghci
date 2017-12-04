@@ -9,4 +9,6 @@ let myPrint = putStrLn . HsColour.hscolour (HsColour.TTYg HsColour.XTerm256Compa
 
 :set -interactive-print=myPrint
 
+:def clear const . return $ ":! clear"
+
 :set prompt "\ESC[1;32mλ> \ESC[0m\STX"

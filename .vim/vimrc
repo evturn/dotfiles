@@ -65,6 +65,8 @@ autocmd FileType * setlocal formatoptions-=cro
 
 autocmd FileType netrw autocmd BufLeave <buffer> setlocal buftype=
 
+autocmd BufNewFile,BufRead,BufReadPost *.ghci set filetype=haskell
+
 " Change cursor shape based on current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
