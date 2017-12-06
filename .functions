@@ -256,8 +256,8 @@ function tre() {
 function y() {
   previous=$?
   if [ $previous -eq 0 ]; then
-    osascript -e "display notification \"Done\" with title \"Terminal Task\"" && say "ok, it is done";
+    osascript -e "display notification \"Done\" with title \"Terminal Task\"" && say "ok all done";
   else
-    osascript -e "display notification \"Failed\" with title \"Terminal Task\"" && say "oh nose, it failed";
+    osascript -e "display notification \"Failed\" with title \"Terminal Task\"" && say "oh nose it failed";
   fi
 }
