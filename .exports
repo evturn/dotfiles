@@ -26,6 +26,9 @@ export NODE_ENV="development";
 # Set variable for gtk-mac-integration for Threadscope
 export PKG_CONFIG_PATH="/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig"
 
+# GOG signing key
+export GPG_TTY=$(tty)
+
 # Expose Android SDK path
 export ANDROID_HOME="/usr/local/opt/android-sdk";
 export JAVA_HOME="$(/usr/libexec/java_home)"
