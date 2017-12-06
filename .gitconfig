@@ -57,7 +57,7 @@
   required = true
 
 [gpg]
-  program = /usr/local/bin/gpg
+  program = gpg2
 
 [help]
   autocorrect = 1               # Automatically correct and execute mistyped commands

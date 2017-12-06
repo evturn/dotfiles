@@ -261,3 +261,9 @@ function y() {
     osascript -e "display notification \"Failed\" with title \"Terminal Task\"" && say "oh nose it failed";
   fi
 }
+
+function commitd() {
+  local datetime="${1}"
+  local message="${2}"
+  GIT_COMMITTER_DATE="${datetime}" git commit -S -m "${message}" --date="${datetime}";
+}
