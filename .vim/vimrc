@@ -11,16 +11,18 @@ set nocompatible
 set runtimepath+=~/.vim
 set directory^=~/.vim/tmp//
 
-execute pathogen#infect()
 
-filetype plugin on
-filetype indent on
-syntax enable
+syntax on
+filetype plugin indent on
 syntax sync minlines=256
 
 colorscheme ev
 
 set expandtab
+set smartcase
+set smarttab
+set smartindent
+set autoindent
 set tabstop=2
 set shiftwidth=2
 set cmdheight=2
@@ -36,8 +38,6 @@ set backspace=indent,eol,start
 set incsearch
 set shortmess=I
 set title
-set wildmode=longest,list
-set wildmenu
 set mouse=r
 set clipboard=unnamed
 set formatoptions-=cro
@@ -47,6 +47,12 @@ set textwidth=79
 set colorcolumn=+1
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
+set completeopt=menuone,menu,longest
+set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
+set wildmode=longest,list,full
+set wildmenu
+set completeopt+=longest
+
 if has('nvim')
   set termguicolors
 endif
@@ -54,6 +60,9 @@ endif
 if !has('gui_running')
   set t_Co=256
 endif
+
+execute pathogen#infect()
+
 """"""""""""""""""""""""""""""
 " => auto commands
 """"""""""""""""""""""""""""""
@@ -63,9 +72,7 @@ autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
 " Disable automatic comment insertion on new lines
 autocmd FileType * setlocal formatoptions-=cro
 
-autocmd FileType netrw autocmd BufLeave <buffer> setlocal buftype=
-
-autocmd BufNewFile,BufRead,BufReadPost *.ghci set filetype=haskell
+autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
 
 " Change cursor shape based on current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -134,6 +141,27 @@ noremap <leader>bd :Bd<cr>
 " return to netrw buffer
 noremap <leader>re :Re<cr>
 
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+""""""""""""""""""""""""""""""
+" => tabular
+""""""""""""""""""""""""""""""
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+vmap a, :Tabularize /<-<CR>
+
+""""""""""""""""""""""""""""""
+" => neco-ghc
+""""""""""""""""""""""""""""""
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
 """"""""""""""""""""""""""""""
 " => netrw
 """"""""""""""""""""""""""""""
@@ -172,6 +200,19 @@ let g:haskell_indent_where = 6
 let g:haskell_indent_before_where = 2
 let g:haskell_indent_after_bare_where = 2
 
+
+""""""""""""""""""""""""""""""
+" => supertab
+""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+  endif
+endif
 """"""""""""""""""""""""""""""
 " => instant-markdown
 """"""""""""""""""""""""""""""
@@ -224,5 +265,3 @@ function! LightlineFiletype()
        \ &filetype ==# '' ? 'text' :
        \ &filetype
 endfunction
-
-

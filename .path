@@ -23,8 +23,8 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Haskell
 export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
 
 # MongoDB
 export PATH="$HOME/src/mongodb/bin:$PATH"

@@ -40,3 +40,9 @@
 [submodule ".vim/bundle/vimproc.vim"]
 	path = .vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule ".vim/bundle/neco-ghc"]
+	path = .vim/bundle/neco-ghc
+	url = https://github.com/eagletmt/neco-ghc
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
