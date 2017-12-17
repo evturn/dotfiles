@@ -162,25 +162,6 @@ highlight jsFuncArgs ctermfg=202 guifg=orangered1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => haskell
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight haskellKeyword ctermfg=198 guifg=deeppink1
-highlight haskellImportKeywords ctermfg=198 guifg=deeppink1
-highlight haskellDecl ctermfg=198 guifg=deeppink1
-highlight haskellDeclKeyword ctermfg=198 guifg=deeppink1
-highlight haskellWhere ctermfg=198 guifg=deeppink1
-highlight haskellLet ctermfg=198 guifg=deeppink1
-highlight haskellParens ctermfg=15 guifg=white
-
-highlight haskellDefault ctermfg=15 guifg=white
-highlight haskellBlock ctermfg=15 guifg=white
-highlight haskellBrackets ctermfg=15 guifg=white
-
-highlight haskellIdentifier ctermfg=11 guifg=yellow
-highlight haskellPragma ctermfg=11 cterm=italic guifg=yellow gui=italic
-
-highlight haskellBottom ctermfg=48 guifg=springgreen1 cterm=underline
-highlight hsForeign ctermfg=48 guifg=springgreen1
-
-highlight haskellType ctermfg=81 guifg=steelblue1
 
 au FileType haskell call AdditionalHaskellHighlights()
 
@@ -192,6 +173,27 @@ function! AdditionalHaskellHighlights()
   highlight link    haskellPragmaKey        hsForeign
   highlight link    haskellPragmaArg        haskellPragma
   highlight link    haskellPragmaDelim      haskellBrackets
+
+  highlight haskellKeyword         ctermfg=198 guifg=deeppink1
+  highlight haskellImportKeywords  ctermfg=198 guifg=deeppink1
+  highlight haskellDecl            ctermfg=198 guifg=deeppink1
+  highlight haskellDeclKeyword     ctermfg=198 guifg=deeppink1
+  highlight haskellWhere           ctermfg=198 guifg=deeppink1
+  highlight haskellLet             ctermfg=198 guifg=deeppink1
+  highlight haskellParens          ctermfg=15  guifg=white
+  highlight haskellDefault         ctermfg=15  guifg=white
+  highlight haskellBlock           ctermfg=15  guifg=white
+  highlight haskellBrackets        ctermfg=15  guifg=white
+  highlight haskellIdentifier      ctermfg=11  guifg=yellow
+  highlight haskellPragma          ctermfg=11  guifg=yellow       cterm=italic gui=italic
+  highlight haskellBottom          ctermfg=48  guifg=springgreen1 cterm=underline
+  highlight hsForeign              ctermfg=48  guifg=springgreen1
+  highlight haskellPatternKeyword  ctermfg=48  guifg=springgreen1
+  highlight haskellTypeRoles       ctermfg=48  guifg=springgreen1
+  highlight haskellStatic          ctermfg=48  guifg=springgreen1
+  highlight haskellPreProc         ctermfg=48  guifg=springgreen1
+  highlight haskellType            ctermfg=81  guifg=steelblue1
+  highlight haskellImport          ctermfg=81  guifg=steelblue1
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""
