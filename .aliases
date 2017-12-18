@@ -7,37 +7,25 @@
 #   (_\__,_|_|_|\__,_|___/\___|___/
 #
 
-alias ls='ls -FHG'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 
-alias d="cd ~/src/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/src/dev"
+alias sr="cd ~/src"
+alias dv="cd ~/src/dev"
 alias g="git"
 alias h="history"
 alias j="jobs"
 
-# List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+ignoreflag="--ignore=.DS_Store --ignore=.. --ignore=."
+widthflag="--width=100"
 
-# List all files colorized in long format, including dot files
-alias ll="ls -laF ${colorflag}"
-
+alias ls="ls -a ${ignoreflag} ${widthflag} ${colorflag}"
+alias la="command ls -A ${widthflag} ${colorflag}"
+alias ll="ls -laF ${widthflag} ${colorflag}"
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
-
-# List all files colorized, including dot files
-alias la="command ls -a ${colorflag}"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
