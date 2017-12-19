@@ -8,11 +8,21 @@
 # =╚═════╝===╚═╝===╚══════╝╚═╝==╚═╝╚═╝=====╚═╝
 # ============================================
  
-# 0   = default colour
-# 1   = bold
-# 4   = underlined
-# 5   = flashing text
-# 7   = reverse field
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
+  export LS_COLORS='no=00;32:fi=00;37:di=00;94:ln=01;34;47:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;31:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;37:*.jpeg=01;37:*.gif=01;37:*.bmp=01;37:*.pbm=01;37:*.pgm=01;37:*.ppm=01;37:*.tga=01;37:*.xbm=01;37:*.xpm=01;37:*.tif=01;37:*.tiff=01;37:*.png=01;37:*.mov=01;37:*.mpg=01;37:*.mpeg=01;37:*.avi=01;37:*.fli=01;37:*.gl=01;37:*.dl=01;37:*.xcf=01;37:*.xwd=01;37:*.ogg=01;35:*.mp3=01;37:*.wav=01;37:'
+else # macOS `ls`
+  colorflag="-G"
+  export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+fi
+
+# 00  = default colour
+# 01  = bold
+# 04  = underlined
+# 05  = flashing text
+# 07  = reverse field
 # 31  = red
 # 32  = green
 # 33  = orange
@@ -42,12 +52,3 @@
 # 104 = light blue background
 # 105 = light purple background
 # 106 = turquoise background
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
-  export LS_COLORS='no=00:fi=01;37:di=01;34:ln=01;34;47:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;31:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;37:*.jpeg=01;37:*.gif=01;37:*.bmp=01;37:*.pbm=01;37:*.pgm=01;37:*.ppm=01;37:*.tga=01;37:*.xbm=01;37:*.xpm=01;37:*.tif=01;37:*.tiff=01;37:*.png=01;37:*.mov=01;37:*.mpg=01;37:*.mpeg=01;37:*.avi=01;37:*.fli=01;37:*.gl=01;37:*.dl=01;37:*.xcf=01;37:*.xwd=01;37:*.ogg=01;35:*.mp3=01;37:*.wav=01;37:'
-else # macOS `ls`
-  colorflag="-G"
-  export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
-fi

@@ -19,7 +19,7 @@ alias h="history"
 alias j="jobs"
 
 ignoreflag="--ignore=.DS_Store --ignore=.. --ignore=."
-widthflag="--width=100"
+widthflag="--width=90"
 
 alias ls="ls -a ${ignoreflag} ${widthflag} ${colorflag}"
 alias la="command ls -A ${widthflag} ${colorflag}"
