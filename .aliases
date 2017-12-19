@@ -21,6 +21,7 @@ alias j="jobs"
 ignoreflag="--ignore=.DS_Store --ignore=.. --ignore=."
 widthflag="--width=90"
 
+alias l="ls ${ignoreflag} ${widthflag} ${colorflag}"
 alias ls="ls -a ${ignoreflag} ${widthflag} ${colorflag}"
 alias la="command ls -A ${widthflag} ${colorflag}"
 alias ll="ls -laF ${widthflag} ${colorflag}"
