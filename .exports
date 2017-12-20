@@ -50,5 +50,5 @@ export LESS_TERMCAP_md=${GREEN};
 export MANPAGER='less -X';
 
 # Expose Node Version Manager path
-export NVM_DIR=$(readlink "$HOME/.nvm");
-source ~/.nvm/nvm.sh
+# export NVM_DIR=$(readlink "$HOME/.nvm");
+# source ~/.nvm/nvm.sh

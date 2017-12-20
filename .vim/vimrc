@@ -146,6 +146,9 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
+let g:highlightedyank_highlight_duration = 1000
+hi HighlightedyankRegion cterm=reverse guibg=SpringGreen1
+
 """"""""""""""""""""""""""""""
 " => tabular
 """"""""""""""""""""""""""""""
