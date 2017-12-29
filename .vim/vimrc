@@ -107,11 +107,11 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
-" `<Ctrl>{char}` moves between window
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Move between windows
+map <leader>hh <C-w>h
+map <leader>jj <C-w>j
+map <leader>kk <C-w>k
+map <leader>ll <C-w>l
 
 " Remap line motion commands to operate on display lines
 nnoremap k gk
