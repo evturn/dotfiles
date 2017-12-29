@@ -48,7 +48,7 @@ set colorcolumn=+1
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 set completeopt=menuone,menu,longest
-set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
+set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git/,.cabal-sandbox
 set wildmode=longest,list,full
 set wildmenu
 set completeopt+=longest
@@ -112,6 +112,13 @@ map <leader>hh <C-w>h
 map <leader>jj <C-w>j
 map <leader>kk <C-w>k
 map <leader>ll <C-w>l
+
+" Jump to end of line
+map <leader>e $
+
+" Page down and up
+map <leader>d <C-d>
+map <leader>u <C-u>
 
 " Remap line motion commands to operate on display lines
 nnoremap k gk
