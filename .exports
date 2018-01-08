@@ -16,6 +16,8 @@
 # Make Sublime Text the default editor.
 export EDITOR='vim'
 
+export VIMCONFIG=~/.vim
+export VIMDATA=~/.vim
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
 # Allow 32³ entries; the default is 1000.
@@ -48,7 +50,3 @@ export LESS_TERMCAP_md=${GREEN};
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
-
-# Expose Node Version Manager path
-# export NVM_DIR=$(readlink "$HOME/.nvm");
-# source ~/.nvm/nvm.sh
