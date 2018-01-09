@@ -85,12 +85,16 @@ let &t_ZR="\e[23m"
 let mapleader=','
 let maplocalleader=' '
 
+" Reassign reverse character search
+noremap \ ,
+
 " Source ~/.vimrc while vim is open
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Open markdown preview in brower
 nnoremap <leader>md :InstantMarkdownPreview<cr>
 
+" vim-fugitive git
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :Git push origin master<cr>
@@ -104,34 +108,6 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
-" Move between windows
-map <leader>hh <C-w>h
-map <leader>jj <C-w>j
-map <leader>kk <C-w>k
-map <leader>ll <C-w>l
-
-" Jump to end of line
-map <leader>e $
-
-" Page down and up
-map <leader>d <C-d>
-map <leader>u <C-u>
-
-" Remap line motion commands to operate on display lines
-nnoremap k gk
-nnoremap gk k
-nnoremap j gj
-nnoremap gj j
-
-" `%%` expands path
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" `gf` opens a file in a vertical split when cursor is on a path
-nnoremap gf :vertical wincmd f<CR>
-
-" Remap `<Ctrl-D>` to ⌦
-imap <C-d> <Del>
-
 " previous buffer, next buffer
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bn :bn<cr>
@@ -142,13 +118,46 @@ nnoremap <leader>bo <c-w>o
 " delete buffer without closing pane
 noremap <leader>bd :Bd<cr>
 
-" return to netrw buffer
-noremap <leader>re :Re<cr>
+" Remap line motion commands to operate on display lines
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
+" Move between windows
+map <leader>hh <C-w>h
+map <leader>jj <C-w>j
+map <leader>kk <C-w>k
+map <leader>ll <C-w>l
+
+" `%%` expands path
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" `gf` opens a file in a vertical split when cursor is on a path
+nnoremap gf :vertical wincmd f<CR>
 
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
+
+" Clear last search pattern register by unsetting it on return
+nnoremap <CR> :noh<CR><CR>
+
+"""""""""""""""""""""""""""""""
+" => netrw
+"""""""""""""""""""""""""""""""
+let g:netrw_altv = 1
+let g:netrw_banner = 0
+let g:netrw_dirhistmax = 0
+let g:netrw_fastbrowse = 0
+let g:netrw_list_hide='.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,^\.git/$,^\./$'
+let g:netrw_liststyle = 0
+let g:netrw_preview = 1
+let g:netrw_use_errorwindow = 0
+
+" return to netrw buffer
+noremap <leader>re :Re<cr>
 
 """""""""""""""""""""""""""""""
 " => highlightedyank
@@ -171,20 +180,6 @@ vmap a, :Tabularize /<-<CR>
 """""""""""""""""""""""""""""""
 let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-"""""""""""""""""""""""""""""""
-" => netrw
-"""""""""""""""""""""""""""""""
-let g:netrw_altv = 1
-let g:netrw_banner = 0
-let g:netrw_fastbrowse = 0
-let g:netrw_list_hide='.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,^\.git/$,^\./$'
-let g:netrw_liststyle = 0
-let g:netrw_localrmdir='rm -rf'
-let g:netrw_preview = 1
-let g:netrw_rmdir_cmd='rm -rf'
-let g:netrw_rmf_cmd = 'rm -rf'
-let g:netrw_use_errorwindow = 0
 
 """""""""""""""""""""""""""""""
 " => vim-jsx
