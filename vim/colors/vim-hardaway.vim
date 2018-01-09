@@ -35,53 +35,53 @@ let g:colors_name = "Vim Hardaway"
 " highlight Normal ctermfg=15 ctermbg=233 guifg=white guibg=grey7
 highlight Boolean      ctermfg=63              guifg=royalblue1
 highlight Character    ctermfg=15              guifg=white
-highlight ColorColumn  ctermfg=240 ctermbg=234 guifg=grey35  guibg=grey3
+highlight ColorColumn  ctermfg=240 ctermbg=232 guifg=grey35            guibg=grey3
 highlight Comment      ctermfg=8               guifg=grey
 highlight Conditional  ctermfg=198             guifg=deeppink1
-highlight Constant     ctermfg=15 cterm=bold   guifg=white gui=bold
-highlight CursorColumn ctermbg=233 cterm=none guibg=grey7 gui=none
-highlight CursorLine   ctermbg=233 cterm=none guibg=grey7 gui=none
-highlight Define       ctermfg=81              guifg=steelblue1
+highlight Constant     ctermfg=15              guifg=white
+highlight CursorColumn ctermbg=233             guibg=grey7             gui=none cterm=none 
+highlight CursorLine   ctermbg=233             guibg=grey7             gui=none cterm=none
+highlight Define       ctermfg=49              guifg=mediumspringgreen
 highlight Delimiter    ctermfg=15              guifg=white
 highlight DiffAdd      ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
 highlight DiffChange   ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
-highlight DiffDelete   ctermfg=198 ctermbg=235 cterm=italic guifg=deeppink1 guibg=grey15 gui=italic
-highlight DiffText     ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15 guifg=mediumspringgreen
-highlight Directory    ctermfg=45              guifg=turquoise2
-highlight Error        ctermfg=9   ctermbg=233 guifg=red guibg=grey7
-highlight ErrorMsg     ctermfg=9   ctermbg=233 guifg=red guibg=grey7
+highlight DiffDelete   ctermfg=198 ctermbg=235 guifg=deeppink1         guibg=grey15 gui=italic cterm=italic 
+highlight DiffText     ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15 
+highlight Directory    ctermfg=81              guifg=steelblue1
+highlight Error        ctermfg=202 ctermbg=233 guifg=orangered1        guibg=grey7
+highlight ErrorMsg     ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
 highlight Float        ctermfg=141             guifg=mediumpurple1
-highlight FoldColumn   ctermfg=240 ctermbg=233 guifg=grey35 guibg=grey7
-highlight Folded       ctermfg=240 ctermbg=235 guifg=grey35 guibg=grey15
+highlight FoldColumn   ctermfg=240 ctermbg=233 guifg=grey35            guibg=grey7
+highlight Folded       ctermfg=240 ctermbg=235 guifg=grey35            guibg=grey15
 highlight Function     ctermfg=198             guifg=deeppink1
-highlight Identifier   ctermfg=81              guifg=steelblue1
-highlight Ignore       ctermfg=244 ctermbg=233 guifg=grey50 guibg=grey7
-highlight IncSearch    cterm=underline         guifg=yellow gui=undercurl
+highlight Identifier   ctermfg=45              guifg=turquoise2
+highlight Ignore       ctermfg=244 ctermbg=233 guifg=grey50            guibg=grey7
+highlight IncSearch    ctermfg=48              guifg=springgreen1      gui=italic,bold cterm=italic,bold
 highlight Label        ctermfg=198             guifg=deeppink1
-highlight LineNr       ctermfg=240 cterm=none  guifg=grey35 guibg=grey7
-highlight Macro        ctermfg=15              guifg=white
-highlight MatchParen   ctermfg=11  ctermbg=233 guifg=yellow guibg=grey7 cterm=none gui=none
-highlight ModeMsg      ctermfg=15              guifg=white
-highlight MoreMsg      ctermfg=15              guifg=white
-highlight NonText      ctermfg=240             guifg=grey35
+highlight LineNr       ctermfg=240             guifg=grey20
+highlight Macro        ctermfg=15              guifg=springgreen1
+highlight MatchParen   ctermfg=33  ctermbg=233 guifg=dodgerblue1       guibg=grey7
+highlight ModeMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
+highlight MoreMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
+highlight NonText      ctermfg=235             guifg=grey15
 highlight Number       ctermfg=141             guifg=mediumpurple1
 highlight Operator     ctermfg=198             guifg=deeppink1
 highlight PreCondit    ctermfg=33              guifg=dodgerblue1
 highlight PreProc      ctermfg=42              guifg=springgreen2
-highlight Question     ctermfg=49              guifg=mediumspringgreen
+highlight Question     ctermfg=49              guifg=mediumspringgreen guibg=grey7
 highlight Repeat       ctermfg=198             guifg=deeppink1
-highlight Search       ctermfg=233 ctermbg=11 cterm=none guifg=yellow guibg=grey25 gui=undercurl
+highlight Search       ctermfg=244 ctermbg=11  guifg=grey7             guibg=yellow cterm=none gui=none
 highlight Special      ctermfg=81              guifg=steelblue1
-highlight SpecialChar  ctermfg=33              guifg=dodgerblue1
+highlight SpecialChar  ctermfg=48              guifg=springgreen1
 highlight SpecialKey   ctermfg=235             guifg=grey15
 highlight Statement    ctermfg=198             guifg=deeppink1
-highlight StorageClass ctermfg=33              guifg=dodgerblue1
-highlight String       ctermfg=49              guifg=mediumspringgreen
+highlight StorageClass ctermfg=48              guifg=springgreen1
+highlight String       ctermfg=48              guifg=springgreen1
 highlight Tag          ctermfg=198             guifg=deeppink1
-highlight VertSplit    ctermfg=240 cterm=none  guifg=grey9 guibg=grey7
-highlight keyword      ctermfg=81 cterm=bold   guifg=steelblue1 gui=bold
-highlight type         ctermfg=183             guifg=plum2
-highlight typedef      ctermfg=183             guifg=plum2
+highlight VertSplit    ctermfg=240             guifg=grey9             guibg=grey7 cterm=none
+highlight keyword      ctermfg=81              guifg=steelblue1        gui=bold cterm=bold 
+highlight type         ctermfg=81              guifg=steelblue1
+highlight typedef      ctermfg=81              guifg=steelblue1
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
@@ -90,7 +90,7 @@ highlight netrwSpecial  ctermfg=45              guifg=turquoise2
 highlight netrwClassify ctermfg=45              guifg=turquoise2
 highlight netrwExe      ctermfg=240             guifg=grey35
 highlight netrwTreeBar  ctermfg=240 ctermbg=233 guifg=grey35 guibg=grey7
-highlight netrwPlain    ctermfg=51              guifg=cyan1
+highlight netrwPlain    ctermfg=81              guifg=steelblue1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => jsx
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,7 +161,6 @@ highlight jsFuncArgs ctermfg=202 guifg=orangered1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => haskell
 """""""""""""""""""""""""""""""""""""""""""""""""
-
 au FileType haskell call AdditionalHaskellHighlights()
 
 let g:hs_highlight_boolean = 1
@@ -189,7 +188,7 @@ highlight hsOperator         ctermfg=198 guifg=deeppink1
 highlight hsOrdering         ctermfg=81  guifg=steelblue1
 highlight hsPragma           ctermfg=11  guifg=yellow       cterm=italic gui=italic
 highlight hsSpecialChar      ctermfg=11  guifg=yellow
-highlight hsSpecialCharError ctermfg=9   guifg=red 
+highlight hsSpecialCharError ctermfg=202 guifg=orangered1 
 highlight hsStatement        ctermfg=81  guifg=steelblue1
 highlight hsString           ctermfg=49  guifg=mediumspringgreen
 highlight hsStructure        ctermfg=198 guifg=deeppink1
