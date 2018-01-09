@@ -2,50 +2,50 @@
 	path = .vim/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
 [submodule ".vim/bundle/lightline.vim"]
-	path = .vim/bundle/lightline.vim
+	path = vim/bundle/lightline
 	url = git@github.com:itchyny/lightline.vim.git
 [submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+	path = vim/bundle/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
 [submodule ".vim/bundle/vim-jsx"]
-	path = .vim/bundle/vim-jsx
+	path = vim/bundle/jsx
 	url = git@github.com:mxw/vim-jsx.git
 [submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
+	path = vim/bundle/surround
 	url = git@github.com:tpope/vim-surround.git
 [submodule ".vim/bundle/haskell-vim"]
-	path = .vim/bundle/haskell-vim
+	path = vim/bundle/haskell
 	url = git@github.com:neovimhaskell/haskell-vim.git
 [submodule ".vim/bundle/vim-commentary"]
-	path = .vim/bundle/vim-commentary
+	path = vim/bundle/commentary
 	url = git@github.com:tpope/vim-commentary.git
 [submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
+	path = vim/bundle/javascript
 	url = git@github.com:pangloss/vim-javascript.git
 [submodule ".vim/bundle/vim-sensible"]
-	path = .vim/bundle/vim-sensible
+	path = vim/bundle/sensible
 	url = git@github.com:tpope/vim-sensible.git
 [submodule ".vim/bundle/vim-wakatime"]
-	path = .vim/bundle/vim-wakatime
+	path = vim/bundle/wakatime
 	url = git@github.com:wakatime/vim-wakatime.git
 [submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
+	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/vim-stylish-haskell"]
-	path = .vim/bundle/vim-stylish-haskell
+	path = vim/bundle/stylish-haskell
 	url = git@github.com:nbouscal/vim-stylish-haskell.git
 [submodule ".vim/bundle/ghcmod-vim"]
-	path = .vim/bundle/ghcmod-vim
+	path = vim/bundle/ghcmod
 	url = git@github.com:eagletmt/ghcmod-vim.git
 [submodule ".vim/bundle/vimproc.vim"]
-	path = .vim/bundle/vimproc.vim
+	path = vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
 [submodule ".vim/bundle/neco-ghc"]
-	path = .vim/bundle/neco-ghc
+	path = vim/bundle/neco-ghc
 	url = https://github.com/eagletmt/neco-ghc
 [submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
+	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule ".vim/bundle/vim-highlightedyank"]
-	path = .vim/bundle/vim-highlightedyank
+	path = vim/bundle/highlightedyank
 	url = git@github.com:machakann/vim-highlightedyank.git
