@@ -1,51 +1,51 @@
-[submodule ".vim/bundle/delimitMate"]
-	path = .vim/bundle/delimitMate
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
-[submodule ".vim/bundle/lightline.vim"]
+[submodule "vim/bundle/lightline"]
 	path = vim/bundle/lightline
 	url = git@github.com:itchyny/lightline.vim.git
-[submodule ".vim/bundle/vim-fugitive"]
+[submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-jsx"]
+[submodule "vim/bundle/jsx"]
 	path = vim/bundle/jsx
 	url = git@github.com:mxw/vim-jsx.git
-[submodule ".vim/bundle/vim-surround"]
+[submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule ".vim/bundle/haskell-vim"]
+[submodule "vim/bundle/haskell"]
 	path = vim/bundle/haskell
 	url = git@github.com:neovimhaskell/haskell-vim.git
-[submodule ".vim/bundle/vim-commentary"]
+[submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = git@github.com:tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-javascript"]
+[submodule "vim/bundle/javascript"]
 	path = vim/bundle/javascript
 	url = git@github.com:pangloss/vim-javascript.git
-[submodule ".vim/bundle/vim-sensible"]
+[submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
 	url = git@github.com:tpope/vim-sensible.git
-[submodule ".vim/bundle/vim-wakatime"]
+[submodule "vim/bundle/wakatime"]
 	path = vim/bundle/wakatime
 	url = git@github.com:wakatime/vim-wakatime.git
-[submodule ".vim/bundle/tabular"]
+[submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/vim-stylish-haskell"]
+[submodule "vim/bundle/stylish-haskell"]
 	path = vim/bundle/stylish-haskell
 	url = git@github.com:nbouscal/vim-stylish-haskell.git
-[submodule ".vim/bundle/ghcmod-vim"]
+[submodule "vim/bundle/ghcmod"]
 	path = vim/bundle/ghcmod
 	url = git@github.com:eagletmt/ghcmod-vim.git
-[submodule ".vim/bundle/vimproc.vim"]
+[submodule "vim/bundle/vimproc"]
 	path = vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
-[submodule ".vim/bundle/neco-ghc"]
+[submodule "vim/bundle/neco-ghc"]
 	path = vim/bundle/neco-ghc
 	url = https://github.com/eagletmt/neco-ghc
-[submodule ".vim/bundle/supertab"]
+[submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule ".vim/bundle/vim-highlightedyank"]
+[submodule "vim/bundle/highlightedyank"]
 	path = vim/bundle/highlightedyank
 	url = git@github.com:machakann/vim-highlightedyank.git
