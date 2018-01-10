@@ -12,7 +12,8 @@ cd "$(dirname "${BASH_SOURCE}")";
 function doIt() {
   rsync --exclude ".git/" \
         --exclude "init/" \
-        --exclude ".vim/" \
+        --exclude "vim/" \
+        --exclude "nvim/" \
         --exclude ".gitmodules" \
         --exclude ".DS_Store" \
         --exclude "bootstrap.sh" \
