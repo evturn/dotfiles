@@ -33,6 +33,8 @@ if [ -f /usr/local/bin/bash-completion/bash_completion ]; then
   . /usr/local/bin/bash-completion/bash_completion
 fi
 
+eval "$(stack --bash-completion-script stack)"
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   complete -o default -o nospace -F _git g;
