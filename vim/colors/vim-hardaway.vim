@@ -5,7 +5,7 @@ if has("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "Vim Hardaway"
+let g:colors_name = "vim-hardaway"
 
 " 8   #808080 Grey
 " 11  #ffff00 Yellow
