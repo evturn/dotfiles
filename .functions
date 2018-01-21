@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #        ____                 __  _
 #       / ____  ______  _____/ /_(_____  ____  _____
 #      / /_/ / / / __ \/ ___/ __/ / __ \/ __ \/ ___/
@@ -12,8 +11,9 @@ function mkd() {
   mkdir -p "$@" && cd "$_";
 }
 
-# Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
+# Change working directory to the top-most Finder window location - function
+# name is short for `cdfinder`
+function cdf() { 
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
@@ -96,7 +96,8 @@ function server() {
   local port="${1:-8000}";
   sleep 1 && open "http://localhost:${port}/" &
   # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+  # And serve everything as UTF-8 (although not technically correct, this
+  # doesn’t break anything for binary files)
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
 
@@ -204,29 +205,9 @@ function s() {
   fi;
 }
 
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-function a() {
-  if [ $# -eq 0 ]; then
-    atom .;
-  else
-    atom "$@";
-  fi;
-}
-
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
+# `v` with no arguments opens the current directory in Neovim,  otherwise opens 
+# the given location
 function v() {
-  if [ $# -eq 0 ]; then
-    vim
-  else
-    vim "$@";
-  fi;
-}
-
-# `n` with no arguments opens the current directory in Neovim, otherwise opens the
-# given location
-function n() {
   if [ $# -eq 0 ]; then
     nvim
   else
