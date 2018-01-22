@@ -32,7 +32,7 @@ let g:colors_name = "vim-hardaway"
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => Base
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight Normal       ctermfg=117             guifg=skyblue1
+" highlight Normal       ctermfg=49              guifg=mediumspringgreen gui=none cterm=none
 highlight Boolean      ctermfg=63              guifg=royalblue1
 highlight Character    ctermfg=15              guifg=white
 highlight ColorColumn  ctermfg=240 ctermbg=232 guifg=grey35            guibg=grey3
@@ -59,7 +59,7 @@ highlight Ignore       ctermfg=244 ctermbg=233 guifg=grey50            guibg=gre
 highlight IncSearch    ctermfg=48              guifg=springgreen1      gui=italic,bold cterm=italic,bold
 highlight Label        ctermfg=198             guifg=deeppink1
 highlight LineNr       ctermfg=240             guifg=grey20
-highlight Macro        ctermfg=15              guifg=springgreen1
+highlight Macro        ctermfg=48              guifg=springgreen1
 highlight MatchParen   ctermfg=33  ctermbg=233 guifg=dodgerblue1       guibg=grey7
 highlight ModeMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
 highlight MoreMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
@@ -67,16 +67,16 @@ highlight NonText      ctermfg=235             guifg=grey15
 highlight Number       ctermfg=141             guifg=mediumpurple1
 highlight Operator     ctermfg=198             guifg=deeppink1
 highlight PreCondit    ctermfg=33              guifg=dodgerblue1
-highlight PreProc      ctermfg=42              guifg=springgreen2
+highlight PreProc      ctermfg=48              guifg=springgreen1
 highlight Question     ctermfg=49              guifg=mediumspringgreen guibg=grey7
 highlight Repeat       ctermfg=198             guifg=deeppink1
-highlight Search       ctermfg=244 ctermbg=11  guifg=grey7             guibg=yellow cterm=none gui=none
+highlight Search       ctermfg=11  ctermbg=196 guifg=white             guibg=red1 cterm=italic gui=italic
 highlight Special      ctermfg=81              guifg=steelblue1
 highlight SpecialChar  ctermfg=48              guifg=springgreen1
 highlight SpecialKey   ctermfg=235             guifg=grey15
 highlight Statement    ctermfg=198             guifg=deeppink1
 highlight StorageClass ctermfg=48              guifg=springgreen1
-highlight String       ctermfg=48              guifg=springgreen1
+highlight String       ctermfg=49              guifg=mediumspringgreen
 highlight Tag          ctermfg=198             guifg=deeppink1
 highlight VertSplit    ctermfg=240             guifg=grey9             guibg=grey7 cterm=none
 highlight keyword      ctermfg=81              guifg=steelblue1        gui=bold cterm=bold 
