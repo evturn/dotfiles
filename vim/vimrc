@@ -114,10 +114,10 @@ nnoremap j gj
 nnoremap gj j
 
 " Move between windows
-map <leader>hh <C-w>h
-map <leader>jj <C-w>j
-map <leader>kk <C-w>k
-map <leader>ll <C-w>l
+map <leader>h <C-w>h
+map <leader>j <C-w>j
+map <leader>k <C-w>k
+map <leader>l <C-w>l
 
 " `%%` expands path
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -137,8 +137,12 @@ nnoremap <silent> <BS> :noh<CR>
 " nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store$', '^\.git$']
+let NERDTreeStatusline=-1
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeDirArrowExpandable = '→'
-let g:NERDTreeDirArrowCollapsible = '⇣'
+let g:NERDTreeDirArrowCollapsible = '⦿'
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -202,7 +206,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:highlightedyank_highlight_duration = -1
 
-hi HighlightedyankRegion ctermfg=233 ctermbg=48 guifg=grey7 guibg=SpringGreen1
+hi HighlightedyankRegion ctermfg=233 ctermbg=48 guifg=yellow guibg=grey5 gui=italic
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neco-ghc
@@ -237,43 +241,71 @@ let g:lightline = {
   \   'right': [ 
   \              ['filetype'],
   \              ['fugitive'],
-  \              ['absolutepath'],
+  \              ['path']
   \              ]
   \ },
+  \ 'inactive': {
+  \   'left': [ ['modified'],
+  \             ['percent']
+  \             ],
+  \   'right': [ 
+  \              ['file'],
+  \              ]
+  \  },
   \ 'component': {
-  \   'mode':     '%{&ft=="nerdtree"?"":lightline#mode()}',
   \   'modified': '%{&ft=="help"?"":&modified?"＋":""}',
+  \   'path':     '[%1=%<%F]',
   \   'fugitive': '%{exists("*fugitive#head")&&(&filetype!="nerdtree")&&(winwidth(0) > 60)?fugitive#head():""}',
-  \   'lineinfo': '%3l:%-1v ⌁ %L',
-  \   'absolutepath': '%<%F',
-  \   'percent': '%{&ft=="nerdtree"?"":""}'
+  \   'lineinfo': '%3l : %-2v ⌁ %L',
   \ },
   \ 'component_function': {
-  \    'filetype': 'LightlineFiletype',
-  \    'lines':    'LightlineLines'
+  \    'filetype': 'LightlyneFiletype',
+  \    'file':     'LightlyneFile',
+  \    'mode':     'LightlyneMode',
+  \    'percent':  'LightlynePercent'
   \ },
   \ 'component_visible_condition': {
-  \   'modified':     '(&filetype!="help"&&(&modified||&!modifiable))',
-  \   'fugitive':     '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \   'modified': '(&filetype!="help"&&(&modified||&!modifiable))',
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
+  \   'path':     '(&filetype!="nerdtree")',
+  \   'mode':     '(&filetype!="nerdtree")',
+  \   'percent':  '(&filetype!="nerdtree")'
   \ },
   \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '', 'right': '' }
   \ }
 
-function! LightlineLines()
-  let ex = &filetype ==# 'netrw'
-  let vl = ex ? '' : line('$')
-  let nl = ex ? '' : '␍ '
-  return &filetype ==# 'nerdtree' ? '' : nl . vl
+function! LightlyneFile() 
+  return &filetype ==# "nerdtree" ||
+       \ &filetype ==# '' ? '' : 
+       \ expand('%:h') . '/' . expand('%:t')
 endfunction
 
-function! LightlineFiletype()
+function! LightlyneMode() 
+  return &filetype ==# "nerdtree" ? '' : lightline#mode()
+endfunction
+
+function! LightlynePath()
+  return &filetype ==# "nerdtree" ? '' : getcwd() . '/' . expand('%t')
+endfunction
+
+function! LightlyneLines()
+  let ex = &filetype ==# 'netrw' || &filetype ==# 'nerdtree'
+  return ex ? '' : line('.') . ':' . line('$') . ' ⌁ ' . col('.')
+endfunction
+
+function! LightlyneFiletype()
   return &filetype ==# 'netrw' ||
        \ &filetype ==# 'nerdtree' ? '' :
        \ &filetype ==# 'javascript.jsx' ? 'javascript' :
        \ &filetype ==# '' ? 'text' :
        \ &filetype
 endfunction
+
+function! LightlynePercent() 
+  return ''
+endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw

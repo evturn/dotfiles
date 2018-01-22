@@ -32,7 +32,7 @@ let g:colors_name = "vim-hardaway"
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => Base
 """""""""""""""""""""""""""""""""""""""""""""""""
-" highlight Normal ctermfg=15 ctermbg=233 guifg=white guibg=grey7
+highlight Normal       ctermfg=117             guifg=skyblue1
 highlight Boolean      ctermfg=63              guifg=royalblue1
 highlight Character    ctermfg=15              guifg=white
 highlight ColorColumn  ctermfg=240 ctermbg=232 guifg=grey35            guibg=grey3
@@ -400,5 +400,18 @@ highlight shExpr           ctermfg=198 guifg=deeppink1
 highlight shHereDoc        ctermfg=198 guifg=deeppink1
 highlight shEcho           ctermfg=198 guifg=deeppink1
 highlight shEchoQuote      ctermfg=198 guifg=deeppink1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""
+highlight NERDTreeCWD             ctermfg=49  guifg=MediumSpringGreen cterm=italic gui=italic
+highlight NERDTREEDir             ctermfg=49  guifg=MediumSpringGreen cterm=italic gui=italic
+highlight NERDTreeFile            ctermfg=81  guifg=steelblue1 
+highlight NERDTreeClosable        ctermfg=11  guifg=yellow
+highlight NERDTreeOpenable        ctermfg=81  guifg=steelblue1
+highlight NERDTreeDirSlash        ctermfg=81  guifg=steelblue1
+highlight NERDTreeHelp            ctermfg=48  guifg=springgreen1
+highlight NERDTreeHelpKey         ctermfg=198 guifg=deeppink1
+highlight NERDTreeHelpTitle       ctermfg=81  guifg=steelblue1        cterm=italic gui=italic
 
 set background=dark
