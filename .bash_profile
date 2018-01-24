@@ -5,7 +5,6 @@
 #   (_|_.__/ \__,_|___|_| |______| .__/|_|  \___/|_| |_|_|\___|
 #                          |_____|_|
 
-
 # * ~/.extra contains private exports
 for file in ~/.{path,cterm,bash_prompt,exports,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";

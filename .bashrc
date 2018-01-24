@@ -5,4 +5,9 @@
 #   (_|_.__/ \__,_|___|_| |_|_|  \___|
 #
 
-[ -n "$PS1" ] && source ~/.bash_profile;
+if [ "$(uname)" = "Darwin" ]; then
+  [ -n "$PS1" ] && source ~/.bash_profile;
+else 
+  [ -n "$PS1" ] && source ~/.profile;
+fi
+

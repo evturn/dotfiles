@@ -9,28 +9,8 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-function doIt() {
-  rsync --exclude ".git/" \
-        --exclude "init/" \
-        --exclude "vim/" \
-        --exclude "nvim/" \
-        --exclude ".gitmodules" \
-        --exclude ".DS_Store" \
-        --exclude "bootstrap.sh" \
-        --exclude "brew.sh" \
-        --exclude "README.md" \
-        -avh --no-perms . ~;
-  source ~/.bash_profile;
-}
-
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  doIt;
-else
-  read -p "This may (will) overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-  echo "";
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    doIt;
-  fi;
-fi;
-unset doIt;
-
+if [ "$(uname)" = "Darwin" ]; then
+  source ./install/macos.sh
+else 
+  source ./install/linux.sh
+fi
