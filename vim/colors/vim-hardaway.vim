@@ -32,15 +32,18 @@ let g:colors_name = "vim-hardaway"
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => Base
 """""""""""""""""""""""""""""""""""""""""""""""""
-" highlight Normal       ctermfg=49              guifg=mediumspringgreen gui=none cterm=none
 highlight Boolean      ctermfg=63              guifg=royalblue1
 highlight Character    ctermfg=15              guifg=white
 highlight ColorColumn  ctermfg=240 ctermbg=232 guifg=grey35            guibg=grey3
 highlight Comment      ctermfg=8               guifg=grey
+" Conceal
 highlight Conditional  ctermfg=198             guifg=deeppink1
 highlight Constant     ctermfg=15              guifg=white
+highlight Cursor       ctermfg=49              guifg=mediumspringgreen guibg=steelblue1
+highlight CursorIM     ctermfg=49              guifg=mediumspringgreen guibg=steelblue1
 highlight CursorColumn ctermbg=233             guibg=grey7             gui=none cterm=none 
 highlight CursorLine   ctermbg=233             guibg=grey7             gui=none cterm=none
+" Debug
 highlight Define       ctermfg=49              guifg=mediumspringgreen
 highlight Delimiter    ctermfg=15              guifg=white
 highlight DiffAdd      ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
@@ -50,6 +53,7 @@ highlight DiffText     ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=gre
 highlight Directory    ctermfg=81              guifg=steelblue1
 highlight Error        ctermfg=202 ctermbg=233 guifg=orangered1        guibg=grey7
 highlight ErrorMsg     ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
+" Exception
 highlight Float        ctermfg=141             guifg=mediumpurple1
 highlight FoldColumn   ctermfg=240 ctermbg=233 guifg=grey35            guibg=grey7
 highlight Folded       ctermfg=240 ctermbg=235 guifg=grey35            guibg=grey15
@@ -57,6 +61,7 @@ highlight Function     ctermfg=198             guifg=deeppink1
 highlight Identifier   ctermfg=45              guifg=turquoise2
 highlight Ignore       ctermfg=244 ctermbg=233 guifg=grey50            guibg=grey7
 highlight IncSearch    ctermfg=48              guifg=springgreen1      gui=italic,bold cterm=italic,bold
+" Include
 highlight Label        ctermfg=198             guifg=deeppink1
 highlight LineNr       ctermfg=240             guifg=grey20
 highlight Macro        ctermfg=48              guifg=springgreen1
@@ -64,24 +69,50 @@ highlight MatchParen   ctermfg=33  ctermbg=233 guifg=dodgerblue1       guibg=gre
 highlight ModeMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
 highlight MoreMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
 highlight NonText      ctermfg=235             guifg=grey15
+highlight Normal                                                       guibg=grey7
 highlight Number       ctermfg=141             guifg=mediumpurple1
 highlight Operator     ctermfg=198             guifg=deeppink1
+" PMenu
+" PMenuSel
+" PMenuSbar
+" PMenuThumb
 highlight PreCondit    ctermfg=33              guifg=dodgerblue1
 highlight PreProc      ctermfg=48              guifg=springgreen1
 highlight Question     ctermfg=49              guifg=mediumspringgreen guibg=grey7
 highlight Repeat       ctermfg=198             guifg=deeppink1
 highlight Search       ctermfg=11  ctermbg=196 guifg=white             guibg=red1 cterm=italic gui=italic
+" SignColumn
 highlight Special      ctermfg=81              guifg=steelblue1
 highlight SpecialChar  ctermfg=48              guifg=springgreen1
+" SpecialComment
 highlight SpecialKey   ctermfg=235             guifg=grey15
+" SpellBad
+" SpellLocal
+" SpellCap
+" SpellRare
+highlight StatusLine   ctermfg=235             guifg=grey17
+highlight StatusLineNC ctermfg=235             guifg=grey10
 highlight Statement    ctermfg=198             guifg=deeppink1
 highlight StorageClass ctermfg=48              guifg=springgreen1
 highlight String       ctermfg=49              guifg=mediumspringgreen
+" Structure
+" TabLine
+" TabLineFill
+" TabLineSel
 highlight Tag          ctermfg=198             guifg=deeppink1
-highlight VertSplit    ctermfg=240             guifg=grey9             guibg=grey7 cterm=none
+" Title
+" Todo
+highlight VertSplit    ctermfg=240             guifg=grey7             guibg=grey7 cterm=none
+" Visual
+" VisualNOS
+" WarningMsg
+" WildMenu
 highlight keyword      ctermfg=81              guifg=steelblue1        gui=bold cterm=bold 
 highlight type         ctermfg=81              guifg=steelblue1
+highlight Type         ctermfg=81              guifg=steelblue1
+highlight Typedef      ctermfg=81              guifg=steelblue1
 highlight typedef      ctermfg=81              guifg=steelblue1
+" Underlined
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
