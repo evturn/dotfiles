@@ -107,7 +107,7 @@ highlight VertSplit    ctermfg=240             guifg=grey7             guibg=gre
 " VisualNOS
 " WarningMsg
 " WildMenu
-highlight keyword      ctermfg=81              guifg=steelblue1        gui=bold cterm=bold 
+highlight keyword      ctermfg=81              guifg=steelblue1        gui=bold cterm=bold
 highlight type         ctermfg=81              guifg=steelblue1
 highlight Type         ctermfg=81              guifg=steelblue1
 highlight Typedef      ctermfg=81              guifg=steelblue1

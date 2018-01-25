@@ -60,9 +60,14 @@ endif
 
 execute pathogen#infect()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open NERDtree on start up
+autocmd vimenter * NERDTree
+
+" Close vim if the only open window is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
 
 " Revert cursor to terminal settings when exiting Vim
@@ -70,6 +75,11 @@ autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
 
 " Disable automatic comment insertion on new lines
 autocmd FileType * setlocal formatoptions-=cro
+
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" Open markdown preview in brower
+nnoremap <leader>md :InstantMarkdownPreview<cr>
 
 " Change cursor shape based on current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -79,7 +89,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEYMAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=','
@@ -125,224 +134,54 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " `gf` opens a file in a vertical split when cursor is on a path
 nnoremap gf :vertical wincmd f<CR>
 
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gp :Git push origin master<cr>
+
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
-
-" clear search highlight
-nnoremap <silent> <BS> :noh<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdtree
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store$', '^\.git$']
-let NERDTreeStatusline=-1
-let NERDTreeMinimalUI=0
-let NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeDirArrowExpandable = '→'
-let g:NERDTreeDirArrowCollapsible = '●'
-
-map <C-n> :NERDTreeToggle<CR>
-
-" Open NERDtree on start up
-autocmd vimenter * NERDTree
-
-" Close vim if the only open window is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tabular
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:haskell_tabular = 1
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 vmap a, :Tabularize /<-<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fugitive
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gp :Git push origin master<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" haskell-vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:haskell_enable_arrowsyntax = 1      " highlight `proc`
-let g:haskell_enable_pattern_synonyms = 1 " highlight `pattern`
-let g:haskell_enable_quantification = 1   " highlight `forall`
-let g:haskell_enable_static_pointers = 1  " highlight `static`
-let g:haskell_enable_typeroles = 1        " highlight type roles
-let g:haskell_backpack = 0
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_before_where = 2
-let g:haskell_indent_case = 2
-let g:haskell_indent_do = 2
-let g:haskell_indent_guard = 4
-let g:haskell_indent_if = 0
-let g:haskell_indent_in = 1
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" supertab
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-
-if has("gui_running")
-  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-else " no gui
-  if has("unix")
-    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-  endif
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" highlightedyank
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:highlightedyank_highlight_duration = -1
-
-hi HighlightedyankRegion ctermfg=233 ctermbg=48 guifg=grey5 guibg=yellow gui=italic
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorizer
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:colorizer_auto_color = 1
-let g:colorizer_colornames = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neco-ghc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:haskellmode_completion_ghc = 1
-
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-jsx
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:jsx_ext_required = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" instant-markdown
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:instant_markdown_autostart = 0 
-
-" Open markdown preview in brower
-nnoremap <leader>md :InstantMarkdownPreview<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let s:term_red    = 204
-let s:term_green  = 49
-let s:term_yellow = 11
-let s:term_blue   = 81
-let s:term_purple = 170
-let s:term_white  = 145
-let s:term_black  = 235
-let s:term_grey   = 236
-
-let g:airline#themes#dark#palette = {}
-
-" Normal
-let s:N1 = [ '#101010', '#00ffaf', s:term_black, s:term_green ]
-let s:N2 = [ '#ABB2BF', '#1A1A1A', s:term_white, s:term_grey ]
-let s:N3 = [ '#00ffaf', '#282C34', s:term_green, '' ]
-let g:airline#themes#dark#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
-let g:airline#themes#dark#palette.accents = {
-      \ 'red': [ '#E06C75', '', s:term_red, 0 ]
-      \ }
-let group = airline#themes#get_highlight('vimCommand')
-let g:airline#themes#dark#palette.normal_modified = {
-      \ 'airline_c': [ group[0], '', group[2], '', '' ]
-      \ }
-
-" Insert
-let s:I1 = [ '#101010', '#FFEE00', s:term_black, s:term_yellow ]
-let s:I2 = s:N2
-let s:I3 = [ '#FFEE00', '#282C34', s:term_yellow, '' ]
-let g:airline#themes#dark#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
-let g:airline#themes#dark#palette.insert_modified = g:airline#themes#dark#palette.normal_modified
-
-" Replace
-let s:R1 = [ '#FFFFFF', '#E06C75', s:term_white, s:term_red ]
-let s:R2 = s:N2
-let s:R3 = [ '#E06C75', '#282C34', s:term_red, '' ]
-let g:airline#themes#dark#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
-let g:airline#themes#dark#palette.replace_modified = g:airline#themes#dark#palette.normal_modified
-
-" Visual
-let s:V1 = [ '#101010', '#5fd7ff', s:term_black, s:term_blue ]
-let s:V2 = s:N2
-let s:V3 = [ '#5fd7ff', '#282C34', s:term_blue, '' ]
-let g:airline#themes#dark#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
-let g:airline#themes#dark#palette.visual_modified = g:airline#themes#dark#palette.normal_modified
-
-" Inactive
-let s:IA1 = [ '#ABB2BF', '#303030', s:term_black, s:term_white ]
-let s:IA2 = [ '#ABB2BF', '#1A1A1A', s:term_white, s:term_black ]
-let s:IA3 = s:N2
-let g:airline#themes#dark#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
-let g:airline#themes#dark#palette.inactive_modified = {
-      \ 'airline_c': [ group[0], '', group[2], '', '' ]
-      \ }
-let s:WI = [ '#101010', '#FFEE00', s:term_black, s:term_yellow ]
-let g:airline#themes#dark#palette.normal.airline_warning = [
-      \ s:WI[0], s:WI[1], s:WI[2], s:WI[3]
-      \ ]
-
-" Warnings
-let g:airline#themes#dark#palette.normal_modified.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-let g:airline#themes#dark#palette.insert.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-let g:airline#themes#dark#palette.insert_modified.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-let g:airline#themes#dark#palette.visual.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-let g:airline#themes#dark#palette.visual_modified.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-let g:airline#themes#dark#palette.replace.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-let g:airline#themes#dark#palette.replace_modified.airline_warning =
-    \ g:airline#themes#dark#palette.normal.airline_warning
-
-" Errors
-let s:ER = [ '#303030', '#E06C75', s:term_black, s:term_red ]
-let g:airline#themes#dark#palette.normal.airline_error = [
-      \ s:ER[0], s:ER[1], s:ER[2], s:ER[3]
-      \ ]
-let g:airline#themes#dark#palette.normal_modified.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-let g:airline#themes#dark#palette.insert.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-let g:airline#themes#dark#palette.insert_modified.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-let g:airline#themes#dark#palette.visual.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-let g:airline#themes#dark#palette.visual_modified.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-let g:airline#themes#dark#palette.replace.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-let g:airline#themes#dark#palette.replace_modified.airline_error =
-    \ g:airline#themes#dark#palette.normal.airline_error
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" netrw
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:netrw_altv = 1
-let g:netrw_banner = 0
-let g:netrw_dirhistmax = 0
-let g:netrw_fastbrowse = 0
-let g:netrw_list_hide='.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,^\.git/$,^\./$'
-let g:netrw_liststyle = 0
-let g:netrw_preview = 1
-let g:netrw_use_errorwindow = 0
+" clear search highlight
+nnoremap <silent> <BS> :noh<CR>
 
 " return to netrw buffer
 noremap <leader>re :Re<cr>
 
+map <C-n> :NERDTreeToggle<CR>
+
+" plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source $HOME/.vim/init/nerdtree.vim
+source $HOME/.vim/init/haskell.vim
+source $HOME/.vim/init/supertab.vim
+source $HOME/.vim/init/airline.vim
+source $HOME/.vim/init/netrw.vim
+
+" tabular
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:haskell_tabular = 1
+
+" highlightedyank
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:highlightedyank_highlight_duration = -1
+hi HighlightedyankRegion ctermfg=233 ctermbg=11 guifg=grey5 guibg=yellow gui=italic
+
+" colorizer
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:colorizer_auto_color = 0
+let g:colorizer_colornames = 1
+
+" neco-ghc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:haskellmode_completion_ghc = 1
+
+" vim-jsx
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0

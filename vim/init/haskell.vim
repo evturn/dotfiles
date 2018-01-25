@@ -1,0 +1,15 @@
+let g:haskell_enable_arrowsyntax      = 1 " highlight `proc`
+let g:haskell_enable_pattern_synonyms = 1 " highlight `pattern`
+let g:haskell_enable_quantification   = 1 " highlight `forall`
+let g:haskell_enable_static_pointers  = 1 " highlight `static`
+let g:haskell_enable_typeroles        = 1 " highlight type roles
+let g:haskell_backpack                = 0
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_before_where     = 2
+let g:haskell_indent_case             = 2
+let g:haskell_indent_do               = 2
+let g:haskell_indent_guard            = 4
+let g:haskell_indent_if               = 0
+let g:haskell_indent_in               = 1
+let g:haskell_indent_let              = 4
+let g:haskell_indent_where            = 6
