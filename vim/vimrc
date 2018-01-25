@@ -209,6 +209,12 @@ let g:highlightedyank_highlight_duration = -1
 hi HighlightedyankRegion ctermfg=233 ctermbg=48 guifg=grey5 guibg=yellow gui=italic
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorizer
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:colorizer_auto_color = 1
+let g:colorizer_colornames = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neco-ghc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:haskellmode_completion_ghc = 1
