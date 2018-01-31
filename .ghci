@@ -1,4 +1,18 @@
+import Control.Applicative
+import Control.Monad
+import Data.Bool
+import Data.Either
+import Data.Foldable
+import Data.Function
+import Data.Maybe
+import Data.Monoid
+import Data.Traversable
+import Data.Int
+import Data.Char
+import Data.List
+
 
 :def clear const . return $ ":! clear"
+:def b \x -> return $ ":browse " ++ x
 
 :set prompt "\ESC[1;32mλ> \ESC[0m\STX"
