@@ -13,3 +13,6 @@ let g:haskell_indent_if               = 0
 let g:haskell_indent_in               = 1
 let g:haskell_indent_let              = 4
 let g:haskell_indent_where            = 6
+let g:hs_highlight_boolean = 1
+let g:hs_highlight_types = 1
+let g:hs_highlight_more_types = 1
