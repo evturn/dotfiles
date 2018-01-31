@@ -118,7 +118,7 @@ noremap <leader>bd :Bd<cr>
 
 " make line motion commands to operate on display lines
 nnoremap k gk
-nnoremap gk k
+noremap gk k
 nnoremap j gj
 nnoremap gj j
 
@@ -128,11 +128,11 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>l <C-w>l
 
-" `%%` expands path
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+map <leader>x <C-w><C-x>
 
-" `gf` opens a file in a vertical split when cursor is on a path
-nnoremap gf :vertical wincmd f<CR>
+nnoremap <C-j> <C-W>w
+
+map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gc :Gcommit<cr>
@@ -147,6 +147,7 @@ vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 vmap a, :Tabularize /<-<CR>
+vmap al :Tabularize /[\[\\|,]<CR>
 
 " clear search highlight
 nnoremap <silent> <BS> :noh<CR>
@@ -154,7 +155,11 @@ nnoremap <silent> <BS> :noh<CR>
 " return to netrw buffer
 noremap <leader>re :Re<cr>
 
-map <C-n> :NERDTreeToggle<CR>
+" `%%` expands path
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" `gf` opens a file in a vertical split when cursor is on a path
+nnoremap gf :vertical wincmd f<CR>
 
 " plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
