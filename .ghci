@@ -10,9 +10,11 @@ import Data.Traversable
 import Data.Int
 import Data.Char
 import Data.List
+import Text.Show.Pretty (pPrint)
 
 
 :def clear const . return $ ":! clear"
 :def b \x -> return $ ":browse " ++ x
 
+:set -interactive-print=pPrint
 :set prompt "\ESC[1;32mλ> \ESC[0m\STX"
