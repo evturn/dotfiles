@@ -248,3 +248,22 @@ function commitd() {
   local message="${2}"
   GIT_COMMITTER_DATE="${datetime}" git commit -S -m "${message}" --date="${datetime}";
 }
+
+function mdless () {
+  local mdfile=$1
+  if [ -z ${mdfile:+x} ]; then mdfile="README.md"; fi
+  case $mdfile in
+      -h | --help)
+        print "mdless usage: 'mdless myfile.md' or 'mdless' (defaults to README.md)"
+      ;;
+      *)
+        mdcat $mdfile | less
+      ;;
+  esac
+}
+ 
+function mdcat () {
+  local mdfile=$1
+  if [ -z ${mdfile:+x} ]; then mdfile="README.md"; fi
+  pandoc -s -f markdown -t man $mdfile | groff -T utf8 -man
+}
