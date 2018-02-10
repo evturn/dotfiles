@@ -1,49 +1,44 @@
 #!/usr/bin/env bash
+#   __    ____    ______  ______  __  __     
+#  /\ \_ /\  _`\ /\  _  \/\__  _\/\ \/\ \    
+#  \/'__`\ \ \L\ \ \ \L\ \/_/\ \/\ \ \_\ \   
+#  /\ \_\_\ \ ,__/\ \  __ \ \ \ \ \ \  _  \  
+#  \ \____ \ \ \/  \ \ \/\ \ \ \ \ \ \ \ \ \ 
+#   \/\ \_\ \ \_\   \ \_\ \_\ \ \_\ \ \_\ \_\
+#    \ `\_ _/\/_/    \/_/\/_/  \/_/  \/_/\/_/
+#     `\_/\_\                                
+#        \/_/                                
 
-#                  _   _
-#      _ __   __ _| |_| |__
-#     | '_ \ / _` | __| '_ \
-#    _| |_) | (_| | |_| | | |
-#   (_| .__/ \__,_|\__|_| |_|
-#     |_|
+if [ "$(uname)" = "Darwin" ]; then
+  export PATH="$HOME/.rvm/gems/ruby-2.4.0/bin"
+fi
 
-export PATH="$HOME/.rvm/gems/ruby-2.4.0/bin"
+export PATH="/bin:/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH" # binaries
 
-export PATH="$HOME/bin:$PATH";
-export PATH="/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH"
-export PATH="/usr/local/bin:/user/local/sbin:$PATH"
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-
-# GNU Utils
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"                                            # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# node
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"                                    # yarn
 
-# Python
-export PATH="$HOME/Library/Python/3.6:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-# Haskell
-export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
 
-# MongoDB
-export PATH="$HOME/src/mongodb/bin:$PATH"
 
-# Fastlane
-export PATH="$HOME/.fastlane/bin:$PATH"
+if [ "$(uname)" = "Darwin" ]; then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"        # GNU
 
-# Android
-export PATH="${PATH}:/usr/local/opt/android-sdk/tools"
-export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
+  export PATH="$HOME/Library/Python/3.6:$PATH"                         # Python
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  export PATH="$HOME/Library/Haskell/bin:$PATH"                        # Haskell
+  export PATH="$HOME/.cabal/bin:$PATH"
 
+  export PATH="$HOME/src/mongodb/bin:$PATH"                            # MongoDB
+
+  export PATH="$HOME/.fastlane/bin:$PATH"                              # Fastlane
+
+  export PATH="${PATH}:/usr/local/opt/android-sdk/tools"               # Android
+  export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
+
+  export PATH="$PATH:$HOME/.rvm/bin"                                   # rvm
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+fi
