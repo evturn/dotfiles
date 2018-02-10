@@ -29,7 +29,7 @@ Updating git submodules
 git submodule foreach git pull origin master
 ```
 
-Copying everything else to $HOME
+Copying everything else to `$HOME`
 ```bash
 sh bootstrap.sh
 ```
