@@ -122,15 +122,11 @@ noremap gk k
 nnoremap j gj
 nnoremap gj j
 
-" Move between windows
-map <leader>h <C-w>h
-map <leader>j <C-w>j
-map <leader>k <C-w>k
-map <leader>l <C-w>l
-
-map <leader>x <C-w><C-x>
-
-nnoremap <C-j> <C-W>w
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-x> <C-w>x
 
 map <C-n> :NERDTreeToggle<CR>
 
