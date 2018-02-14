@@ -30,6 +30,7 @@ set formatoptions-=cro
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set incsearch
 set laststatus=2
+set lazyredraw
 set list
 set listchars=trail:·,space:·
 set mouse=r
@@ -39,6 +40,7 @@ set number
 set shiftwidth=2
 set shortmess=I
 set showcmd
+set showmatch
 set smartcase
 set smartindent
 set smarttab
@@ -60,28 +62,18 @@ endif
 
 execute pathogen#infect()
 
-" AUTOCOMMANDS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open NERDtree on start up
 autocmd vimenter * NERDTree
-
-" Close vim if the only open window is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
-
-" Revert cursor to terminal settings when exiting Vim
-autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
-
-" Disable automatic comment insertion on new lines
-autocmd FileType * setlocal formatoptions-=cro
-
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-" Open markdown preview in brower
-nnoremap <leader>md :InstantMarkdownPreview<cr>
+" Disable automatic new line comment insertion
+autocmd FileType * setlocal formatoptions-=cro
 
-" Change cursor shape based on current mode
+" Reset cursor to terminal settings
+autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
+
+" Current mode sets cursor shape
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -89,34 +81,11 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-" KEYMAPPINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=','
 let maplocalleader=' '
-
-" Reassign reverse character search
 noremap \ ,
 
-" Source ~/.vimrc while vim is open
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" navigate buffers
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-
-" previous buffer, next buffer
-nnoremap <leader>bp :bp<cr>
-nnoremap <leader>bn :bn<cr>
-
-" close every window in current tabview but the current
-nnoremap <leader>bo <c-w>o
-
-" delete buffer without closing pane
-noremap <leader>bd :Bd<cr>
-
-" make line motion commands to operate on display lines
+" Line motion on display lines
 nnoremap k gk
 noremap gk k
 nnoremap j gj
@@ -127,6 +96,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-x> <C-w>x
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+nnoremap gf :vertical wincmd f<CR>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -145,44 +118,16 @@ vmap a- :Tabularize /-><CR>
 vmap a, :Tabularize /<-<CR>
 vmap al :Tabularize /[\[\\|,]<CR>
 
-" clear search highlight
-nnoremap <silent> <BS> :noh<CR>
-
-" return to netrw buffer
-noremap <leader>re :Re<cr>
-
-" `%%` expands path
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" `gf` opens a file in a vertical split when cursor is on a path
-nnoremap gf :vertical wincmd f<CR>
-
-" plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/.vim/init/nerdtree.vim
 source $HOME/.vim/init/haskell.vim
 source $HOME/.vim/init/supertab.vim
 source $HOME/.vim/init/airline.vim
 source $HOME/.vim/init/netrw.vim
 
-" tabular
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:haskell_tabular = 1
-
-" highlightedyank
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:highlightedyank_highlight_duration = -1
-hi HighlightedyankRegion ctermfg=233 ctermbg=11 guifg=grey5 guibg=yellow gui=italic
-
-" colorizer
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:colorizer_auto_color = 0
 let g:colorizer_colornames = 1
-
-" neco-ghc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:haskellmode_completion_ghc = 1
-
-" vim-jsx
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0
+let g:highlightedyank_highlight_duration = -1
+hi HighlightedyankRegion ctermfg=233 ctermbg=11 guifg=grey5 guibg=yellow gui=italic
