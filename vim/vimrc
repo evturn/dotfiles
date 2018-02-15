@@ -65,6 +65,7 @@ execute pathogen#infect()
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " Disable automatic new line comment insertion
@@ -72,6 +73,7 @@ autocmd FileType * setlocal formatoptions-=cro
 
 " Reset cursor to terminal settings
 autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
+
 
 " Current mode sets cursor shape
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -99,13 +101,12 @@ map <C-x> <C-w>x
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
+nnoremap <leader>sv :source $MYVIMRC<CR>
 map <C-n> :NERDTreeToggle<CR>
 
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gp :Git push origin master<cr>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gp :Git push origin master<CR>
 
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
