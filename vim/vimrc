@@ -103,6 +103,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 map <C-n> :NERDTreeToggle<CR>
+tnoremap <Esc> <C-\><C-n>
 
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
