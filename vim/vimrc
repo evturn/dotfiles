@@ -33,8 +33,9 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=trail:·,space:·
-set mouse=r
+set mouse=a
 set noshowmode
+set nowrap
 set nrformats=
 set number
 set shiftwidth=2
@@ -48,6 +49,7 @@ set synmaxcol=128
 set tabstop=2
 set textwidth=80
 set title
+set ttimeoutlen=50
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git/,.cabal-sandbox
 set wildmenu
 set wildmode=longest,list,full
