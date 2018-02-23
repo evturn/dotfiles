@@ -10,8 +10,8 @@ import Data.Traversable
 import Data.Int
 import Data.Char
 import Data.List
+import System.Environment
 import Text.Show.Pretty (pPrint)
-
 
 :def clear const . return $ ":! clear"
 :def b \x -> return $ ":browse " ++ x
