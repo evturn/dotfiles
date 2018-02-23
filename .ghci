@@ -1,21 +1,24 @@
-import Control.Applicative
-import Control.Monad
-import Data.Bool
-import Data.Either
-import Data.Foldable
-import Data.Function
-import Data.Maybe
-import Data.Monoid
-import Data.Traversable
-import Data.Int
-import Data.Char
-import Data.List
-import System.Environment
-import Text.Show.Pretty (pPrint)
+{-# LANGUAGE OverloadedStrings #-}
+
+import           Control.Applicative
+import           Control.Monad
+import           Data.Bool
+import           Data.Either
+import           Data.Foldable
+import           Data.Function
+import           Data.Maybe
+import           Data.Monoid
+import           Data.Traversable
+import           Data.Int
+import           Data.Char
+import           Data.List
+import           System.Environment
+import           Text.Prints        (prints)
 
 :def clear const . return $ ":! clear"
 :def b \x -> return $ ":browse " ++ x
 
-:set -interactive-print=pPrint
+:set -interactive-print=prints
 :set prompt "\ESC[1;32mλ> \ESC[0m\STX"
 :set prompt-cont "\ESC[1;32m  | \ESC[0m\STX"
+
