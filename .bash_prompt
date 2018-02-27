@@ -91,7 +91,7 @@ RESET=$(tput sgr0);
 cursor='\033]50;CursorShape=1\x7'
 prompt="\[${YELLOW}\]>";
 if [ "$(uname)" = "Linux" ]; then
-  prompt="\[${RED}\]$";
+  prompt="\[${YELLOW}\u\[${RED}\]$";
 fi
 PS1="$cursor\[\033]0;\W\007\]";
 PS1+="\[${BLUE}\]\w";
