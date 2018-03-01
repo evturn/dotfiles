@@ -122,11 +122,11 @@ vmap a- :Tabularize /-><CR>
 vmap a, :Tabularize /<-<CR>
 vmap al :Tabularize /[\[\\|,]<CR>
 
-source $HOME/.vim/init/nerdtree.vim
-source $HOME/.vim/init/haskell.vim
-source $HOME/.vim/init/supertab.vim
-source $HOME/.vim/init/airline.vim
-source $HOME/.vim/init/netrw.vim
+source $HOME/.vim/plugin/nerdtree.vim
+source $HOME/.vim/plugin/haskell.vim
+source $HOME/.vim/plugin/supertab.vim
+source $HOME/.vim/plugin/airline.vim
+source $HOME/.vim/plugin/netrw.vim
 
 let g:haskell_tabular = 1
 let g:colorizer_auto_color = 0
