@@ -23,6 +23,7 @@ let g:colors_name = "vim-hardaway"
 " 198 #ff0087 DeepPink1
 " 202 #ff5f00 OrangeRed1
 " 233 #121212 Grey7
+" 230 #ffffd7 Cornsilk1
 " 234 #1c1c1c Grey11
 " 235 #262626 Grey15
 " 240 #585858 Grey35
@@ -127,66 +128,6 @@ highlight netrwPlain    ctermfg=81              guifg=steelblue1
 highlight xmlTag     ctermfg=198 guifg=deeppink1
 highlight xmlTagName ctermfg=198 guifg=deeppink1
 highlight xmlEndTag  ctermfg=198 guifg=deeppink1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" => javascript
-"""""""""""""""""""""""""""""""""""""""""""""""""
-highlight jsImport ctermfg=198 guifg=deeppink1
-highlight jsExport ctermfg=198 guifg=deeppink1
-highlight jsExportDefault ctermfg=198 guifg=deeppink1
-highlight jsFrom ctermfg=198 guifg=deeppink1
-highlight jsTernaryIfOperator ctermfg=198 guifg=deeppink1
-highlight jsModuleAs ctermfg=198 guifg=deeppink1
-highlight jsDecorator ctermfg=198 guifg=deeppink1
-highlight jsLabel ctermfg=198 guifg=deeppink1
-highlight jsSwitchCase ctermfg=198 guifg=deeppink1
-highlight jsSwitchColon ctermfg=198 guifg=deeppink1
-highlight jsForAwait ctermfg=198 guifg=deeppink1
-highlight jsClassMethodType ctermfg=198 guifg=deeppink1
-
-highlight jsDecoratorFunction ctermfg=15 guifg=white
-highlight jsModuleAsterisk ctermfg=15 guifg=white
-highlight jsArrowFuncArgs ctermfg=15 guifg=white
-highlight jsObjectKeyString ctermfg=15 guifg=white
-highlight jsObjectStringKey ctermfg=15 guifg=white
-highlight jsDestructuringAssignment ctermfg=15 guifg=white
-highlight jsDestructuringNoise ctermfg=15 guifg=white
-highlight jsFuncParens ctermfg=15 guifg=white
-
-highlight jsNull ctermfg=63 guifg=royalblue1
-highlight jsBooleanTrue ctermfg=63 guifg=royalblue1
-highlight jsBooleanFalse ctermfg=63 guifg=royalblue1
-
-highlight jsObjectKey ctermfg=194 guifg=honeydew2
-
-highlight jsObjectMethodType ctermfg=11 guifg=yellow
-highlight jsClassFuncName ctermfg=11 cterm=italic guifg=yellow gui=italic
-highlight jsClassDefinition ctermfg=11 cterm=italic guifg=yellow gui=italic
-highlight jsClassProperty ctermfg=11 guifg=yellow
-highlight jsFuncName ctermfg=11 cterm=italic guifg=yellow gui=italic
-
-highlight jsObjectFuncName ctermfg=81 cterm=italic guifg=steelblue1 gui=italic
-highlight jsThis ctermfg=81 guifg=steelblue1
-highlight jsAsyncKeyword ctermfg=81 guifg=steelblue1
-highlight jsStorageClass ctermfg=81 guifg=steelblue1
-highlight jsPrototype ctermfg=81 guifg=steelblue1
-highlight jsBuiltins ctermfg=81 guifg=steelblue1
-highlight jsSuper ctermfg=81 guifg=steelblue1
-highlight jsBlockLabel ctermfg=81 guifg=steelblue1
-highlight jsBlockLabelKey ctermfg=81 guifg=steelblue1
-highlight jsFunction ctermfg=81 guifg=steelblue1
-highlight jsGlobalObjects ctermfg=81 guifg=steelblue1
-highlight jsGlobalNodeObjects ctermfg=81 guifg=steelblue1
-highlight jsSpecial ctermfg=81 guifg=steelblue1
-highlight jsBlockLabel ctermfg=81 guifg=steelblue1
-highlight jsCharacter ctermfg=81 guifg=steelblue1
-highlight jsArrowFunction ctermfg=81 guifg=steelblue1
-
-highlight jsNumber ctermfg=141 guifg=mediumpurple1
-highlight jsFloat ctermfg=141 guifg=mediumpurple1
-
-highlight jsFuncArgOperator ctermfg=202 guifg=orangered1
-highlight jsFuncArgs ctermfg=202 guifg=orangered1
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => sh.vim
