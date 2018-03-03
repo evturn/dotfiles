@@ -9,36 +9,41 @@
 #     `\_/\_\                                
 #        \/_/                                
 
+# rvm must come before first
+# it must also source its own bootstrapping
+# script after all values have been added to $PATH
 if [ "$(uname)" = "Darwin" ]; then
   export PATH="$HOME/.rvm/gems/ruby-2.4.0/bin"
 fi
 
-export PATH="/bin:/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH" # binaries
+export PATH="/bin:/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"                                            # nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+NVM_DIR="$HOME/.nvm"
+if [ "$(uname)" = "Linux" ]; then
+  NVM_DIR="/usr/local/share/.nvm";
+fi
+export NVM_DIR;
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh";
 
-export PATH="$HOME/.yarn/bin:$PATH"                                    # yarn
-
+export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-
 if [ "$(uname)" = "Darwin" ]; then
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"        # GNU
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-  export PATH="$HOME/Library/Python/3.6:$PATH"                         # Python
+  export PATH="$HOME/Library/Python/3.6:$PATH"
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-  export PATH="$HOME/Library/Haskell/bin:$PATH"                        # Haskell
+  export PATH="$HOME/Library/Haskell/bin:$PATH"
   export PATH="$HOME/.cabal/bin:$PATH"
 
-  export PATH="$HOME/src/mongodb/bin:$PATH"                            # MongoDB
+  export PATH="$HOME/src/mongodb/bin:$PATH"
 
-  export PATH="$HOME/.fastlane/bin:$PATH"                              # Fastlane
+  export PATH="$HOME/.fastlane/bin:$PATH"
 
-  export PATH="${PATH}:/usr/local/opt/android-sdk/tools"               # Android
+  export PATH="${PATH}:/usr/local/opt/android-sdk/tools"
   export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
 
-  export PATH="$PATH:$HOME/.rvm/bin"                                   # rvm
+  export PATH="$PATH:$HOME/.rvm/bin"
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi

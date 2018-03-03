@@ -12,7 +12,6 @@ rsync --exclude ".git/" \
       --exclude "vim/" \
       --exclude ".macos" \
       --exclude ".bash_profile" \
-      --exclude ".path" \
       --exclude "bootstrap.sh" \
       --exclude "README.md" \
       -avh --no-perms . ~;
