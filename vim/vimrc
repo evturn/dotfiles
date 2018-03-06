@@ -67,6 +67,7 @@ execute pathogen#infect()
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+autocmd BufNewFile,BufRead,BufReadPost *.css set syntax=postcss
 autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
