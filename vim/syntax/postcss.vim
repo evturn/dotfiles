@@ -453,7 +453,7 @@ syn match cssAttrComma ","
 
 " Pseudo class
 " http://www.w3.org/TR/css3-selectors/
-syn match cssPseudoClass ":[A-Za-z0-9_-]*" contains=cssNoise,cssPseudoClassId,cssUnicodeEscape,cssPseudoClassFn
+syn match cssPseudoClass ":[A-Za-z0-9_-]*" contains=cssPseudoClassId,cssUnicodeEscape,cssPseudoClassFn
 syn keyword cssPseudoClassId contained link visited active hover before after left right
 syn keyword cssPseudoClassId contained root empty target enable disabled checked invalid
 syn keyword cssPseudoClassId contained valid scope contained current past future default
@@ -477,7 +477,7 @@ syn match cssPseudoClassId contained  "\<\(input-\)\=placeholder\>"
 
 " Misc highlight groups
 syntax match cssUnitDecorators /\(#\|-\|%\|mm\|cm\|in\|pt\|pc\|em\|ex\|px\|ch\|rem\|vh\|vw\|vmin\|vmax\|dpi\|dppx\|dpcm\|Hz\|kHz\|s\|ms\|deg\|grad\|rad\)/ contained
-syntax match cssNoise contained /\(:\|;\|\/\)/
+syntax match cssNoise contained /\(:\|;\|%\|\/\)/
 
 " Comment
 syn region cssComment start="/\*" end="\*/" contains=@Spell fold
@@ -515,6 +515,18 @@ endif
 " For version 5.8 and later: only when an item doesn't have highlighting yet
 
 command -nargs=+ HiLink hi def link <args>
+
+" ------------------------------------------------------------------------------
+" CSS3 
+" ------------------------------------------------------------------------------
+syn keyword cssFontProp order
+syn match   cssFontProp contained "\<flex\(-\(basis\|direction\|flow\|grow\|shrink\|wrap\)\)\=\>"
+syn keyword cssFontAttr contained flex row wrap
+syn match   cssFontAttr contained "\<inline-flex\>"
+syn match   cssFontAttr contained "\<\(row\|column\|wrap\)-reverse\>"
+
+syn match   cssFontProp contained "\<--[A-Za-z_][A-Za-z0-9_-]\+\>"
+syn region  cssFunction contained matchgroup=cssFunctionName start="\<var\s*(" end=")" oneline keepend
 
 HiLink cssComment Comment
 HiLink cssHacks Comment

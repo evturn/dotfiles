@@ -43,8 +43,8 @@ highlight Cursor       ctermfg=49              guifg=mediumspringgreen guibg=ste
 highlight CursorIM     ctermfg=49              guifg=mediumspringgreen guibg=steelblue1
 highlight CursorColumn ctermbg=233             guibg=grey7             gui=none cterm=none 
 highlight CursorLine   ctermbg=233             guibg=grey7             gui=none cterm=none
-" Debug
-highlight Define       ctermfg=49              guifg=mediumspringgreen
+highlight Debug        ctermfg=4               guifg=navy
+highlight Define       ctermfg=198             guifg=deeppink1
 highlight Delimiter    ctermfg=15              guifg=white
 highlight DiffAdd      ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
 highlight DiffChange   ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
@@ -53,7 +53,7 @@ highlight DiffText     ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=gre
 highlight Directory    ctermfg=81              guifg=steelblue1
 highlight Error        ctermfg=202 ctermbg=233 guifg=orangered1        guibg=grey7
 highlight ErrorMsg     ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
-" Exception
+highlight Exception    ctermfg=196             guifg=red1
 highlight Float        ctermfg=141             guifg=mediumpurple1
 highlight FoldColumn   ctermfg=240 ctermbg=233 guifg=grey35            guibg=grey7
 highlight Folded       ctermfg=240 ctermbg=235 guifg=grey35            guibg=grey15
@@ -61,7 +61,7 @@ highlight Function     ctermfg=198             guifg=deeppink1
 highlight Identifier   ctermfg=45              guifg=turquoise2
 highlight Ignore       ctermfg=244 ctermbg=233 guifg=grey50            guibg=grey7
 highlight IncSearch    ctermfg=48              guifg=springgreen1      gui=italic,bold cterm=italic,bold
-" Include
+highlight Include      ctermfg=198             guifg=deeppink1
 highlight Label        ctermfg=198             guifg=deeppink1
 highlight LineNr       ctermfg=240             guifg=grey20
 highlight Macro        ctermfg=48              guifg=springgreen1
@@ -77,14 +77,14 @@ highlight Operator     ctermfg=198             guifg=deeppink1
 " PMenuSbar
 " PMenuThumb
 highlight PreCondit    ctermfg=33              guifg=dodgerblue1
-highlight PreProc      ctermfg=48              guifg=springgreen1
+highlight PreProc      ctermfg=198             guifg=deeppink1
 highlight Question     ctermfg=49              guifg=mediumspringgreen guibg=grey7
 highlight Repeat       ctermfg=198             guifg=deeppink1
 highlight Search       ctermfg=11  ctermbg=196 guifg=white             guibg=red1 cterm=italic gui=italic
 " SignColumn
 highlight Special      ctermfg=81              guifg=steelblue1
 highlight SpecialChar  ctermfg=48              guifg=springgreen1
-" SpecialComment
+highlight SpecialComment ctermfg=81            guifg=steelblue1
 highlight SpecialKey   ctermfg=235             guifg=grey15
 " SpellBad
 " SpellLocal
@@ -93,15 +93,15 @@ highlight SpecialKey   ctermfg=235             guifg=grey15
 highlight StatusLine   ctermfg=235             guifg=grey17
 highlight StatusLineNC ctermfg=235             guifg=grey10
 highlight Statement    ctermfg=198             guifg=deeppink1
-highlight StorageClass ctermfg=48              guifg=springgreen1
+highlight StorageClass ctermfg=198             guifg=deeppink1
 highlight String       ctermfg=49              guifg=mediumspringgreen
-" Structure
+highlight Structure    ctermfg=81              guifg=steelblue1 gui=none
 " TabLine
 " TabLineFill
 " TabLineSel
 highlight Tag          ctermfg=198             guifg=deeppink1
 " Title
-" Todo
+highlight Todo         ctermfg=81  ctermbg=233 guifg=steelblue1        guibg=grey7
 highlight VertSplit    ctermfg=240             guifg=grey7             guibg=grey7 cterm=none
 " Visual
 " VisualNOS
@@ -115,6 +115,45 @@ highlight typedef      ctermfg=81              guifg=steelblue1
 " Underlined
 
 """""""""""""""""""""""""""""""""""""""""""""""""
+" CSS / PostCSS
+"""""""""""""""""""""""""""""""""""""""""""""""""
+highlight cssVariableValue          ctermfg=11  guifg=yellow
+highlight cssVariable               ctermfg=11  guifg=yellow
+highlight cssMediaProp              ctermfg=81  guifg=steelblue1
+highlight cssClassName              ctermfg=198 guifg=deeppink1
+highlight cssClassNameDot           ctermfg=198 guifg=deeppink1
+highlight cssIdentifier             ctermfg=49  guifg=mediumspringgreen
+highlight cssTagName                ctermfg=198 guifg=deeppink1
+highlight cssFunctionName           ctermfg=198 guifg=deeppink1
+highlight cssFunction               ctermfg=198 guifg=deeppink1
+highlight cssFunctionComma          ctermfg=14  guifg=aqua
+highlight cssAttr                   ctermfg=14  guifg=aqua
+highlight cssProp                   ctermfg=81  guifg=steelblue1
+highlight cssCommonAttr             ctermfg=81  guifg=steelblue1
+highlight cssFontProp               ctermfg=198 guifg=deeppink1
+highlight cssFontDescriptor         ctermfg=198 guifg=deeppink1
+highlight cssFontDescriptorFunction ctermfg=141 guifg=mediumpurple1
+highlight cssFlexibleBoxProp        ctermfg=81  guifg=steelblue1
+highlight cssFlexibleBoxAttr        ctermfg=14  guifg=aqua
+highlight cssUnitDecorators         ctermfg=14  guifg=aqua
+highlight cssValueTime              ctermfg=14  guifg=aqua
+highlight cssValueFrequency         ctermfg=14  guifg=aqua
+highlight cssValueLength            ctermfg=141 guifg=mediumpurple1
+highlight cssValueAngle             ctermfg=14  guifg=aqua
+highlight cssValueInteger           ctermfg=141 guifg=mediumpurple1
+highlight cssValueNumber            ctermfg=141 guifg=mediumpurple1 
+highlight cssVendor                 ctermfg=198 guifg=deeppink1
+highlight cssColor                  ctermfg=14  guifg=aqua
+highlight cssNoise                  ctermfg=14  guifg=aqua
+highlight cssSelectorOp             ctermfg=11  guifg=yellow
+highlight cssSelectorOp2            ctermfg=11  guifg=yellow
+highlight cssKeyFrameSelector       ctermfg=141 guifg=mediumpurple1
+highlight cssPseudoClass            ctermfg=11  guifg=yellow
+highlight cssPseudoClassId          ctermfg=11  guifg=yellow
+highlight cssPseudoClassFn          ctermfg=11  guifg=yellow
+highlight cssPseudoClassLang        ctermfg=11  guifg=yellow
+highlight cssPagePseudo             ctermfg=11  guifg=yellow
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""
 highlight netrwSpecial  ctermfg=45              guifg=turquoise2
@@ -125,10 +164,11 @@ highlight netrwPlain    ctermfg=81              guifg=steelblue1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => jsx
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight xmlTag     ctermfg=198 guifg=deeppink1
-highlight xmlTagName ctermfg=198 guifg=deeppink1
-highlight xmlEndTag  ctermfg=198 guifg=deeppink1
-
+highlight xmlTag     ctermfg=198                guifg=deeppink1
+highlight xmlTagName ctermfg=198                guifg=deeppink1
+highlight xmlEndTag  ctermfg=198                guifg=deeppink1
+highlight xmlAttrib  ctermfg=81                 guifg=steelblue1
+highlight xmlEqual   ctermfg=198                guifg=deeppink1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => sh.vim
 """""""""""""""""""""""""""""""""""""""""""""""""
