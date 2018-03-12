@@ -56,6 +56,7 @@ GRAY=$(tput setaf 246);
 RESET=$(tput sgr0);
 LTGRAYBG=$(tput setab 252);
 DKGRAY=$(tput setaf 251);
+DKSLATEGRAY=$(tput setaf 123);
 LTBLUEBG=$(tput setab 39);
 BLACK=$(tput setaf 0);
 
@@ -65,10 +66,10 @@ if [ "$(uname)" = "Linux" ]; then
   identity=" \u@\H ";
 fi
 PS1="$cursor\[\033]0;\W\007\]";
-PS1+="\[${BLACK}\]\[${LTGRAYBG}\]\[${identity}\]\[${LTBLUEBG}\] \w \[${RESET}\]\[${DKGRAY}\]";
-PS1+="\$(prompt_git \"\[${GRAY}\] \" \"\[${GRAY}\]\")";
+PS1+="\[${BLACK}\]\[${LTGRAYBG}\]\[${identity}\]\[${LTBLUEBG}\] \w \[${RESET}\]\[${DKSLATEGRAY}\]";
+PS1+="\$(prompt_git \"\[${DKSLATEGRAY}\] \" \"\[${DKSLATEGRAY}\]\")";
 PS1+="\n";
-PS1+="\[${YELLOW}\]❯ \[${RESET}\]\[${DKGRAY}\]";
+PS1+="\[${YELLOW}\]❯ \[${RESET}\]\[${DKSLATEGRAY}\]";
 export PS1;
 
 PS2="\[${YELLOW}\]→ \[${RESET}\]";

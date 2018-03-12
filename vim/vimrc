@@ -140,4 +140,4 @@ let g:colorizer_colornames = 1
 let g:haskellmode_completion_ghc = 1
 let g:jsx_ext_required = 0
 let g:highlightedyank_highlight_duration = -1
-hi HighlightedyankRegion ctermfg=233 ctermbg=11 guifg=grey5 guibg=yellow gui=italic
+hi HighlightedyankRegion ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1

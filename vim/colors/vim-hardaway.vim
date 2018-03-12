@@ -8,6 +8,7 @@ let g:colors_name = "vim-hardaway"
 
 " 8   #808080 Grey
 " 11  #ffff00 Yellow
+" 14  #00ffff Aqua
 " 15  #ffffff White
 " 33  #0087ff DodgerBlue1
 " 42  #00d787 SpringGreen2
@@ -17,9 +18,12 @@ let g:colors_name = "vim-hardaway"
 " 51  #00ffff Cyan1
 " 63  #5f5fff RoyalBlue1
 " 81  #5fd7ff SteelBlue1
+" 123 #87ffff DarkSlateGray1
 " 141 #af87ff MediumPurple1
 " 183 #d7afff Plum2
+" 190 #d7ff00 Yellow2
 " 194 #d7ffd7 Honeydew2
+" 196 #ff0000 Red1
 " 198 #ff0087 DeepPink1
 " 202 #ff5f00 OrangeRed1
 " 233 #121212 Grey7
@@ -45,7 +49,7 @@ highlight CursorColumn ctermbg=233             guibg=grey7             gui=none 
 highlight CursorLine   ctermbg=233             guibg=grey7             gui=none cterm=none
 highlight Debug        ctermfg=4               guifg=navy
 highlight Define       ctermfg=198             guifg=deeppink1
-highlight Delimiter    ctermfg=15              guifg=white
+highlight Delimiter    ctermfg=14              guifg=aqua
 highlight DiffAdd      ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
 highlight DiffChange   ctermfg=49  ctermbg=235 guifg=mediumspringgreen guibg=grey15
 highlight DiffDelete   ctermfg=198 ctermbg=235 guifg=deeppink1         guibg=grey15 gui=italic cterm=italic 
@@ -60,8 +64,8 @@ highlight Folded       ctermfg=240 ctermbg=235 guifg=grey35            guibg=gre
 highlight Function     ctermfg=198             guifg=deeppink1
 highlight Identifier   ctermfg=45              guifg=turquoise2
 highlight Ignore       ctermfg=244 ctermbg=233 guifg=grey50            guibg=grey7
-highlight IncSearch    ctermfg=48              guifg=springgreen1      gui=italic,bold cterm=italic,bold
-highlight Include      ctermfg=198             guifg=deeppink1
+highlight IncSearch    ctermfg=0   ctermbg=190 guifg=black             guibg=yellow2 gui=italic cterm=italic
+highlight Include      ctermfg=49              guifg=mediumspringgreen
 highlight Label        ctermfg=198             guifg=deeppink1
 highlight LineNr       ctermfg=240             guifg=grey20
 highlight Macro        ctermfg=48              guifg=springgreen1
@@ -77,10 +81,10 @@ highlight Operator     ctermfg=198             guifg=deeppink1
 " PMenuSbar
 " PMenuThumb
 highlight PreCondit    ctermfg=33              guifg=dodgerblue1
-highlight PreProc      ctermfg=198             guifg=deeppink1
+highlight PreProc      ctermfg=49              guifg=mediumspringgreen 
 highlight Question     ctermfg=49              guifg=mediumspringgreen guibg=grey7
 highlight Repeat       ctermfg=198             guifg=deeppink1
-highlight Search       ctermfg=11  ctermbg=196 guifg=white             guibg=red1 cterm=italic gui=italic
+highlight Search       ctermfg=0   ctermbg=190 guifg=black             guibg=yellow2
 " SignColumn
 highlight Special      ctermfg=81              guifg=steelblue1
 highlight SpecialChar  ctermfg=48              guifg=springgreen1
@@ -117,42 +121,42 @@ highlight typedef      ctermfg=81              guifg=steelblue1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " CSS / PostCSS
 """""""""""""""""""""""""""""""""""""""""""""""""
-highlight cssVariableValue          ctermfg=11  guifg=yellow
-highlight cssVariable               ctermfg=11  guifg=yellow
-highlight cssMediaProp              ctermfg=81  guifg=steelblue1
+highlight cssAttr                   ctermfg=14  guifg=aqua
 highlight cssClassName              ctermfg=198 guifg=deeppink1
 highlight cssClassNameDot           ctermfg=198 guifg=deeppink1
-highlight cssIdentifier             ctermfg=49  guifg=mediumspringgreen
-highlight cssTagName                ctermfg=198 guifg=deeppink1
-highlight cssFunctionName           ctermfg=198 guifg=deeppink1
-highlight cssFunction               ctermfg=198 guifg=deeppink1
-highlight cssFunctionComma          ctermfg=14  guifg=aqua
-highlight cssAttr                   ctermfg=14  guifg=aqua
-highlight cssProp                   ctermfg=81  guifg=steelblue1
+highlight cssColor                  ctermfg=14  guifg=aqua
 highlight cssCommonAttr             ctermfg=81  guifg=steelblue1
-highlight cssFontProp               ctermfg=198 guifg=deeppink1
+highlight cssFlexibleBoxAttr        ctermfg=14  guifg=aqua
+highlight cssFlexibleBoxProp        ctermfg=81  guifg=steelblue1
 highlight cssFontDescriptor         ctermfg=198 guifg=deeppink1
 highlight cssFontDescriptorFunction ctermfg=141 guifg=mediumpurple1
-highlight cssFlexibleBoxProp        ctermfg=81  guifg=steelblue1
-highlight cssFlexibleBoxAttr        ctermfg=14  guifg=aqua
-highlight cssUnitDecorators         ctermfg=14  guifg=aqua
-highlight cssValueTime              ctermfg=14  guifg=aqua
-highlight cssValueFrequency         ctermfg=14  guifg=aqua
-highlight cssValueLength            ctermfg=141 guifg=mediumpurple1
-highlight cssValueAngle             ctermfg=14  guifg=aqua
-highlight cssValueInteger           ctermfg=141 guifg=mediumpurple1
-highlight cssValueNumber            ctermfg=141 guifg=mediumpurple1 
-highlight cssVendor                 ctermfg=198 guifg=deeppink1
-highlight cssColor                  ctermfg=14  guifg=aqua
+highlight cssFunction               ctermfg=198 guifg=deeppink1
+highlight cssFunctionComma          ctermfg=14  guifg=aqua
+highlight cssFunctionName           ctermfg=198 guifg=deeppink1
+highlight cssIdentifier             ctermfg=49  guifg=mediumspringgreen
+highlight cssIncludeKeyword         ctermfg=198 guifg=deeppink1
+highlight cssKeyFrameSelector       ctermfg=141 guifg=mediumpurple1
+highlight cssMediaProp              ctermfg=81  guifg=steelblue1
 highlight cssNoise                  ctermfg=14  guifg=aqua
+highlight cssPagePseudo             ctermfg=11  guifg=yellow
+highlight cssProp                   ctermfg=81  guifg=steelblue1
+highlight cssPseudoClass            ctermfg=11  guifg=yellow
+highlight cssPseudoClassFn          ctermfg=11  guifg=yellow
+highlight cssPseudoClassId          ctermfg=11  guifg=yellow
+highlight cssPseudoClassLang        ctermfg=11  guifg=yellow
 highlight cssSelectorOp             ctermfg=11  guifg=yellow
 highlight cssSelectorOp2            ctermfg=11  guifg=yellow
-highlight cssKeyFrameSelector       ctermfg=141 guifg=mediumpurple1
-highlight cssPseudoClass            ctermfg=11  guifg=yellow
-highlight cssPseudoClassId          ctermfg=11  guifg=yellow
-highlight cssPseudoClassFn          ctermfg=11  guifg=yellow
-highlight cssPseudoClassLang        ctermfg=11  guifg=yellow
-highlight cssPagePseudo             ctermfg=11  guifg=yellow
+highlight cssTagName                ctermfg=198 guifg=deeppink1
+highlight cssUnitDecorators         ctermfg=14  guifg=aqua
+highlight cssValueAngle             ctermfg=14  guifg=aqua
+highlight cssValueFrequency         ctermfg=14  guifg=aqua
+highlight cssValueInteger           ctermfg=141 guifg=mediumpurple1
+highlight cssValueLength            ctermfg=141 guifg=mediumpurple1
+highlight cssValueNumber            ctermfg=141 guifg=mediumpurple1 
+highlight cssValueTime              ctermfg=14  guifg=aqua
+highlight cssVariable               ctermfg=11  guifg=yellow
+highlight cssVariableValue          ctermfg=11  guifg=yellow
+highlight cssVendor                 ctermfg=198 guifg=deeppink1
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw
 """""""""""""""""""""""""""""""""""""""""""""""""
