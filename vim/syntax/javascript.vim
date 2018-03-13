@@ -377,63 +377,6 @@ syntax cluster  javaScriptExpression contains=@jsAll
 " Vim's default html.vim highlights all javascript as 'Special'
 hi! def link javaScript              NONE
 
-highlight jsArrowFuncArgs           ctermfg=202 guifg=orangered1
-highlight jsArrowFunction           ctermfg=81  guifg=steelblue1
-highlight jsAsyncKeyword            ctermfg=81  guifg=steelblue1 cterm=italic gui=italic
-highlight jsBlockLabel              ctermfg=81  guifg=steelblue1
-highlight jsBlockLabel              ctermfg=81  guifg=steelblue1
-highlight jsBlockLabelKey           ctermfg=81  guifg=steelblue1
-highlight jsBooleanFalse            ctermfg=63  guifg=royalblue1
-highlight jsBooleanTrue             ctermfg=63  guifg=royalblue1
-highlight jsBuiltins                ctermfg=81  guifg=steelblue1
-highlight jsCharacter               ctermfg=81  guifg=steelblue1
-highlight jsClassDefinition         ctermfg=11  guifg=yellow cterm=italic gui=italic
-highlight jsClassFuncName           ctermfg=11  guifg=yellow cterm=italic gui=italic
-highlight jsClassMethodType         ctermfg=198 guifg=deeppink1
-highlight jsClassProperty           ctermfg=11  guifg=yellow
-highlight jsDecorator               ctermfg=198 guifg=deeppink1
-highlight jsDecoratorFunction       ctermfg=15  guifg=white
-highlight jsDestructuringAssignment ctermfg=15  guifg=white
-highlight jsDestructuringNoise      ctermfg=15  guifg=white
-highlight jsExport                  ctermfg=198 guifg=deeppink1
-highlight jsExportDefault           ctermfg=198 guifg=deeppink1
-highlight jsFloat                   ctermfg=141 guifg=mediumpurple1
-highlight jsForAwait                ctermfg=198 guifg=deeppink1
-highlight jsFrom                    ctermfg=198 guifg=deeppink1
-highlight jsFuncArgOperator         ctermfg=202 guifg=orangered1
-highlight jsFuncArgs                ctermfg=202 guifg=orangered1
-highlight jsFuncName                ctermfg=11  guifg=yellow cterm=italic gui=italic
-highlight jsFuncParens              ctermfg=15  guifg=white
-highlight jsFunction                ctermfg=81  guifg=steelblue1
-highlight jsGlobalNodeObjects       ctermfg=81  guifg=steelblue1
-highlight jsGlobalObjects           ctermfg=81  guifg=steelblue1
-highlight jsImport                  ctermfg=198 guifg=deeppink1
-highlight jsLabel                   ctermfg=198 guifg=deeppink1
-highlight jsModuleAs                ctermfg=198 guifg=deeppink1
-highlight jsModuleAsterisk          ctermfg=198 guifg=deeppink1
-highlight jsNoise                   ctermfg=49  guifg=mediumspringgreen
-highlight jsNull                    ctermfg=63  guifg=royalblue1
-highlight jsNumber                  ctermfg=141 guifg=mediumpurple1
-highlight jsObjectFuncName          ctermfg=81  guifg=steelblue1 cterm=italic gui=italic
-highlight jsObjectKey               ctermfg=157 guifg=darkseagreen2
-highlight jsObjectKeyComputed       ctermfg=157 guifg=darkseagreen2
-highlight jsObjectKeyString         ctermfg=157 guifg=darkseagreen2
-highlight jsObjectMethodType        ctermfg=11  guifg=yellow
-highlight jsObjectStringKey         ctermfg=157 guifg=darkseagreen2
-highlight jsPrototype               ctermfg=81  guifg=steelblue1 cterm=italic gui=italic
-highlight jsSpecial                 ctermfg=81  guifg=steelblue1
-highlight jsStorageClass            ctermfg=81  guifg=steelblue1
-highlight jsString                  ctermfg=42  guifg=springgreen2
-highlight jsSuper                   ctermfg=81  guifg=steelblue1 cterm=italic gui=italic
-highlight jsSwitchCase              ctermfg=198 guifg=deeppink1
-highlight jsSwitchColon             ctermfg=198 guifg=deeppink1
-highlight jsTaggedTemplate          ctermfg=198 guifg=deeppink1
-highlight jsTemplateBraces          ctermfg=198 guifg=deeppink1
-highlight jsTemplateExpression      ctermfg=198 guifg=deeppink1
-highlight jsTernaryIfOperator       ctermfg=198 guifg=deeppink1
-highlight jsThis                    ctermfg=81  guifg=steelblue1
-highlight jsUndefined               ctermfg=81  guifg=steelblue1
-
 let b:current_syntax = "javascript"
 if main_syntax == 'javascript'
   unlet main_syntax
