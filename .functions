@@ -244,9 +244,12 @@ function y() {
 }
 
 function commitd() {
-  local datetime="${1}"
-  local message="${2}"
-  GIT_COMMITTER_DATE="${datetime}" git commit -S -m "${message}" --date="${datetime}";
+  GIT_COMMITTER_DATE="${1}" git commit -S -m "${2}" --date="${1}";
+}
+
+function commitda() {
+  local adate=$(git log -1 --format=%cd --date=local);
+  GIT_COMMITTER_DATE="${adate}" git commit -S -C HEAD --date="${adate}" --amend;
 }
 
 function mdless () {
