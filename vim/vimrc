@@ -18,6 +18,7 @@ colorscheme vim-hardaway
 
 set autochdir
 set autoindent
+set autoread
 set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
@@ -65,6 +66,9 @@ if !has('gui_running')
 endif
 
 execute pathogen#infect()
+
+autocmd CursorHold,CursorHoldI * checktime
+autocmd FocusGained,BufEnter * :checktime
 
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
