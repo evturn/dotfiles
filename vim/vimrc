@@ -1,3 +1,4 @@
+" vim: fdm=marker
 "            _
 "     _   __(_____ ___  __________
 "    | | / / / __ `__ \/ ___/ ___/
@@ -6,6 +7,9 @@
 "
 "  Vim is sponsored by Diet Coke®
 "
+
+" Options {{{
+
 set nocompatible
 set runtimepath+=~/.vim
 set directory^=~/.vim/tmp//
@@ -67,6 +71,10 @@ endif
 
 execute pathogen#infect()
 
+" }}}
+
+" Auto commands {{{
+
 autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :checktime
 
@@ -83,6 +91,10 @@ autocmd FileType * setlocal formatoptions-=cro
 
 " Reset cursor to terminal settings
 autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
+
+" }}}
+
+" Map commands {{{
 
 " Current mode sets cursor shape
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -132,6 +144,9 @@ vmap a- :Tabularize /-><CR>
 vmap a, :Tabularize /<-<CR>
 vmap al :Tabularize /[\[\\|,]<CR>
 
+" }}}
+
+" Plugin options {{{
 source $HOME/.vim/plugin/nerdtree.vim
 source $HOME/.vim/plugin/haskell.vim
 source $HOME/.vim/plugin/supertab.vim
@@ -145,3 +160,5 @@ let g:haskellmode_completion_ghc = 1
 let g:jsx_ext_required = 0
 let g:highlightedyank_highlight_duration = -1
 hi HighlightedyankRegion ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
+
+" }}}

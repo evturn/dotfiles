@@ -1,3 +1,10 @@
+" vim: fdm=marker
+" Name:         Vim Hardaway
+" Author:       ev <ev@evturn.com>
+" Maintainer:   ev <ev@evturn.com>
+" License:      Public domain
+" Last Updated: Wed Mar 21 21:52:09 2018
+
 highlight clear
 
 if has("syntax_on")
@@ -6,36 +13,38 @@ endif
 
 let g:colors_name = "vim-hardaway"
 
-" 8   #808080 Grey
-" 11  #ffff00 Yellow
-" 14  #00ffff Aqua
-" 15  #ffffff White
-" 33  #0087ff DodgerBlue1
-" 42  #00d787 SpringGreen2
-" 45  #00d7ff Turquoise2
-" 48  #00ff87 SpringGreen1
-" 49  #00ffaf MediumSpringGreen
-" 51  #00ffff Cyan1
-" 63  #5f5fff RoyalBlue1
-" 81  #5fd7ff SteelBlue1
-" 123 #87ffff DarkSlateGray1
-" 141 #af87ff MediumPurple1
-" 183 #d7afff Plum2
-" 190 #d7ff00 Yellow2
-" 194 #d7ffd7 Honeydew2
-" 196 #ff0000 Red1
-" 198 #ff0087 DeepPink1
-" 202 #ff5f00 OrangeRed1
-" 233 #121212 Grey7
-" 230 #ffffd7 Cornsilk1
-" 234 #1c1c1c Grey11
-" 235 #262626 Grey15
-" 240 #585858 Grey35
-" 244 #808080 Grey50
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" => Base
-"""""""""""""""""""""""""""""""""""""""""""""""""
+" Color palette {{{
+
+" Color: black             #000000      0        Black
+" Color: grey              #808080      8        LightGrey
+" Color: aqua              #00ffff      14       LightCyan
+" Color: yellow            #ffff00      11       DarkYellow
+" Color: white             #ffffff      15       White
+" Color: dodgerblue1       #0087ff      33       Blue
+" Color: springgreen2      #00d787      42       LightGreen
+" Color: turquoise2        #00d7ff      45       Cyan
+" Color: springgreen1      #00ff87      48       LightGreen
+" Color: mediumspringgreen #00ffaf      49       Green
+" Color: royalblue1        #5f5fff      63       DarkBlue
+" Color: steelblue1        #5fd7ff      81       LightBlue
+" Color: mediumpurple1     #af87ff      141      DarkCyan
+" Color: darkseagreen2     #afffaf      157      DarkGreen
+" Color: yellow2           #d7ff00      190      Yellow
+" Color: red1              #ff0000      196      Red
+" Color: deeppink1         #ff0087      198      LightRed
+" Color: orangered1        #ff5f00      202      DarkRed
+" Color: grey3             #080808      232      Black
+" Color: grey7             #121212      233      Black
+" Color: grey11            #1c1c1c      234      DarkGrey
+" Color: grey15            #262626      235      DarkGrey
+" Color: grey20            #303030      236      DarkGrey
+" Color: grey35            #585858      240      Grey
+" Color: grey50            #808080      244      LightGrey
+
+" }}}
+
+" Base {{{
+
 highlight Boolean      ctermfg=63              guifg=royalblue1
 highlight Character    ctermfg=15              guifg=white
 highlight ColorColumn  ctermfg=240 ctermbg=232 guifg=grey35            guibg=grey3
@@ -118,9 +127,10 @@ highlight Typedef      ctermfg=81              guifg=steelblue1
 highlight typedef      ctermfg=81              guifg=steelblue1
 " Underlined
 
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" CSS / PostCSS
-"""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" CSS / PostCSS {{{
+
 highlight cssAttr                   ctermfg=14  guifg=aqua
 highlight cssClassName              ctermfg=198 guifg=deeppink1
 highlight cssClassNameDot           ctermfg=198 guifg=deeppink1
@@ -157,9 +167,11 @@ highlight cssValueTime              ctermfg=14  guifg=aqua
 highlight cssVariable               ctermfg=11  guifg=yellow
 highlight cssVariableValue          ctermfg=11  guifg=yellow
 highlight cssVendor                 ctermfg=198 guifg=deeppink1
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" Haskell
-"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" }}}
+
+" Haskell {{{
+
 highlight ConId                     ctermfg=81  guifg=steelblue1
 highlight haskellBlock              ctermfg=15  guifg=white
 highlight haskellBottom             ctermfg=48  guifg=springgreen1 cterm=underline
@@ -209,9 +221,11 @@ highlight hsStructure               ctermfg=198 guifg=deeppink1
 highlight hsType                    ctermfg=81  guifg=steelblue1
 highlight hsTypedef                 ctermfg=198 guifg=deeppink1
 highlight hsVarSym                  ctermfg=198 guifg=deeppink1
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" JavaScript
-"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" }}}
+
+" JavaScript {{{
+
 highlight jsArrowFuncArgs           ctermfg=202 guifg=orangered1
 highlight jsArrowFunction           ctermfg=81  guifg=steelblue1
 highlight jsAsyncKeyword            ctermfg=81  guifg=steelblue1    cterm=italic gui=italic
@@ -272,9 +286,11 @@ highlight jsTemplateExpression      ctermfg=198 guifg=deeppink1
 highlight jsTernaryIfOperator       ctermfg=198 guifg=deeppink1
 highlight jsThis                    ctermfg=81  guifg=steelblue1
 highlight jsUndefined               ctermfg=81  guifg=steelblue1
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree
-"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" }}} 
+
+" NERDTree {{{
+
 highlight NERDTreeCWD               ctermfg=49  guifg=mediumspringgreen cterm=italic gui=italic
 highlight NERDTREEDir               ctermfg=49  guifg=mediumspringgreen cterm=italic gui=italic
 highlight NERDTreeFile              ctermfg=81  guifg=steelblue1 
@@ -284,25 +300,31 @@ highlight NERDTreeDirSlash          ctermfg=81  guifg=steelblue1
 highlight NERDTreeHelp              ctermfg=49  guifg=mediumspringgreen
 highlight NERDTreeHelpKey           ctermfg=81  guifg=steelblue1
 highlight NERDTreeHelpTitle         ctermfg=190 guifg=yellow2 gui=underline,italic
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" netrw
-"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" }}}
+
+" netrw {{{
+
 highlight netrwSpecial  ctermfg=45              guifg=turquoise2
 highlight netrwClassify ctermfg=45              guifg=turquoise2
 highlight netrwExe      ctermfg=240             guifg=grey35
 highlight netrwTreeBar  ctermfg=240 ctermbg=233 guifg=grey35 guibg=grey7
 highlight netrwPlain    ctermfg=81              guifg=steelblue1
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" XML / JSX
-"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" }}}
+
+" XML / JSX {{{
+
 highlight xmlTag     ctermfg=198                guifg=deeppink1
 highlight xmlTagName ctermfg=198                guifg=deeppink1
 highlight xmlEndTag  ctermfg=198                guifg=deeppink1
 highlight xmlAttrib  ctermfg=81                 guifg=steelblue1
 highlight xmlEqual   ctermfg=198                guifg=deeppink1
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" SH / Bash
-"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" }}}
+
+" SH / Bash {{{
+
 highlight shStatement      ctermfg=81 guifg=steelblue1
 highlight bashStatement    ctermfg=81 guifg=steelblue1
 highlight shArithmetic     ctermfg=141 guifg=mediumpurple1
@@ -323,5 +345,7 @@ highlight shExpr           ctermfg=198 guifg=deeppink1
 highlight shHereDoc        ctermfg=198 guifg=deeppink1
 highlight shEcho           ctermfg=198 guifg=deeppink1
 highlight shEchoQuote      ctermfg=198 guifg=deeppink1
+
+" }}}
 
 set background=dark
