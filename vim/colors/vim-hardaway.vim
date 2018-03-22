@@ -3,7 +3,7 @@
 " Author:       ev <ev@evturn.com>
 " Maintainer:   ev <ev@evturn.com>
 " License:      Public domain
-" Last Updated: Wed Mar 21 21:52:09 2018
+" Last Updated: Wed Mar 22 2018
 
 highlight clear
 
@@ -38,6 +38,7 @@ let g:colors_name = "vim-hardaway"
 " Color: grey11            #1c1c1c      234      DarkGrey
 " Color: grey15            #262626      235      DarkGrey
 " Color: grey20            #303030      236      DarkGrey
+" Color: grey23            #444444      237      DarkGrey
 " Color: grey35            #585858      240      Grey
 " Color: grey50            #808080      244      LightGrey
 
@@ -78,7 +79,7 @@ highlight Include      ctermfg=49              guifg=mediumspringgreen
 highlight Label        ctermfg=198             guifg=deeppink1
 highlight LineNr       ctermfg=240             guifg=grey20
 highlight Macro        ctermfg=48              guifg=springgreen1
-highlight MatchParen   ctermfg=33  ctermbg=233 guifg=dodgerblue1       guibg=grey7
+highlight MatchParen               ctermbg=237 guifg=none              guibg=grey23
 highlight ModeMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
 highlight MoreMsg      ctermfg=49  ctermbg=233 guifg=mediumspringgreen guibg=grey7
 highlight NonText      ctermfg=235             guifg=grey15

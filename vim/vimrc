@@ -78,9 +78,9 @@ execute pathogen#infect()
 autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :checktime
 
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+autocmd VimEnter * NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 autocmd BufNewFile,BufRead,BufReadPost *.css set syntax=postcss
 autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
