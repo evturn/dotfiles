@@ -153,12 +153,13 @@ source $HOME/.vim/plugin/supertab.vim
 source $HOME/.vim/plugin/airline.vim
 source $HOME/.vim/plugin/netrw.vim
 
-let g:haskell_tabular = 1
-let g:colorizer_auto_color = 0
-let g:colorizer_colornames = 1
-let g:haskellmode_completion_ghc = 1
-let g:jsx_ext_required = 0
-let g:highlightedyank_highlight_duration = -1
+let g:airline#extensions#wordcount#enabled = 0
+let g:haskell_tabular                      = 1
+let g:colorizer_auto_color                 = 0
+let g:colorizer_colornames                 = 1
+let g:haskellmode_completion_ghc           = 1
+let g:jsx_ext_required                     = 0
+let g:highlightedyank_highlight_duration   = -1
 hi HighlightedyankRegion ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
 
 " }}}
