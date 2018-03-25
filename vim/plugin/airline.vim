@@ -4,6 +4,8 @@
 " Repository:   https://github.com/evturn/dotfiles/blob/master/vim/plugin/airline.vim
 " License:      MIT
 
+" Color variables {{{
+
 " cterm
 let s:T000 = 0         " black
 let s:T011 = 11        " yellow
@@ -47,6 +49,10 @@ let s:G302 = "#ffee00" " yellow
 let s:G303 = "#1a1a1a" " grey
 let s:G304 = "#282c34" " grey
 
+" }}}
+
+" Color maps {{{
+
 " Normal mode
 let s:N1 = [ s:G300, s:G049, s:T235, s:T049 ]
 let s:N2 = [ s:G301, s:G303, s:T015, s:T236 ]
@@ -71,6 +77,10 @@ let s:V3 = s:N3
 let s:IA1 = [ s:G240, s:G233, s:T240, s:T233 ]
 let s:IA2 = s:IA1
 let s:IA3 = s:IA1
+
+" }}}
+
+" Color palette {{{
 
 let g:airline#themes#dark#palette = {}
 let g:airline#themes#dark#palette.normal   = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
@@ -116,3 +126,5 @@ let g:airline#themes#dark#palette.visual.airline_term  = g:airline#themes#dark#p
 let g:airline#themes#dark#palette.replace.airline_term = g:airline#themes#dark#palette.normal.airline_term
 
 let g:airline#themes#dark#palette.accents = { 'red': [ s:G196, '', s:T196, 0 ] }
+
+" }}}
