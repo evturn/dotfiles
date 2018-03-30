@@ -14,11 +14,12 @@ set nocompatible
 set runtimepath+=~/.vim
 set directory^=~/.vim/tmp//
 
+execute pathogen#infect()
 syntax on
 filetype plugin indent on
 syntax sync minlines=256
 
-colorscheme vim-hardaway
+colorscheme vimhardaway
 
 set autochdir
 set autoindent
@@ -69,7 +70,6 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-execute pathogen#infect()
 
 " }}}
 
@@ -150,7 +150,7 @@ vmap al :Tabularize /[\[\\|,]<CR>
 source $HOME/.vim/plugin/nerdtree.vim
 source $HOME/.vim/plugin/haskell.vim
 source $HOME/.vim/plugin/supertab.vim
-source $HOME/.vim/plugin/airline.vim
+" source $HOME/.vim/plugin/airline.vim
 source $HOME/.vim/plugin/netrw.vim
 
 let g:airline#extensions#wordcount#enabled = 0
