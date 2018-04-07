@@ -44,10 +44,13 @@ set noshowmode
 set nowrap
 set nrformats=
 set number
+set scrolloff=10
 set shiftwidth=2
 set shortmess=I
 set showcmd
 set showmatch
+set sidescroll=1
+set sidescrolloff=15
 set smartcase
 set smartindent
 set smarttab
@@ -75,8 +78,12 @@ endif
 
 " Auto commands {{{
 
+" Check for changes to a buffer on focus/enter
 autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :checktime
+
+" Automatically reload vimrc when it's saved
+autocmd! BufWritePost vimrc so ~/.vimrc"
 
 autocmd VimEnter * NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -148,18 +155,26 @@ vmap al :Tabularize /[\[\\|,]<CR>
 
 " Plugin options {{{
 
+" 🔌  Airline
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_b = airline#section#create([' %l:%c ⚡︎ %L '])
+let g:airline_section_c = '%t'
+let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
+let g:airline_section_z = expand('%:p:~:h') 
+
 " 🔌  NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.DS_Store$', '^\.git$']
 let NERDTreeStatusline=''
-let NERDTreeMinimalUI=0
 let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable = '→'
 let g:NERDTreeDirArrowCollapsible = '●'
 
 function! CursorChange()
   if &filetype == 'nerdtree'
-    highlight CursorLine guifg=white guibg=steelblue1
+    highlight CursorLine ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
   endif
 endfunction
 
@@ -207,13 +222,12 @@ let g:netrw_preview = 1
 let g:netrw_use_errorwindow = 0
 
 " 🔌  Misc
-let g:airline#extensions#wordcount#enabled = 0
 let g:haskell_tabular                      = 1
 let g:colorizer_auto_color                 = 0
 let g:colorizer_colornames                 = 1
 let g:haskellmode_completion_ghc           = 1
 let g:jsx_ext_required                     = 0
 let g:highlightedyank_highlight_duration   = -1
-hi HighlightedyankRegion ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
+hi HighlightedyankRegion ctermfg=0 ctermbg=14 guifg=black guibg=aqua
 
 " }}}
