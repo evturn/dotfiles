@@ -158,10 +158,11 @@ vmap al :Tabularize /[\[\\|,]<CR>
 " 🔌  Airline
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_section_b = airline#section#create([' %l:%c ⚡︎ %L '])
-let g:airline_section_c = '%t'
+let g:airline_section_b = airline#section#create([' %3l:%-3c ⚡︎ %L '])
+let g:airline_section_c = airline#section#create(['%t %m'])
+let g:airline_section_x = expand('%:p:~:h')
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
-let g:airline_section_z = expand('%:p:~:h') 
+let g:airline_section_z = airline#section#create(['filetype'])
 
 " 🔌  NERDTree
 let NERDTreeShowHidden=1
