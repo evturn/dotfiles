@@ -12,6 +12,7 @@
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
   di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
   l = !"git log --pretty='format:%n%Cblue %h   %Cgreen %s %Cblue%GK  %n Author:    %an %aD %n Committer: %cn %cD %n %cr' --shortstat"
+  nogpg = !"git config commit.gpgSign false"
 
 [color]
   ui = always
@@ -43,13 +44,13 @@
 
 [core]
   editor = vim
-  precomposeunicode = false     # Don't show files named with non-ASCII symbols as unversioned
+  precomposeunicode = false
 
 [diff]
-  renames = copies              # Detect copies as well as renames
+  renames = copies
 
 [diff "bin"]
-  textconv = hexdump -v -C      # Use `hexdump` to diff binary files
+  textconv = hexdump -v -C
 
 [filter "lfs"]
   clean = git-lfs clean %f
@@ -60,10 +61,10 @@
   program = gpg2
 
 [help]
-  autocorrect = 1               # Automatically correct and execute mistyped commands
+  autocorrect = 1
 
 [merge]
-  log = true                    # Include summaries of merged commits in new merge commit messages
+  log = true
 
 [push]
   default = current
