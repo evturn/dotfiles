@@ -101,15 +101,6 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-  local port="${1:-4000}";
-  local ip=$(ipconfig getifaddr en1);
-  sleep 1 && open "http://${ip}:${port}/" &
-  php -S "${ip}:${port}";
-}
-
 # Compare original and gzipped file size
 function gz() {
   local origsize=$(wc -c < "$1");
@@ -269,12 +260,4 @@ function mdcat () {
   local mdfile=$1
   if [ -z ${mdfile:+x} ]; then mdfile="README.md"; fi
   pandoc -s -f markdown -t man $mdfile | groff -T utf8 -man
-}
-
-function weather() {
-  if [ $# -eq 0 ]; then
-    curl -A "curl" "wttr.in/brooklyn,ny?1";
-  else
-    curl -A "curl" "wttr.in/brooklyn,ny?$@";
-  fi;
 }
