@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #           _ _
 #      __ _| (_) __ _ ___  ___ ___
 #     / _` | | |/ _` / __|/ _ / __|
@@ -7,118 +6,66 @@
 #   (_\__,_|_|_|\__,_|___/\___|___/
 #
 
+alias reload="exec $SHELL -l"          # Reload shell (invoke as a login shell)
+alias path='echo -e ${PATH//:/\\n}'    # Print each PATH entry on a separate line
+
+if ls --color > /dev/null 2>&1; then   # GNU `ls`
+  colorflag="--color"
+  export LS_COLORS='no=00;32:fi=32:di=00;94:ln=92:pi=40;33:so=35:do=35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=91:st=01;36:sg=01;36:ow=01;36:tw=36:su=36:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;37:*.jpeg=01;37:*.gif=01;37:*.bmp=01;37:*.pbm=01;37:*.pgm=01;37:*.ppm=01;37:*.tga=01;37:*.xbm=01;37:*.xpm=01;37:*.tif=01;37:*.tiff=01;37:*.png=01;37:*.mov=01;37:*.mpg=01;37:*.mpeg=01;37:*.avi=01;37:*.fli=01;37:*.gl=01;37:*.dl=01;37:*.xcf=01;37:*.xwd=01;37:*.ogg=01;35:*.mp3=01;37:*.wav=01;37:'
+else                                   # macOS `ls`
+  colorflag="-G"
+  export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+fi
+
+alias ls="ls -a --width=80 ${colorflag} --ignore=.DS_Store --ignore=.. --ignore=."
+alias ll="ls -laF --width=80 ${colorflag}"
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
-
-alias sr="cd ~/src"
-alias dv="cd ~/src/dev"
-alias g="git"
-alias h="history"
-alias j="jobs"
-
-ignoreflag="--ignore=.DS_Store --ignore=.. --ignore=."
-widthflag="--width=90"
-
-alias l="ls -lF ${widthflag} ${colorflag}"
-alias ls="ls -a ${ignoreflag} ${widthflag} ${colorflag}"
-alias la="command ls -A ${widthflag} ${colorflag}"
-alias ll="ls -laF ${widthflag} ${colorflag}"
-# List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always enable colored `grep` output
-# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# Get week number
+alias sudo='sudo '                     # Enable `sudo` to be used with aliases
 alias week='date +%V'
-
-# Stopwatch
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-
-# IP addresses
+alias timer='echo "Timer started. Stop with Ctrl-D." && date \
+  && time cat && date'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias localip="ipconfig getifaddr en0" 
 
-# Show active network interfaces
-alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+##############################
+#  Only
+##############################
+command -v hd > /dev/null || alias hd="hexdump -C"       # Canonical hex dump
+command -v md5sum > /dev/null || alias md5sum="md5"      # macOS has no `md5sum`
+command -v sha1sum > /dev/null || alias sha1sum="shasum" # macOS has no `sha1sum`
 
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# Canonical hex dump; some systems have this symlinked
-command -v hd > /dev/null || alias hd="hexdump -C"
-
-# macOS has no `md5sum`, so use `md5` as a fallback
-command -v md5sum > /dev/null || alias md5sum="md5"
-
-# macOS has no `sha1sum`, so use `shasum` as a fallback
-command -v sha1sum > /dev/null || alias sha1sum="shasum"
-
-# JavaScriptCore REPL
-jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Empty the Trash on all mounted volumes and the main HDD.
-# Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-
-# Show/hide hidden files in Finder
-alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
-
-# Hide/show all desktop icons
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-# Disable/enable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-alias spoton="sudo mdutil -a -i on"
-
-# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-alias plistbuddy="/usr/libexec/PlistBuddy"
-
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-# (useful when executing time-consuming commands)
-alias badge="tput bel"
-
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1"
+alias sr="cd ~/src"
+alias dv="cd ~/src/dev"
+alias c="tr -d '\n' | pbcopy"                                 # Trim new lines and copy
+alias cleanup="find . -type f -name '*.ds_store' -ls -delete" # Delete .ds_store
+alias emptytrash="sudo rm -rfv /volumes/*/.trashes; sudo rm -rfv ~/.trash; \
+  sudo rm -rfv /private/var/log/asl/*.asl; \
+  sqlite3 ~/library/preferences/com.apple.launchservices.quarantineeventsv* \
+  'delete from lsquarantineevent'"     # 1) Empty trash on all mounted volumes and main hdd
+                                       # 2) Clear apple system logs (improve shell startup speed)
+                                       # 3) Clear download history from quarantine
+alias hide="defaults write com.apple.finder appleshowallfiles false \
+  && killall finder"                   # Hide hidden files in finder
+alias show="defaults write com.apple.finder appleshowallfiles true \
+  && killall finder"                   # Show hidden files in finder
+alias hidedesktop="defaults write com.apple.finder createdesktop -bool false \
+  && killall finder"                   # Hide files on desktop
+alias showdesktop="defaults write com.apple.finder createdesktop -bool true \
+  && killall finder"                   # Show files on desktop
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \ 
+  -kill -r -domain local -domain system \
+  -domain user && killall Finder"      # Remove duplicates in the “Open With” menu
+alias spotoff="sudo mdutil -a -i off"  # Disable spotlight
+alias spoton="sudo mdutil -a -i on"    # Enable spotlight
+alias badge="tput bel"                 # Ring terminal bell and show badge
+alias plistbuddy="/usr/libexec/plistbuddy"
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
 done
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
-
-# Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'

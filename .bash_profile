@@ -6,7 +6,7 @@
 #                          |_____|_|
 
 # * ~/.extra contains private exports
-for file in ~/.{path,cterm,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
