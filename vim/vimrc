@@ -27,7 +27,7 @@ set autoread
 set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
-set colorcolumn=+1
+set colorcolumn=81
 set completeopt+=longest
 set completeopt=menuone,menu,longest
 set expandtab
@@ -58,12 +58,13 @@ set splitbelow
 set splitright
 set synmaxcol=128
 set tabstop=2
-set textwidth=80
+set textwidth=0
 set title
 set ttimeoutlen=50
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git/,.cabal-sandbox
 set wildmenu
 set wildmode=longest,list,full
+set wrapmargin=0
 
 if has('nvim')
   set termguicolors
