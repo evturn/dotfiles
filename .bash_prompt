@@ -54,7 +54,7 @@ GRAY=$(tput setaf 246)
 DKGRAY=$(tput setaf 251)
 LTGRAYBG=$(tput setab 252)
 
-if [ '$(uname)' = 'Linux' ]; then
+if [ "$(uname)" = "Linux" ]; then
   PROMPT_USER=' \u ⌁ \H '
 else
   PROMPT_USER=' ⌁ '
