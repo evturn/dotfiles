@@ -27,11 +27,9 @@ set autoread
 set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
-set colorcolumn=81
 set completeopt+=longest
 set completeopt=menuone,menu,longest
 set expandtab
-set fillchars+=vert:\ 
 set formatoptions-=cro
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set incsearch
@@ -140,11 +138,6 @@ endif
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gp :Git push origin master<CR>
-
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
