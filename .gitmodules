@@ -85,3 +85,6 @@
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git@github.com:tpope/vim-repeat
+[submodule "vim/bundle/python-syntax"]
+	path = vim/bundle/python-syntax
+	url = git@github.com:hdima/python-syntax.git
