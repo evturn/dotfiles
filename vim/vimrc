@@ -198,6 +198,9 @@ let g:hs_highlight_boolean = 1
 let g:hs_highlight_types = 1
 let g:hs_highlight_more_types = 1
 
+" 🔌  Python
+let g:python_highlight_all = 1
+
 " 🔌  SuperTab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
