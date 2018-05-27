@@ -14,7 +14,7 @@ if [ "$(uname)" = "Darwin" ]; then
   export PATH="$HOME/.rvm/gems/ruby-2.4.0/bin"
 fi
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 if [ "$(uname)" = "Linux" ]; then
   NVM_DIR="/usr/local/share/.nvm";
