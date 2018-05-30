@@ -159,6 +159,9 @@ vmap al :Tabularize /[\[\\|,]<CR>
 " 🔌  Airline
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline_inactive_collapse = 1
+let g:airline#extensions#tabline#fnamemod = ':p:.'
+let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline_section_b = airline#section#create([' %3l:%-3c ⚡︎ %L '])
 let g:airline_section_c = airline#section#create(['%t %m'])
 let g:airline_section_x = expand('%:p:~:h')
@@ -201,6 +204,9 @@ let g:haskell_indent_where            = 6
 let g:hs_highlight_boolean = 1
 let g:hs_highlight_types = 1
 let g:hs_highlight_more_types = 1
+
+" 🔌  Python
+let g:python_highlight_all = 1
 
 " 🔌  SuperTab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
