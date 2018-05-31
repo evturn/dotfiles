@@ -11,7 +11,7 @@
 " Options {{{
 
 set nocompatible
-set runtimepath+=~/.vim
+set runtimepath+=~/.vim,/usr/local/opt/fzf
 set directory^=~/.vim/tmp//
 
 execute pathogen#infect()
@@ -27,7 +27,6 @@ set autoread
 set backspace=indent,eol,start
 set clipboard=unnamed
 set cmdheight=2
-set colorcolumn=81
 set completeopt+=longest
 set completeopt=menuone,menu,longest
 set expandtab
