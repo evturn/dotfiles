@@ -89,5 +89,5 @@
 	path = vim/bundle/python-syntax
 	url = git@github.com:hdima/python-syntax.git
 [submodule "vim/bundle/fzf"]
-	path = vim/bundle/fzf
-	url = git@github.com:junegunn/fzf.git
+  path = vim/bundle/fzf
+  url = git@github.com:junegunn/fzf.vim.git
