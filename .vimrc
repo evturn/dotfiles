@@ -127,6 +127,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-x> <C-w>x
 
+nnoremap <CR> :noh<CR><CR>
+
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -138,12 +140,6 @@ endif
 
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gp :Git push origin master<CR>
-
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
