@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-
-#                            ___  ____
-#      _ __ ___   __ _  ___ / _ \/ ___|
-#     | '_ ` _ \ / _` |/ __| | | \___ \
-#    _| | | | | | (_| | (__| |_| |___) |
-#   (_|_| |_| |_|\__,_|\___|\___/|____/
-#
+#  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.d88888b.~~~.d8888b.~~
+#  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~d88P"~"Y88b~d88P~~Y88b~
+#  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~888~~~~~888~Y88b.~~~~~~
+#  88888b.d88b.~~~8888b.~~~.d8888b~888~~~~~888~~"Y888b.~~~
+#  888~"888~"88b~~~~~"88b~d88P"~~~~888~~~~~888~~~~~"Y88b.~
+#  888~~888~~888~.d888888~888~~~~~~888~~~~~888~~~~~~~"888~
+#  888~~888~~888~888~~888~Y88b.~~~~Y88b.~.d88P~Y88b~~d88P~
+#  888~~888~~888~"Y888888~~"Y8888P~~"Y88888P"~~~"Y8888P"~~
+#  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -16,8 +20,6 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -33,8 +35,8 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 # Expand save panel by default
-defaults write -g NSNavPanelExpandedStateForSaveMode -bool true && \
-defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -120,10 +122,16 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+defaults write com.apple.screencapture location -string "${HOME}/Desktop/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
+
+# Replace "Screen Shot" text from screenshot filenames
+defaults write com.apple.screencapture name "screencap"
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
