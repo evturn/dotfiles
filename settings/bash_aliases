@@ -6,17 +6,20 @@
 #   (_\__,_|_|_|\__,_|___/\___|___/
 #
 
-alias reload="exec $SHELL -l"          # Reload shell (invoke as a login shell)
-alias path='echo -e ${PATH//:/\\n}'    # Print each PATH entry on a separate line
+# Reload shell (invoke as a login shell)
+alias reload="exec $SHELL -l"
 
-if ls --color > /dev/null 2>&1; then   # GNU `ls`
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+if ls --color > /dev/null 2>&1; then
   colorflag="--color"
-else                                   # macOS `ls`
+else
   colorflag="-G"
 fi
 
-alias ls="ls -AF --width=80 ${colorflag} --ignore=.DS_Store"
-alias ll="ls -lAF --width=80 ${colorflag} --ignore=.DS_Store"
+alias ls="ls -AF --width=100 ${colorflag} --ignore=.DS_Store"
+alias ll="ls -lAF --width=100 ${colorflag} --ignore=.DS_Store"
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
@@ -24,44 +27,61 @@ alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias sudo='sudo '                     # Enable `sudo` to be used with aliases
+alias sudo='sudo '
 alias week='date +%V'
-alias timer='echo "Timer started. Stop with Ctrl-D." && date \
-  && time cat && date'
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0" 
 
-##############################
+###########################################################
 #  Only
-##############################
-command -v hd > /dev/null || alias hd="hexdump -C"       # Canonical hex dump
-command -v md5sum > /dev/null || alias md5sum="md5"      # macOS has no `md5sum`
-command -v sha1sum > /dev/null || alias sha1sum="shasum" # macOS has no `sha1sum`
+###########################################################
 
-alias sr="cd ~/src"
-alias dv="cd ~/src/dev"
-alias c="tr -d '\n' | pbcopy"                                 # Trim new lines and copy
-alias cleanup="find . -type f -name '*.ds_store' -ls -delete" # Delete .ds_store
+# Canonical hex dump
+command -v hd > /dev/null || alias hd="hexdump -C"
+
+# macOS has no `md5sum`
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# macOS has no `sha1sum`
+command -v sha1sum > /dev/null || alias sha1sum="shasum" 
+
+alias src="cd ~/src"
+alias dev="cd ~/src/dev"
+alias wo="cd ~/src/workbench"
+
+# Trim new lines and copy
+alias c="tr -d '\n' | pbcopy"
+
+# Delete .ds_store
+alias cleanup="find . -type f -name '*.ds_store' -ls -delete"
+
+# Empty trash on all disk & mounted volumes and 
+# clear apple system logs & quarantine download history
 alias emptytrash="sudo rm -rfv /volumes/*/.trashes; sudo rm -rfv ~/.trash; \
   sudo rm -rfv /private/var/log/asl/*.asl; \
   sqlite3 ~/library/preferences/com.apple.launchservices.quarantineeventsv* \
-  'delete from lsquarantineevent'"     # 1) Empty trash on all mounted volumes and main hdd
-                                       # 2) Clear apple system logs (improve shell startup speed)
-                                       # 3) Clear download history from quarantine
-alias hide="defaults write com.apple.finder appleshowallfiles false \
-  && killall finder"                   # Hide hidden files in finder
-alias show="defaults write com.apple.finder appleshowallfiles true \
-  && killall finder"                   # Show hidden files in finder
-alias hidedesktop="defaults write com.apple.finder createdesktop -bool false \
-  && killall finder"                   # Hide files on desktop
-alias showdesktop="defaults write com.apple.finder createdesktop -bool true \
-  && killall finder"                   # Show files on desktop
+  'delete from lsquarantineevent'"
+
+# Show/Hide hidden files in finder
+alias show="defaults write com.apple.finder appleshowallfiles true && killall finder"
+alias hide="defaults write com.apple.finder appleshowallfiles false && killall finder"
+
+# Show/Hide files on desktop
+alias showdesktop="defaults write com.apple.finder createdesktop -bool true && killall finder"
+alias hidedesktop="defaults write com.apple.finder createdesktop -bool false && killall finder"
+
+# Remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \ 
   -kill -r -domain local -domain system \
-  -domain user && killall Finder"      # Remove duplicates in the “Open With” menu
-alias spotoff="sudo mdutil -a -i off"  # Disable spotlight
-alias spoton="sudo mdutil -a -i on"    # Enable spotlight
-alias badge="tput bel"                 # Ring terminal bell and show badge
+  -domain user && killall Finder"      
+
+# Enable/Disable spotlight
+alias spotoff="sudo mdutil -a -i off"
+alias spoton="sudo mdutil -a -i on"
+
+# Ring terminal bell and show badge
+alias badge="tput bel"
 alias plistbuddy="/usr/libexec/plistbuddy"
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
@@ -69,7 +89,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 if ls --color > /dev/null 2>&1; then   # GNU `ls`
-  export LS_COLORS='no=0;92:fi=0;94:di=0;92:ln=0;33:or=0;37:mi=0;37;ex=0;91:pi=0;33:so=0;35:do=0;35:bd=40;33:cd=0;34:st=0;36:sg=0;36:ow=0;36:tw=0;36:su=0;36:*.tar=0;90:*.tgz=0;90:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=0;90:*.z=01;31:*.Z=01;31:*.gz=0;90:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=0;90:*.jpg=0;90:*.jpeg=0;90:*.gif=0;90:*.bmp=0;90:*.pbm=0;90:*.pgm=0;90:*.ppm=0;90:*.tga=0;90:*.xbm=0;90:*.xpm=0;90:*.tif=0;90:*.tiff=0;90:*.png=0;90:*.mov=0;90:*.mpg=0;90:*.mpeg=0;90:*.avi=0;90:*.m4a=0;90:*.m4r=0;90:*.mp4=0;90:*.wmv=0;90:*.fli=0;90:*.gl=0;07:*.dl=0;90:*.xcf=0;90:*.xwd=0;90:*.ogg=0;90:*.mp3=0;90:*.wav=0;90:'
+  export LS_COLORS='no=0;93:fi=94;5;074;1:di=0;92:ln=4;34:mi=0;37:pi=0;33:do=0;35:bd=40;33:cd=0;34:or=0;37:so=0;35:su=0;36:ca=1;41:sg=0;36:tw=0;36:ow=0;36:st=0;36:ex=05;91:*.tar=0;90:*.tgz=0;90:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=0;90:*.z=01;31:*.Z=01;31:*.gz=0;90:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=0;90:*.jpg=0;90:*.jpeg=0;90:*.gif=0;90:*.bmp=0;90:*.pbm=0;90:*.pgm=0;90:*.ppm=0;90:*.tga=0;90:*.xbm=0;90:*.xpm=0;90:*.tif=0;90:*.tiff=0;90:*.png=0;90:*.mov=0;90:*.mpg=0;90:*.mpeg=0;90:*.avi=0;90:*.m4a=0;90:*.m4r=0;90:*.mp4=0;90:*.wmv=0;90:*.fli=0;90:*.gl=0;07:*.dl=0;90:*.xcf=0;90:*.xwd=0;90:*.ogg=0;90:*.mp3=0;90:*.wav=0;90:'
 else                                   # macOS `ls`
   export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
