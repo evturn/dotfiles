@@ -89,7 +89,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 if ls --color > /dev/null 2>&1; then   # GNU `ls`
-  export LS_COLORS='no=0;93:fi=94;5;074;1:di=0;92:ln=4;34:mi=0;37:pi=0;33:do=0;35:bd=40;33:cd=0;34:or=0;37:so=0;35:su=0;36:ca=1;41:sg=0;36:tw=0;36:ow=0;36:st=0;36:ex=05;91:*.tar=0;90:*.tgz=0;90:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=0;90:*.z=01;31:*.Z=01;31:*.gz=0;90:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=0;90:*.jpg=0;90:*.jpeg=0;90:*.gif=0;90:*.bmp=0;90:*.pbm=0;90:*.pgm=0;90:*.ppm=0;90:*.tga=0;90:*.xbm=0;90:*.xpm=0;90:*.tif=0;90:*.tiff=0;90:*.png=0;90:*.mov=0;90:*.mpg=0;90:*.mpeg=0;90:*.avi=0;90:*.m4a=0;90:*.m4r=0;90:*.mp4=0;90:*.wmv=0;90:*.fli=0;90:*.gl=0;07:*.dl=0;90:*.xcf=0;90:*.xwd=0;90:*.ogg=0;90:*.mp3=0;90:*.wav=0;90:'
+  export LS_COLORS='no=0;93:fi=0;92:di=1;34:ln=4;95:mi=0;37:pi=0;33:do=0;35:bd=40;33:cd=0;34:or=0;37:so=0;35:su=0;36:ca=1;41:sg=0;36:tw=0;36:ow=0;36:st=0;36:ex=05;91:*.tar=0;90:*.tgz=0;90:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=0;90:*.z=01;31:*.Z=01;31:*.gz=0;90:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=0;90:*.jpg=0;90:*.jpeg=0;90:*.gif=0;90:*.bmp=0;90:*.pbm=0;90:*.pgm=0;90:*.ppm=0;90:*.tga=0;90:*.xbm=0;90:*.xpm=0;90:*.tif=0;90:*.tiff=0;90:*.png=0;90:*.mov=0;90:*.mpg=0;90:*.mpeg=0;90:*.avi=0;90:*.m4a=0;90:*.m4r=0;90:*.mp4=0;90:*.wmv=0;90:*.fli=0;90:*.gl=0;07:*.dl=0;90:*.xcf=0;90:*.xwd=0;90:*.ogg=0;90:*.mp3=0;90:*.wav=0;90:'
 else                                   # macOS `ls`
   export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
