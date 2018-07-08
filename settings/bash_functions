@@ -199,10 +199,11 @@ function s() {
 # `v` with no arguments opens the current directory in Neovim,  otherwise opens 
 # the given location
 function v() {
+  # if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
   if [ $# -eq 0 ]; then
-    nvim
+    $EDITOR
   else
-    nvim "$@";
+    $EDITOR "$@";
   fi;
 }
 
