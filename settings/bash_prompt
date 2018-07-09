@@ -66,8 +66,7 @@ else
   PROMPT_SYMBOL='❯  '
 fi
 
-PS1='\033]50;CursorShape=1\x7\[\033]0;\W\007\]'
-PS1+="\[$BLACK\]\[$LTGRAYBG\]$PROMPT_USER"
+PS1="\[$BLACK\]\[$LTGRAYBG\]$PROMPT_USER"
 PS1+="\[$LTBLUEBG\] \w \[$RESET\]\[$DKSLATEGRAY\]"
 PS1+="\$(prompt_git \"\[$GREEN\] \" \"\[$DKSLATEGRAY\]\")"
 PS1+="\n\[$YELLOW\]$PROMPT_SYMBOL\[$RESET\]\[$DKSLATEGRAY\]"
