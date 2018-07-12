@@ -73,6 +73,12 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+if !exists('g:gui_oni')
+  autocmd VimEnter * NERDTree
+  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
+endif
+
 
 " }}}
 
@@ -85,9 +91,6 @@ autocmd FocusGained,BufEnter * :checktime
 " Automatically reload vimrc when it's saved
 autocmd! BufWritePost vimrc so ~/.vimrc"
 
-autocmd VimEnter * NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 autocmd BufNewFile,BufRead,BufReadPost *.css set syntax=postcss
 autocmd BufNewFile,BufRead,BufReadPost *.ghci,.ghci.conf set filetype=haskell
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
