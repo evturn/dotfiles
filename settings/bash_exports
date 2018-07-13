@@ -47,4 +47,6 @@ if [ "$(uname)" = "Darwin" ]; then        # macOS only
   export ANDROID_HOME='/usr/local/opt/android-sdk';
   export JAVA_HOME=$(/usr/libexec/java_home)
   export PKG_CONFIG_PATH='/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig'
+  export CPPFLAGS='-I/usr/local/opt/qt5/include'
+  export LDFLAGS='-L/usr/local/opt/qt5/lib'
 fi
