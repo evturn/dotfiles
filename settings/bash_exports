@@ -14,7 +14,7 @@
 #        tt   i       tDj  E#t              t       DWi   ,KK:       fE     EG.       
 #                                                                     :     ,         
 
-if [ $TERM_PROGRAM = "iTerm.app" ]; then
+if [ -z $TERM_PROGRAM ]; then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
