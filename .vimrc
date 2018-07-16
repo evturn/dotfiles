@@ -168,7 +168,7 @@ let g:airline_section_z = airline#section#create(['filetype'])
 
 " 🔌  NERDTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store$', '^\.git$']
+let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '__pycache__']
 let NERDTreeStatusline=''
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
