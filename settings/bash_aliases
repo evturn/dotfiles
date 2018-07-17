@@ -18,8 +18,8 @@ else
   colorflag="-G"
 fi
 
-alias ls="ls -AF --width=100 ${colorflag} --ignore=.DS_Store"
-alias ll="ls -lAF --width=100 ${colorflag} --ignore=.DS_Store"
+alias ls="ls -AFN --width=100 ${colorflag} --ignore=.DS_Store"
+alias ll="ls -lhAFN --width=100 ${colorflag} --ignore=.DS_Store"
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
