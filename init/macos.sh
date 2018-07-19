@@ -144,6 +144,9 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 # Finder                                                                      #
 ###############################################################################
 
+# Show full path in the title title bar
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false; killall Finder
+
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
 
