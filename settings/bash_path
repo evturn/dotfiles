@@ -38,6 +38,8 @@ if [ "$(uname)" = "Darwin" ]; then
   export PATH="$HOME/.fastlane/bin:$PATH"
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="/usr/local/opt/qt5/bin:$PATH"
+  export PATH="$HOME/src/miniconda3/bin:$PATH"
+
   export PATH="${PATH}:/usr/local/opt/android-sdk/tools"
   export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
 
