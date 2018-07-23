@@ -1,6 +1,7 @@
 c = get_config()
 
 c.TerminalIPythonApp.display_banner = False
+c.TerminalInteractiveShell.editing_mode = 'vi'
 
 c.InteractiveShell.autoindent= True
 c.InteractiveShell.colors = 'Linux'
