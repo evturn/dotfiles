@@ -31,19 +31,17 @@ export PATH="$HOME/.local/bin:$PATH"
 
 if [ "$(uname)" = "Darwin" ]; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-  export PATH="$HOME/Library/Python/3.6:$PATH"
-  export PATH="$HOME/Library/Haskell/bin:$PATH"
-  export PATH="$HOME/.cabal/bin:$PATH"
-  export PATH="$HOME/src/mongodb/bin:$PATH"
-  export PATH="$HOME/.fastlane/bin:$PATH"
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-  export PATH="/usr/local/opt/qt5/bin:$PATH"
+
   export PATH="$HOME/src/miniconda3/bin:$PATH"
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+  export PATH="/usr/local/opt/qt5/bin:$PATH"
+
+  export PATH="$HOME/.fastlane/bin:$PATH"
 
   export PATH="${PATH}:/usr/local/opt/android-sdk/tools"
   export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
 
-  # Added last To prevent bootstrapping issues
   export PATH="$PATH:$HOME/.rvm/bin"
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi
