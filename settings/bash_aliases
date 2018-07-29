@@ -52,9 +52,20 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 # macOS has no `sha1sum`
 command -v sha1sum > /dev/null || alias sha1sum="shasum" 
 
-alias src='cd ~/src'
-alias dev='cd ~/src/dev'
-alias workbench='cd ~/src/workbench'
+# Directory traversal shortcuts
+function cd_aliases() {
+  unset -f $FUNCNAME
+  local SRC="$HOME/src"
+  alias src="cd $SRC"
+  alias dev="cd $SRC/dev"
+  alias dot="cd $SRC/dotfiles"
+  alias wor="cd $SRC/workbench"
+}
+
+cd_aliases
+
+# Launch application shortcuts
+alias prefs='open /Applications/System\ Preferences.app'
 
 # Trim new lines and copy
 alias c="tr -d '\n' | pbcopy"
