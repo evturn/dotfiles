@@ -30,7 +30,7 @@ set cmdheight=2
 set completeopt+=longest
 set completeopt=menuone,menu,longest
 set expandtab
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 set formatoptions-=cro
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set incsearch
@@ -178,6 +178,7 @@ let g:NERDTreeDirArrowCollapsible = '●'
 function! CursorChange()
   if &filetype == 'nerdtree'
     highlight CursorLine ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
+    highlight Cursor     ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
   endif
 endfunction
 
@@ -205,6 +206,7 @@ let g:hs_highlight_more_types = 1
 
 " 🔌  Python
 let g:python_highlight_all = 1
+let g:python_space_error_highlight = 0
 
 " 🔌  SuperTab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
