@@ -15,17 +15,8 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-
-if [ "$(uname)" = "Linux" ]; then
-  NVM_DIR="/usr/local/share/.nvm";
-else
-  NVM_DIR="$HOME/.nvm"
-fi
-
 export CDPATH='.:~/:..:../..'
 
-export NVM_DIR;
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh";
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 

@@ -33,6 +33,16 @@ if [ -f /usr/local/bin/bash-completion/bash_completion ]; then
   . /usr/local/bin/bash-completion/bash_completion
 fi
 
+# Set nvm path, load nvm, and enable tab completion
+if [ "$(uname)" = "Linux" ]; then
+  NVM_DIR="/usr/local/share/.nvm";
+else
+  NVM_DIR="$HOME/.nvm"
+fi
+export NVM_DIR;
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 eval "$(stack --bash-completion-script stack)"
 
 # Enable tab completion for `g` by marking it as an alias for `git`
