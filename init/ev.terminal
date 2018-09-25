@@ -144,9 +144,9 @@
 	<key>BellBounce</key>
 	<false/>
 	<key>BlinkText</key>
-	<true/>
-	<key>CursorBlink</key>
 	<false/>
+	<key>CursorBlink</key>
+	<true/>
 	<key>CursorColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -166,21 +166,21 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AwAAAAAAAAEBCAAoADXxATT3BlcmF0b3JNb25vLU1lZGl1bdITFBUWWiRjbGFz
-	c25hbWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy
-	0RobVHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eI6TnqeusbrMz9QAAAAAAAABAQAAAAAA
-	AAAcAAAAAAAAAAAAAAAAAAAA1g==
+	YXNzI0AuAAAAAAAAEBCAAoADXxART3BlcmF0b3JNb25vLUJvb2vSExQVFlokY2xhc3Nu
+	YW1lWCRjbGFzc2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEa
+	G1Ryb290gAEIERojLTI3PEJLUltiaXJ0dniMkZylrK+4ys3SAAAAAAAAAQEAAAAAAAAA
+	HAAAAAAAAAAAAAAAAAAAANQ=
 	</data>
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
 	<real>0.98753088962108748</real>
 	<key>FontWidthSpacing</key>
-	<real>1.0704219007413509</real>
+	<real>0.87736541678413171</real>
 	<key>Linewrap</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>2.0499999999999998</real>
+	<real>2.0600000000000001</real>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -231,15 +231,15 @@
 	<key>TextColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NGMSAx
-	IDEAEAGAAtIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
-	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FITltiaWttcn2GjpGa
-	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEBEw
+	LjUyOTQxMTc2NDcgMSAxABABgALSEBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29s
+	b3KiEhRYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztB
+	SE5bYnZ4en+Kk5uep7m8wQAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADD
 	</data>
 	<key>UseBoldFonts</key>
-	<true/>
+	<false/>
 	<key>UseBrightBold</key>
-	<true/>
+	<false/>
 	<key>VisualBell</key>
 	<false/>
 	<key>VisualBellOnlyWhenMuted</key>
