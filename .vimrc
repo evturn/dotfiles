@@ -65,7 +65,7 @@ set wildmenu
 set wildmode=longest,list,full
 set wrapmargin=0
 
-if has('nvim')
+if has('nvim') && $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
 
