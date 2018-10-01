@@ -34,12 +34,7 @@ if [ -f /usr/local/bin/bash-completion/bash_completion ]; then
 fi
 
 # Set nvm path, load nvm, and enable tab completion
-if [ "$(uname)" = "Linux" ]; then
-  NVM_DIR="/usr/local/share/.nvm";
-else
-  NVM_DIR="$HOME/.nvm"
-fi
-export NVM_DIR;
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
