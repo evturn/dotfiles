@@ -262,3 +262,11 @@ function mdcat () {
   if [ -z ${mdfile:+x} ]; then mdfile="README.md"; fi
   pandoc -s -f markdown -t man $mdfile | groff -T utf8 -man
 }
+
+function jsoncat() {
+  cat $1 | python -mjson.tool | pygmentize -l json
+}
+
+function jsoncurl() {
+  curl $* | python -mjson.tool | pygmentize -l json
+}
