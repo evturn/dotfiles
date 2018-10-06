@@ -481,6 +481,11 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true && \
 open /System/Library/CoreServices/PowerChime.app
 
 ###############################################################################
+# Enable key-repeating for VSCode Vim
+###############################################################################
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
