@@ -20,6 +20,7 @@ filetype plugin indent on
 syntax sync minlines=256
 
 colorscheme vimhardaway
+let g:colors_name = 'vimhardaway'
 
 set autochdir
 set autoindent
@@ -30,14 +31,13 @@ set cmdheight=2
 set completeopt+=longest
 set completeopt=menuone,menu,longest
 set expandtab
-set fillchars+=vert:\
 set formatoptions-=cro
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set incsearch
 set laststatus=2
 set lazyredraw
 set list
-set listchars=trail:·,space:·
+set listchars=trail:·
 set mouse=a
 set noshowmode
 set nowrap
