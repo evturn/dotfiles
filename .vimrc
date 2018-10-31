@@ -19,8 +19,10 @@ syntax on
 filetype plugin indent on
 syntax sync minlines=256
 
+set background=dark
 colorscheme vimhardaway
 let g:colors_name = 'vimhardaway'
+let g:airline_theme = 'vimhardaway'
 
 set autochdir
 set autoindent
@@ -131,6 +133,14 @@ map <C-l> <C-w>l
 map <C-x> <C-w>x
 
 nnoremap <CR> :noh<CR><CR>
+
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists('*synstack')
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
