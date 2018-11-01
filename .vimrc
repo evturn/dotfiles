@@ -132,7 +132,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-x> <C-w>x
 
-nnoremap <CR> :noh<CR><CR>
+nnoremap <CR> :noh<CR>
 
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
