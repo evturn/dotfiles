@@ -19,10 +19,9 @@ syntax on
 filetype plugin indent on
 syntax sync minlines=256
 
-set background=dark
-colorscheme vimhardaway
-let g:colors_name = 'vimhardaway'
-let g:airline_theme = 'vimhardaway'
+colorscheme vim-hardaway
+let g:colors_name = 'vim-hardaway'
+let g:airline_theme = 'vim_hardaway'
 
 set autochdir
 set autoindent
