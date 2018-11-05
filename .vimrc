@@ -44,6 +44,7 @@ set noshowmode
 set nowrap
 set nrformats=
 set number
+set selection=old
 set scrolloff=10
 set shiftwidth=2
 set shortmess=I
