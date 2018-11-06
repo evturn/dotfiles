@@ -1075,9 +1075,9 @@ Resize Window.Increase Width</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1815 367 606 469 0 0 3440 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1884 1007 928 394 0 0 3440 1417 </string>
+	<string>921 874 1018 447 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1140 161 1151 829 0 0 3440 1417 </string>
+	<string>821 44 1926 811 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 17 1170 860 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_F34DF184-3176-4659-9C68-8B42F9E258C4</key>
@@ -1507,6 +1507,13 @@ Resize Window.Increase Width</string>
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x50-0x120000</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Text</key>
+					<string></string>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -1901,6 +1908,8 @@ Resize Window.Increase Width</string>
 	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>527748831.70117402</real>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1953,7 +1962,7 @@ Resize Window.Increase Width</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-27T21:49:13Z</date>
+	<date>2018-11-11T01:18:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2001,7 +2010,7 @@ Resize Window.Increase Width</string>
 	<key>WindowNumber</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.4</string>
+	<string>3.2.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
