@@ -167,14 +167,33 @@ vmap al :Tabularize /[\[\\|,]<CR>
 " 🔌  Airline
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline_exclude_preview = 0
+let g:airline#extensions#fugitiveline#enabled = 1
+let g:airline_skip_empty_sections = 1
+let g:airline_focuslost_inactive = 1
 let g:airline_inactive_collapse = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#fnamemod = ':p:.'
 let g:airline#extensions#tabline#fnamecollapse = 1
-let g:airline_section_b = airline#section#create([' %3l:%-3c ⚡︎ %L '])
-let g:airline_section_c = airline#section#create(['%t %m'])
-let g:airline_section_x = expand('%:p:~:h')
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline_section_a = airline#section#create(['%<%60%', ' ', 'mode', ' %3l:%-3c ⚡︎ %L '])
+let g:airline_section_b = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%t %m%r%w'])
+let g:airline_section_c = airline#section#create([' '])
+let g:airline_section_x = airline#section#create([' '])
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_z = airline#section#create(['filetype'])
+let g:airline#extensions#default#section_truncate_width = {
+    \ 'b': 30,
+    \ 'x': 30,
+    \ 'y': 60,
+    \ 'z': 80,
+    \ 'fugitive': 80,
+    \ 'warning': 45,
+    \ 'error': 45,
+\ }
 
 " 🔌  NERDTree
 let NERDTreeShowHidden=1
