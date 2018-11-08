@@ -28,16 +28,16 @@
   remoteBranch = blue
 
 [color "diff"]
-  meta = white dim
-  commit = yellow
-  frag = blue
-  old = cyan
-  new = green
+  meta = #657b83
+  commit = #5fafff
+  frag = #003847
+  old = #ff0087
+  new = #00ffaf
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+  added = blue
+  changed = #ff0087
+  untracked = #00ffaf
 
 [commit]
   gpgsign = true
