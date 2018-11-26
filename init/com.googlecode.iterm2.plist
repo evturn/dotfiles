@@ -16,6 +16,8 @@
 	<string>manual</string>
 	<key>AutocompleteMaxOptions</key>
 	<integer>70</integer>
+	<key>ColoredSelectedTabOutlineStrength</key>
+	<real>1</real>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Cosmic Barf</key>
@@ -1073,11 +1075,11 @@ Resize Window.Increase Width</string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>453 1668 620 392 -517 900 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1815 367 606 469 0 0 3440 1418 </string>
+	<string>1815 367 606 469 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>921 874 1018 447 0 0 3440 1417 </string>
+	<string>2078 990 928 394 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>821 44 1926 811 0 0 3440 1417 </string>
+	<string>624 158 2715 866 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 17 1170 860 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_F34DF184-3176-4659-9C68-8B42F9E258C4</key>
@@ -1092,7 +1094,7 @@ Resize Window.Increase Width</string>
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Allow Title Setting</key>
-			<false/>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1962,7 +1964,7 @@ Resize Window.Increase Width</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-11T01:18:35Z</date>
+	<date>2018-12-01T23:51:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2010,7 +2012,7 @@ Resize Window.Increase Width</string>
 	<key>WindowNumber</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.5</string>
+	<string>3.2.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
