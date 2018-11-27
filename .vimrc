@@ -1,15 +1,12 @@
-" vim: fdm=marker
-"            _
-"     _   __(_____ ___  __________
-"    | | / / / __ `__ \/ ___/ ___/
-"   _| |/ / / / / / / / /  / /__
-"  (_|___/_/_/ /_/ /_/_/   \___/
+"  "            _                       "
+"  "     _   __(_____ ___  __________   "
+"  "    | | / / / __ `__ \/ ___/ ___/   "
+"  "   _| |/ / / / / / / / /  / /__     "
+"  "  (_|___/_/_/ /_/ /_/_/   \___/     "
+"  "   Vim is sponsored by Diet Coke®   "
 "
-"  Vim is sponsored by Diet Coke®
-"
-
-" Options {{{
-
+" ⌁  Options "{{{
+" ----------------------------------------------------------------------
 set nocompatible
 set runtimepath+=~/.vim,/usr/local/opt/fzf
 set directory^=~/.vim/tmp//
@@ -19,8 +16,8 @@ syntax on
 filetype plugin indent on
 syntax sync minlines=256
 
-colorscheme vim-hardaway
-let g:colors_name = 'vim-hardaway'
+colorscheme cosmic-barf
+let g:colors_name = 'cosmic-barf'
 let g:airline_theme = 'vim_hardaway'
 
 set autochdir
@@ -81,11 +78,9 @@ if !exists('g:gui_oni')
   autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 endif
 
-
 " }}}
-
-" Auto commands {{{
-
+" ⌘  Auto commands {{{
+" ----------------------------------------------------------------------
 " Check for changes to a buffer on focus/enter
 autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :checktime
@@ -103,11 +98,9 @@ autocmd FileType * setlocal formatoptions-=cro
 
 " Reset cursor to terminal settings
 autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
-
 " }}}
-
-" Map commands {{{
-
+" ⌨︎  Key mappings {{{
+" ----------------------------------------------------------------------
 " Current mode sets cursor shape
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -159,12 +152,9 @@ vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 vmap a, :Tabularize /<-<CR>
 vmap al :Tabularize /[\[\\|,]<CR>
-
 " }}}
-
-" Plugin options {{{
-
-" 🔌  Airline
+" ⚡︎ Airline "{{{
+" ----------------------------------------------------------------------
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_exclude_preview = 0
@@ -194,26 +184,14 @@ let g:airline#extensions#default#section_truncate_width = {
     \ 'warning': 45,
     \ 'error': 45,
 \ }
-
-" 🔌  NERDTree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '__pycache__']
-let NERDTreeStatusline=''
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeMinimalUI=1
-let g:NERDTreeDirArrowExpandable = '→'
-let g:NERDTreeDirArrowCollapsible = '●'
-
-function! CursorChange()
-  if &filetype == 'nerdtree'
-    highlight CursorLine ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
-    highlight Cursor     ctermfg=0 ctermbg=81 guifg=black guibg=steelblue1
-  endif
-endfunction
-
-autocmd vimenter,bufenter * call CursorChange()
-
-" 🔌  Haskell
+"}}}
+" ⚡︎ Colorizer "{{{
+" ----------------------------------------------------------------------
+let g:colorizer_auto_color = 0
+let g:colorizer_colornames = 1
+"}}}
+" ⚡︎ Haskell "{{{
+" ----------------------------------------------------------------------
 let g:haskell_enable_arrowsyntax      = 1 " highlight `proc`
 let g:haskell_enable_pattern_synonyms = 1 " highlight `pattern`
 let g:haskell_enable_quantification   = 1 " highlight `forall`
@@ -229,15 +207,60 @@ let g:haskell_indent_if               = 0
 let g:haskell_indent_in               = 1
 let g:haskell_indent_let              = 4
 let g:haskell_indent_where            = 6
+
 let g:hs_highlight_boolean = 1
 let g:hs_highlight_types = 1
 let g:hs_highlight_more_types = 1
 
-" 🔌  Python
+let g:haskell_tabular = 1
+let g:haskellmode_completion_ghc = 1
+"}}}
+" ⚡︎ Highlighted Yank "{{{
+" ----------------------------------------------------------------------
+let g:highlightedyank_highlight_duration = -1
+hi HighlightedyankRegion ctermfg=0 ctermbg=14 guifg=black guibg=aqua
+"}}}
+" ⚡︎ JSX "{{{
+" ----------------------------------------------------------------------
+let g:jsx_ext_required = 0
+"}}}
+" ⚡︎ NERDTree "{{{
+" ----------------------------------------------------------------------
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '__pycache__']
+let NERDTreeStatusline=''
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let g:NERDTreeDirArrowExpandable = '→'
+let g:NERDTreeDirArrowCollapsible = '●'
+
+function! CursorChange()
+  if &filetype == 'nerdtree'
+    highlight CursorLine ctermfg=0 ctermbg=81 guifg=#002b36 guibg=#5fd7ff
+    highlight Cursor     ctermfg=0 ctermbg=NONE guifg=#002b36 guibg=#5fd7ff
+  endif
+endfunction
+
+autocmd VimEnter,BufEnter,WinEnter * call CursorChange()
+"}}}
+" ⚡︎ Netrw "{{{
+" ----------------------------------------------------------------------
+let g:netrw_altv = 1
+let g:netrw_banner = 0
+let g:netrw_dirhistmax = 0
+let g:netrw_fastbrowse = 0
+let g:netrw_list_hide='.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,^\.git/$,^\./$'
+let g:netrw_liststyle = 0
+let g:netrw_preview = 1
+let g:netrw_use_errorwindow = 0
+"}}}
+" ⚡︎ Python "{{{
+" ----------------------------------------------------------------------
 let g:python_highlight_all = 1
 let g:python_space_error_highlight = 0
-
-" 🔌  SuperTab
+"}}}
+" ⚡︎ SuperTab "{{{
+" ----------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 if has("gui_running")
@@ -247,24 +270,5 @@ else " no gui
     inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
   endif
 endif
-
-" 🔌  netrw
-let g:netrw_altv = 1
-let g:netrw_banner = 0
-let g:netrw_dirhistmax = 0
-let g:netrw_fastbrowse = 0
-let g:netrw_list_hide='.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,^\.git/$,^\./$'
-let g:netrw_liststyle = 0
-let g:netrw_preview = 1
-let g:netrw_use_errorwindow = 0
-
-" 🔌  Misc
-let g:haskell_tabular                      = 1
-let g:colorizer_auto_color                 = 0
-let g:colorizer_colornames                 = 1
-let g:haskellmode_completion_ghc           = 1
-let g:jsx_ext_required                     = 0
-let g:highlightedyank_highlight_duration   = -1
-hi HighlightedyankRegion ctermfg=0 ctermbg=14 guifg=black guibg=aqua
-
-" }}}
+"}}}
+" vim: fdm=marker:foldlevel=0
