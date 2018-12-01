@@ -35,7 +35,7 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set list
-set listchars=trail:·
+set listchars=tab:▸\ ,trail:·
 set mouse=a
 set noshowmode
 set nowrap
