@@ -42,7 +42,7 @@ set nowrap
 set nrformats=
 set number
 set selection=old
-set scrolloff=10
+set scrolloff=7
 set shiftwidth=2
 set shortmess=I
 set showcmd
@@ -71,13 +71,6 @@ endif
 if !has('gui_running')
   set t_Co=256
 endif
-
-if !exists('g:gui_oni')
-  autocmd VimEnter * NERDTree
-  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
-endif
-
 " }}}
 " ⌘  Auto commands {{{
 " ----------------------------------------------------------------------
@@ -144,6 +137,7 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>
 endif
 
+nnoremap <leader>co :ColorToggle<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 
