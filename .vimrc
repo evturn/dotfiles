@@ -54,7 +54,7 @@ set smartindent
 set smarttab
 set splitbelow
 set splitright
-set synmaxcol=128
+set synmaxcol=256
 set tabstop=2
 set textwidth=0
 set title
