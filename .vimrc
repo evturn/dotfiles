@@ -64,7 +64,7 @@ set wildmenu
 set wildmode=longest,list,full
 set wrapmargin=0
 
-if has('nvim') && $TERM_PROGRAM != 'Apple_Terminal'
+if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
 
@@ -91,6 +91,9 @@ autocmd FileType * setlocal formatoptions-=cro
 
 " Reset cursor to terminal settings
 autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
+
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 " }}}
 " ⌨︎  Key mappings {{{
 " ----------------------------------------------------------------------
