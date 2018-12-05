@@ -35,9 +35,9 @@
   new = #00ffaf
 
 [color "status"]
-  added = blue
-  changed = #ff0087
-  untracked = #00ffaf
+  added = #00ffaf
+  changed = #d7f00
+  untracked = #00ffff
 
 [commit]
   gpgsign = true
