@@ -128,6 +128,9 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+nnoremap gf :vertical wincmd f<CR>
+
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists('*synstack')
@@ -136,8 +139,13 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-nnoremap gf :vertical wincmd f<CR>
+nnoremap <leader>te :call <SID>TermBuf()<CR>
+function! <SID>TermBuf()
+  if &filetype == 'nerdtree'
+    exec 'wincmd w'
+  endif
+  exec 'sp | te'
+endfunction
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
