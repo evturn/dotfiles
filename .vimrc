@@ -92,8 +92,6 @@ autocmd FileType * setlocal formatoptions-=cro
 " Reset cursor to terminal settings
 autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
 
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 " }}}
 " ⌨︎  Key mappings {{{
 " ----------------------------------------------------------------------
@@ -123,6 +121,13 @@ map <C-x> <C-w>x
 
 nnoremap <CR> :noh<CR>
 
+map <C-n> :NERDTreeToggle<CR>
+
+nnoremap <leader>co :ColorToggle<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists('*synstack')
@@ -133,16 +138,10 @@ endfunc
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-map <C-n> :NERDTreeToggle<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
 endif
-
-nnoremap <leader>co :ColorToggle<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
@@ -231,14 +230,8 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable = '→'
 let g:NERDTreeDirArrowCollapsible = '●'
 
-function! CursorChange()
-  if &filetype == 'nerdtree'
-    highlight CursorLine ctermfg=0 ctermbg=81 guifg=#002b36 guibg=#5fd7ff
-    highlight Cursor     ctermfg=0 ctermbg=NONE guifg=#002b36 guibg=#5fd7ff
-  endif
-endfunction
-
-autocmd VimEnter,BufEnter,WinEnter * call CursorChange()
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 "}}}
 " ⚡︎ Netrw "{{{
 " ----------------------------------------------------------------------
