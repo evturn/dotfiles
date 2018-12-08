@@ -159,6 +159,18 @@ vmap al :Tabularize /[\[\\|,]<CR>
 " }}}
 " ⚡︎ Airline "{{{
 " ----------------------------------------------------------------------
+function! RenderInactiveFilename(...)
+  let builder = a:1
+  let context = a:2
+  let l:parent = '%{&ft != "nerdtree" ? fnamemodify(getcwd(), ":t") : ""}'
+  let l:file = '%{&ft != "nerdtree" ? "/" . expand("%t") : ""}'
+  let l:stat = l:parent . l:file
+  call builder.add_section('file', l:stat)
+  return 1
+endfunction
+
+call airline#add_inactive_statusline_func('RenderInactiveFilename')
+
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_exclude_preview = 0
