@@ -93,6 +93,8 @@ autocmd FileType * setlocal formatoptions-=cro
 " Reset cursor to terminal settings
 autocmd VimLeave * set guicursor=a:ver25-Cursor/lCursor
 
+" Remove trailing whitespace on write
+autocmd BufWritePre * :%s/\s\+$//e
 " }}}
 " ⌨︎  Key mappings {{{
 " ----------------------------------------------------------------------
