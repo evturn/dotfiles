@@ -165,9 +165,7 @@ vmap al :Tabularize /[\[\\|,]<CR>
 function! RenderInactiveFilename(...)
   let builder = a:1
   let context = a:2
-  let l:parent = '%{&ft != "nerdtree" ? fnamemodify(getcwd(), ":t") : ""}'
-  let l:file = '%{&ft != "nerdtree" ? "/" . expand("%t") : ""}'
-  let l:stat = l:parent . l:file
+  let l:stat = '%{&ft != "nerdtree" ? fnamemodify(expand("%t"), ":p:~") : ""}'
   call builder.add_section('file', l:stat)
   return 1
 endfunction
@@ -182,14 +180,15 @@ let g:airline_skip_empty_sections = 1
 let g:airline_focuslost_inactive = 1
 let g:airline_inactive_collapse = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#fnamemod = ':p:.'
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline_section_a = airline#section#create(['%<%60%', ' ', 'mode', ' %3l:%-3c ⚡︎ %L '])
-let g:airline_section_b = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%t %m%r%w'])
+let g:airline_section_b = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%{empty(expand("%t")) ? "" : expand("%t %m%r%w")}'])
 let g:airline_section_c = airline#section#create([' '])
 let g:airline_section_x = airline#section#create([' '])
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -245,13 +244,17 @@ let g:jsx_ext_required = 0
 "}}}
 " ⚡︎ NERDTree "{{{
 " ----------------------------------------------------------------------
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store$', '^\.git$', '__pycache__']
-let NERDTreeStatusline=''
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeMinimalUI=1
-let g:NERDTreeDirArrowExpandable = '→'
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeCascadeSingleChildDir = 0
+let NERDTreeCaseSensitiveSort = 1
+let NERDTreeIgnore = ['\.DS_Store$', '^\.git$', '__pycache__']
+let NERDTreeMinimalUI = 1
+let NERDTreeNaturalSort = 1
+let NERDTreeShowHidden = 1
+let NERDTreeStatusline = ''
+" let NERDTreeStatusline = '%{exists("b:NERDTree")?fnamemodify(b:NERDTree.root.path.str(), ":~"):""}'
 let g:NERDTreeDirArrowCollapsible = '●'
+let g:NERDTreeDirArrowExpandable = '→'
 
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
