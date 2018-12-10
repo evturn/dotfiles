@@ -188,7 +188,7 @@ let g:airline#extensions#tabline#fnamemod = ':p:.'
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline_section_a = airline#section#create(['%<%60%', ' ', 'mode', ' %3l:%-3c ⚡︎ %L '])
-let g:airline_section_b = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%{empty(expand("%t")) ? "" : expand("%t %m%r%w")}'])
+let g:airline_section_b = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%{empty(expand("%t")) ? "" : expand("%t")} %m%r%w'])
 let g:airline_section_c = airline#section#create([' '])
 let g:airline_section_x = airline#section#create([' '])
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
@@ -250,14 +250,11 @@ let NERDTreeCaseSensitiveSort = 1
 let NERDTreeIgnore = ['\.DS_Store$', '^\.git$', '__pycache__']
 let NERDTreeMinimalUI = 1
 let NERDTreeNaturalSort = 1
+let NERDTreeQuitOnOpen = 1
 let NERDTreeShowHidden = 1
 let NERDTreeStatusline = ''
-" let NERDTreeStatusline = '%{exists("b:NERDTree")?fnamemodify(b:NERDTree.root.path.str(), ":~"):""}'
 let g:NERDTreeDirArrowCollapsible = '●'
 let g:NERDTreeDirArrowExpandable = '→'
-
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd WinEnter * if (winnr("$") == 1 && expand('%') == '') | q | endif
 "}}}
 " ⚡︎ Netrw "{{{
 " ----------------------------------------------------------------------
