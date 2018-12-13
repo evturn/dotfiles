@@ -167,6 +167,7 @@ function! RenderInactiveFilename(...)
   let context = a:2
   let l:stat = '%{&ft != "nerdtree" ? fnamemodify(expand("%t"), ":p:~") : ""}'
   call builder.add_section('file', l:stat)
+  call builder.add_section('line', ' %m%r%w')
   return 1
 endfunction
 
@@ -201,6 +202,7 @@ let g:airline#extensions#default#section_truncate_width = {
     \ 'fugitive': 80,
     \ 'warning': 45,
     \ 'error': 45,
+    \ 'nerdtree': ['%{exists("b:NERDTreeRoot") ? b:NERDTreeRoot.path.str() : ""}', '']
 \ }
 "}}}
 " ⚡︎ Colorizer "{{{
