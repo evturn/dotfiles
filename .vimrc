@@ -165,9 +165,9 @@ vmap al :Tabularize /[\[\\|,]<CR>
 function! RenderInactiveFilename(...)
   let builder = a:1
   let context = a:2
-  let l:stat = '%{&ft != "nerdtree" ? fnamemodify(expand("%t"), ":p:~") : ""}'
+  let l:stat = '%{empty(expand("%t")) || &ft == "nerdtree"
+      \ ? "" : fnamemodify(expand("%t"), ":p:~")} %{expand(&modified) ? "[+]" : ""}'
   call builder.add_section('file', l:stat)
-  call builder.add_section('line', ' %m%r%w')
   return 1
 endfunction
 
