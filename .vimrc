@@ -165,45 +165,39 @@ vmap al :Tabularize /[\[\\|,]<CR>
 function! RenderInactiveFilename(...)
   let builder = a:1
   let context = a:2
-  let l:stat = '%{empty(expand("%t")) || &ft == "nerdtree"
-      \ ? "" : fnamemodify(expand("%t"), ":p:~")} %{expand(&modified) ? "[+]" : ""}'
-  call builder.add_section('file', l:stat)
+  let l:stat = '%{expand(&modified) ? "[+]" : ""}
+      \ %{empty(expand("%t")) || &ft == "nerdtree"
+      \ ? "" : fnamemodify(expand("%t"), ":p:~")}'
+  call builder.add_section('airline_section_b', l:stat)
   return 1
 endfunction
 
 call airline#add_inactive_statusline_func('RenderInactiveFilename')
-
-let g:airline#extensions#wordcount#enabled = 0
-let g:airline#extensions#whitespace#enabled = 0
+call airline#parts#define_minwidth('mode', 15)
+call airline#parts#define_minwidth('branch', 80)
+call airline#parts#define_minwidth('filetype', 5)
+let g:airline_section_a = airline#section#create([' ', '%{get(w:, "airline_current_mode", "")}', '  ', '⚡︎%3l:%-3c'])
+let g:airline_section_b = airline#section#create(['%3L ␤', ' ', '%m%r%w'])
+let g:airline_section_c = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%{empty(expand("%t")) ? "" : expand("%t")}'])
+let g:airline_section_x = airline#section#create(['%{fnamemodify(getcwd(), ":t")}'])
+let g:airline_section_y = airline#section#create(['branch'])
+let g:airline_section_z = airline#section#create(['%{&filetype}'])
 let g:airline_exclude_preview = 0
-let g:airline#extensions#fugitiveline#enabled = 1
-let g:airline_skip_empty_sections = 1
 let g:airline_focuslost_inactive = 1
 let g:airline_inactive_collapse = 1
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#default#section_truncate_width = {}
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#tabline#fnamemod = ':p:.'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#fnamecollapse = 1
+let g:airline#extensions#tabline#fnamemod = ':p:~'
+let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline_section_a = airline#section#create(['%<%60%', ' ', 'mode', ' %3l:%-3c ⚡︎ %L '])
-let g:airline_section_b = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%{empty(expand("%t")) ? "" : expand("%t")} %m%r%w'])
-let g:airline_section_c = airline#section#create([' '])
-let g:airline_section_x = airline#section#create([' '])
-let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
-let g:airline_section_z = airline#section#create(['filetype'])
-let g:airline#extensions#default#section_truncate_width = {
-    \ 'b': 30,
-    \ 'x': 30,
-    \ 'y': 60,
-    \ 'z': 80,
-    \ 'fugitive': 80,
-    \ 'warning': 45,
-    \ 'error': 45,
-    \ 'nerdtree': ['%{exists("b:NERDTreeRoot") ? b:NERDTreeRoot.path.str() : ""}', '']
-\ }
 "}}}
 " ⚡︎ Colorizer "{{{
 " ----------------------------------------------------------------------
