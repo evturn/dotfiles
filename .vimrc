@@ -129,7 +129,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>co :ColorToggle<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR><Bar>:AirlineRefresh<CR>
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap gf :vertical wincmd f<CR>
