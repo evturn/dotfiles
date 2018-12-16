@@ -1,93 +1,93 @@
 [submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
-	url = git@github.com:Raimondi/delimitMate.git
+  path = vim/bundle/delimitMate
+  url = git@github.com:Raimondi/delimitMate.git
   ignore = dirty
 [submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = git@github.com:tpope/vim-fugitive.git
+  path = vim/bundle/fugitive
+  url = git@github.com:tpope/vim-fugitive.git
   ignore = dirty
 [submodule "vim/bundle/jsx"]
-	path = vim/bundle/jsx
-	url = git@github.com:mxw/vim-jsx.git
+  path = vim/bundle/jsx
+  url = git@github.com:mxw/vim-jsx.git
   ignore = dirty
 [submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
-	url = git@github.com:tpope/vim-surround.git
+  path = vim/bundle/surround
+  url = git@github.com:tpope/vim-surround.git
   ignore = dirty
 [submodule "vim/bundle/haskell"]
-	path = vim/bundle/haskell
-	url = git@github.com:neovimhaskell/haskell-vim.git
+  path = vim/bundle/haskell
+  url = git@github.com:neovimhaskell/haskell-vim.git
   ignore = dirty
 [submodule "vim/bundle/commentary"]
-	path = vim/bundle/commentary
-	url = git@github.com:tpope/vim-commentary.git
+  path = vim/bundle/commentary
+  url = git@github.com:tpope/vim-commentary.git
   ignore = dirty
 [submodule "vim/bundle/javascript"]
-	path = vim/bundle/javascript
-	url = git@github.com:pangloss/vim-javascript.git
+  path = vim/bundle/javascript
+  url = git@github.com:pangloss/vim-javascript.git
   ignore = dirty
 [submodule "vim/bundle/sensible"]
-	path = vim/bundle/sensible
-	url = git@github.com:tpope/vim-sensible.git
+  path = vim/bundle/sensible
+  url = git@github.com:tpope/vim-sensible.git
   ignore = dirty
 [submodule "vim/bundle/wakatime"]
-	path = vim/bundle/wakatime
-	url = git@github.com:wakatime/vim-wakatime.git
+  path = vim/bundle/wakatime
+  url = git@github.com:wakatime/vim-wakatime.git
   ignore = dirty
 [submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
+  path = vim/bundle/tabular
+  url = git://github.com/godlygeek/tabular.git
   ignore = dirty
 [submodule "vim/bundle/stylish-haskell"]
-	path = vim/bundle/stylish-haskell
-	url = git@github.com:nbouscal/vim-stylish-haskell.git
+  path = vim/bundle/stylish-haskell
+  url = git@github.com:nbouscal/vim-stylish-haskell.git
   ignore = dirty
 [submodule "vim/bundle/ghcmod"]
-	path = vim/bundle/ghcmod
-	url = git@github.com:eagletmt/ghcmod-vim.git
+  path = vim/bundle/ghcmod
+  url = git@github.com:eagletmt/ghcmod-vim.git
   ignore = dirty
 [submodule "vim/bundle/vimproc"]
-	path = vim/bundle/vimproc
-	url = https://github.com/Shougo/vimproc.vim.git
+  path = vim/bundle/vimproc
+  url = https://github.com/Shougo/vimproc.vim.git
   ignore = dirty
 [submodule "vim/bundle/neco-ghc"]
-	path = vim/bundle/neco-ghc
-	url = https://github.com/eagletmt/neco-ghc
+  path = vim/bundle/neco-ghc
+  url = https://github.com/eagletmt/neco-ghc
   ignore = dirty
 [submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
+  path = vim/bundle/supertab
+  url = https://github.com/ervandew/supertab.git
   ignore = dirty
 [submodule "vim/bundle/highlightedyank"]
-	path = vim/bundle/highlightedyank
-	url = git@github.com:machakann/vim-highlightedyank.git
+  path = vim/bundle/highlightedyank
+  url = git@github.com:machakann/vim-highlightedyank.git
   ignore = dirty
 [submodule "vim/bundle/unimpaired"]
-	path = vim/bundle/unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
+  path = vim/bundle/unimpaired
+  url = git://github.com/tpope/vim-unimpaired.git
   ignore = dirty
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+  path = vim/bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
   ignore = dirty
 [submodule "vim/bundle/airline"]
-	path = vim/bundle/airline
-	url = git@github.com:vim-airline/vim-airline.git
+  path = vim/bundle/airline
+  url = git@github.com:vim-airline/vim-airline.git
 [submodule "vim/bundle/colorizer"]
-	path = vim/bundle/colorizer
-	url = git@github.com:chrisbra/Colorizer.git
+  path = vim/bundle/colorizer
+  url = git@github.com:chrisbra/Colorizer.git
 [submodule "vim/bundle/auto-pairs"]
-	path = vim/bundle/auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs.git
+  path = vim/bundle/auto-pairs
+  url = git@github.com:jiangmiao/auto-pairs.git
 [submodule "vim/bundle/vim-hardaway"]
-	path = vim/bundle/vim-hardaway
-	url = git@github.com:evturn/vim-hardaway.git
+  path = vim/bundle/vim-hardaway
+  url = git@github.com:evturn/vim-hardaway.git
 [submodule "vim/bundle/repeat"]
-	path = vim/bundle/repeat
-	url = git@github.com:tpope/vim-repeat
+  path = vim/bundle/repeat
+  url = git@github.com:tpope/vim-repeat
 [submodule "vim/bundle/python-syntax"]
-	path = vim/bundle/python-syntax
-	url = git@github.com:hdima/python-syntax.git
+  path = vim/bundle/python-syntax
+  url = git@github.com:hdima/python-syntax.git
 [submodule "vim/bundle/fzf"]
   path = vim/bundle/fzf
   url = git@github.com:junegunn/fzf.vim.git
