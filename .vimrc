@@ -173,9 +173,6 @@ function! RenderInactiveFilename(...)
 endfunction
 
 call airline#add_inactive_statusline_func('RenderInactiveFilename')
-call airline#parts#define_minwidth('mode', 15)
-call airline#parts#define_minwidth('branch', 80)
-call airline#parts#define_minwidth('filetype', 5)
 let g:airline_section_a = airline#section#create([' ', '%{get(w:, "airline_current_mode", "")}', '  ', '⚡︎%3l:%-3c'])
 let g:airline_section_b = airline#section#create(['%3L ␤', ' ', '%m%r%w'])
 let g:airline_section_c = airline#section#create(['%{fnamemodify(getcwd(), ":t")}/%{empty(expand("%t")) ? "" : expand("%t")}'])
@@ -186,7 +183,7 @@ let g:airline_exclude_preview = 0
 let g:airline_focuslost_inactive = 1
 let g:airline_inactive_collapse = 1
 let g:airline_skip_empty_sections = 1
-let g:airline#extensions#default#section_truncate_width = {}
+let g:airline#extensions#default#section_truncate_width = {'a': 10, 'b': 60, 'c': 10, 'x': 80, 'y': 80, 'z': 80}
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#fugitiveline#enabled = 1
