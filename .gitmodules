@@ -91,3 +91,6 @@
 [submodule "vim/bundle/fzf"]
   path = vim/bundle/fzf
   url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/bundle/cosmic-barf"]
+  path = vim/bundle/cosmic-barf
+  url = git@github.com:evturn/cosmic-barf.git
