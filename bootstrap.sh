@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-#     ___  ____  ____  ___________________  ___   ___        __ 
-#    / _ )/ __ \/ __ \/_  __/ __/_  __/ _ \/ _ | / _ \  ___ / / 
+#     ___  ____  ____  ___________________  ___   ___        __
+#    / _ )/ __ \/ __ \/_  __/ __/_  __/ _ \/ _ | / _ \  ___ / /
 #   / _  / /_/ / /_/ / / / _\ \  / / / , _/ __ |/ ___/ (_-</ _ \
 #  /____/\____/\____/ /_/ /___/ /_/ /_/|_/_/ |_/_/  (_)___/_//_/
-#                                                               
+#
 
-cd "$(dirname "${BASH_SOURCE}")" 
+cd "$(dirname "${BASH_SOURCE}")"
 
 function createSymlink() {
   if [ ! -L $2 ]; then
@@ -14,16 +14,24 @@ function createSymlink() {
   fi
 }
 
+SRC_GIT_CONFIG="${PWD}/.gitconfig"
+CFG_GIT_CONFIG="${HOME}/.gitconfig"
+
 SRC_IPYTHON="${PWD}/ipython/ipython_config.py"
 CFG_IPYTHON="${HOME}/.ipython/profile_default/ipython_config.py"
+
 SRC_NVIM="${PWD}/nvim/"
 CFG_NVIM="${HOME}/.config/nvim"
+
 SRC_VIM="${PWD}/vim/"
 CFG_VIM="${HOME}/.vim"
+
 SRC_VIMRC="${PWD}/vimrc"
 CFG_VIMRC="${HOME}/.vimrc"
+
 SRC_GVIMRC="${PWD}/vim/gvimrc"
 CFG_GVIMRC="${HOME}/.gvimrc"
+
 SRC_BASH="${PWD}/settings/"
 CFG_BASH="${HOME}/settings"
 
