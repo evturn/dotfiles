@@ -14,8 +14,14 @@ function createSymlink() {
   fi
 }
 
-SRC_GIT_CONFIG="${PWD}/.gitconfig"
-CFG_GIT_CONFIG="${HOME}/.gitconfig"
+SRC_BASHRC="${PWD}/.bashrc"
+CFG_BASHRC="${HOME}/.bashrc"
+
+SRC_BASH_PROFILE="${PWD}/.bash_profile"
+CFG_BASH_PROFILE="${HOME}/.bash_profile"
+
+SRC_GITCONFIG="${PWD}/.gitconfig"
+CFG_GITCONFIG="${HOME}/.gitconfig"
 
 SRC_IPYTHON="${PWD}/ipython/ipython_config.py"
 CFG_IPYTHON="${HOME}/.ipython/profile_default/ipython_config.py"
@@ -40,11 +46,12 @@ createSymlink $SRC_NVIM $CFG_NVIM
 createSymlink $SRC_VIM $CFG_VIM
 createSymlink $SRC_VIMRC $CFG_VIMRC
 createSymlink $SRC_GVIMRC $CFG_GVIMRC
+createSymlink $SRC_GITCONFIG $CFG_GITCONFIG
+createSymlink $SRC_BASHRC $CFG_BASHRC
+createSymlink $SRC_BASH_PROFILE $CFG_BASH_PROFILE
 createSymlink $SRC_BASH $CFG_BASH
 
 rsync --include './' \
-      --include '.bash_profile' \
-      --include '.bashrc' \
       --include '.curlrc' \
       --include '.ghci' \
       --include '.hushlogin' \
