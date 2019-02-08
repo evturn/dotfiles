@@ -7,7 +7,7 @@
 
 [ -t 1 -a -n "$BASH_VERSION" ] || return
 
-for file in ~/settings/bash_{path,prompt,exports,aliases,functions,extra}; do
+for file in ~/settings/bash_{path,prompt,exports,aliases,functions}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -38,12 +38,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(stack --bash-completion-script stack)"
+# eval "$(stack --bash-completion-script stack)"
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   complete -o default -o nospace -F _git g;
 fi;
+
+source ~/.git-completion.bash
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;

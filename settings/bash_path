@@ -1,38 +1,38 @@
 #!/usr/bin/env bash
-#   __    ____    ______  ______  __  __     
-#  /\ \_ /\  _`\ /\  _  \/\__  _\/\ \/\ \    
-#  \/'__`\ \ \L\ \ \ \L\ \/_/\ \/\ \ \_\ \   
-#  /\ \_\_\ \ ,__/\ \  __ \ \ \ \ \ \  _  \  
-#  \ \____ \ \ \/  \ \ \/\ \ \ \ \ \ \ \ \ \ 
+#   __    ____    ______  ______  __  __
+#  /\ \_ /\  _`\ /\  _  \/\__  _\/\ \/\ \
+#  \/'__`\ \ \L\ \ \ \L\ \/_/\ \/\ \ \_\ \
+#  /\ \_\_\ \ ,__/\ \  __ \ \ \ \ \ \  _  \
+#  \ \____ \ \ \/  \ \ \/\ \ \ \ \ \ \ \ \ \
 #   \/\ \_\ \ \_\   \ \_\ \_\ \ \_\ \ \_\ \_\
 #    \ `\_ _/\/_/    \/_/\/_/  \/_/  \/_/\/_/
-#     `\_/\_\                                
-#        \/_/                                
+#     `\_/\_\
+#        \/_/
 
-if [ "$(uname)" = "Darwin" ]; then
+# if [ "$(uname)" = "Darwin" ]; then
   # Added first to prevent overwriting issues
-  export PATH="$HOME/.rvm/gems/ruby-2.4.0/bin"
-fi
+  # export PATH="$HOME/.rvm/gems/ruby-2.4.0/bin"
+# fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export CDPATH='.:~/:..:../..'
 
-export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 if [ "$(uname)" = "Darwin" ]; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  export PATH=~/Library/Python/3.7/bin:$PATH
+  # export PATH="$HOME/src/miniconda3/bin:$PATH"
+  # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-  export PATH="$HOME/src/miniconda3/bin:$PATH"
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+  # export PATH="/usr/local/opt/qt5/bin:$PATH"
 
-  export PATH="/usr/local/opt/qt5/bin:$PATH"
+  # export PATH="$HOME/.fastlane/bin:$PATH"
 
-  export PATH="$HOME/.fastlane/bin:$PATH"
+  # export PATH="${PATH}:/usr/local/opt/android-sdk/tools"
+  # export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
 
-  export PATH="${PATH}:/usr/local/opt/android-sdk/tools"
-  export PATH="${PATH}:/usr/local/opt/android-sdk/platform-tools"
-
-  export PATH="$PATH:$HOME/.rvm/bin"
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  # export PATH="$PATH:$HOME/.rvm/bin"
+  # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi

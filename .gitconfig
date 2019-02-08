@@ -1,78 +1,67 @@
 #  ┌─┐┬┌┬┐┌─┐┌─┐┌┐┌┌─┐┬┌─┐
 #  │ ┬│ │ │  │ ││││├┤ ││ ┬
 #  └─┘┴ ┴ └─┘└─┘┘└┘└  ┴└─┘
-#
-#
+[user]
+  name = Evan Turner
+  email = ev@evturn.com
+[core]
+  editor = vim
+  precomposeunicode = false
+[color]
+  ui = always
+[color "advice"]
+  hint = cyan
+[color "branch"]
+  current = green
+  local = red
+  remote = blue
+[color "decorate"]
+  HEAD = green
+  branch = red
+  remoteBranch = blue
+[color "diff"]
+  meta = white
+  commit = blue
+  frag = cyan
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
+[commit]
+  gpgsign = true
+[diff]
+  renames = copies
+  tool = vimdiff
+[diff "bin"]
+  textconv = hexdump -v -C
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[format]
+  pretty = barf
+[help]
+  autocorrect = 1
+[log]
+  abbrevCommit = true
+[merge]
+  log = true
+[pretty]
+  barf = "format:%Cblue⏣  %Cred%h %>(14)%Creset%cr %Cblue%GK %n%Cred|%>(12)%Cgreen %s %Cred%n%Cred|%>(3)%Creset Author: %<|(12)%Creset %an - %aD %n%Cred|%Creset Committer: %<|(12)%Creset %cn - %cD %n%Cred|%n%Cred|"
+[push]
+  default = current
+[status]
+  showUntrackedFiles = all
+[web]
+  brower = google-chrome
 [alias]
   aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
   amend = commit --amend --reuse-message=HEAD
   branches = "for-each-ref --sort='-committerdate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads"
   c = commit -S -m
-  contributors = shortlog --summary --numbered
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
   di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-  l = !"git log --pretty='format:%n%Cblue %h   %Cgreen %s %Cblue%GK  %n Author:    %an %aD %n Committer: %cn %cD %n %cr' --shortstat"
-  nogpg = !"git config commit.gpgSign false"
-
-[color]
-  ui = always
-
-[color "branch"]
-  current = green
-  local = red
-  remote = blue
-
-[color "decorate"]
-  HEAD = green
-  branch = red
-  remoteBranch = blue
-
-[color "diff"]
-  meta = #657b83
-  commit = #5fafff
-  frag = #003847
-  old = #ff0087
-  new = #00ffaf
-
-[color "status"]
-  added = #00ffaf
-  changed = #d7f00
-  untracked = #00ffff
-
-[commit]
-  gpgsign = true
-
-[core]
-  editor = vim
-  precomposeunicode = false
-
-[diff]
-  renames = copies
-
-[diff "bin"]
-  textconv = hexdump -v -C
-
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
-
-[gpg]
-  program = gpg2
-
-[help]
-  autocorrect = 1
-
-[merge]
-  log = true
-
-[push]
-  default = current
-
-[user]
-  name = hl
-  email = ev@evturn.com
-  name = Evan Turner
-
-[web]
-  brower = firefox
+  contributors = shortlog --summary --numbered
+  l = log
