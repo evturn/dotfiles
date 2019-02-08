@@ -52,6 +52,8 @@
   log = true
 [pretty]
   barf = "format:%Cblue⏣  %Cred%h %>(14)%Creset%cr %Cblue%GK %n%Cred|%>(12)%Cgreen %s %Cred%n%Cred|%>(3)%Creset Author: %<|(12)%Creset %an - %aD %n%Cred|%Creset Committer: %<|(12)%Creset %cn - %cD %n%Cred|%n%Cred|"
+[pull]
+  rebase = true
 [push]
   default = current
 [status]
