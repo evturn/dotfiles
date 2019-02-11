@@ -27,10 +27,16 @@
   "explorer.confirmDelete": false,
   "explorer.decorations.badges": false,
   "explorer.decorations.colors": false,
+  "files.associations": {
+    "*.css": "postcss",
+    "*.scss": "postcss"
+  },
   "files.trimTrailingWhitespace": true,
   "git.enableCommitSigning": true,
+  "javascript.preferences.quoteStyle": "single",
   "javascript.suggest.names": false,
   "javascript.suggestionActions.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
   "javascript.validate.enable": false,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.preview.autoShowPreviewToSide": true,
