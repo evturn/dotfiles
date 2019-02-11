@@ -1,0 +1,28 @@
+{
+  "import React, { Component }": {
+    "prefix": "importreact",
+    "body": ["import React, { Component } from 'react';", ""],
+		"description": "Import React destructure Component"
+  },
+  "import CSS Module": {
+    "prefix": "importstyle",
+		"body": ["import styles from './style.module.css';", ""],
+		"description": "Import styles from relative CSS module file"
+	},
+	"class C extends Component": {
+		"prefix": "classcomp",
+		"body": [
+      "class C extends Component {",
+      "  render() {",
+      "    return (",
+      "      $0",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default C;",
+      ""
+    ],
+    "description": "Creates a React component class"
+  },
+}
