@@ -74,7 +74,7 @@
   ],
   "vim.searchHighlightColor": "rgba(215, 255, 0, 0.3)",
   "vim.statusBarColorControl": true,
-  "vim.statusBarColors.insert": ["#1D252A", "#d7ff00"],
+  "vim.statusBarColors.insert": ["#00212C", "#d7ff00"],
   "vim.statusBarColors.normal": ["#002b36", "#00ffaf"],
   "vim.statusBarColors.replace": ["#002b36", "#ff0087"],
   "vim.statusBarColors.visual": ["#002b36", "#5fafff"],
