@@ -95,5 +95,17 @@
     "key": "ctrl+l",
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "alt+o",
+    "command": "workbench.action.navigateToLastEditLocation"
+  },
+  {
+    "key": "cmd+k cmd+q",
+    "command": "-workbench.action.navigateToLastEditLocation"
   }
 ]
