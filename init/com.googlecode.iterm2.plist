@@ -1080,9 +1080,9 @@ Maximize Active Pane</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1815 367 606 469 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1180 802 958 470 0 0 3440 1417 </string>
+	<string>1549 853 918 452 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1134 24 2306 730 0 0 3440 1417 </string>
+	<string>924 282 1424 616 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 17 1170 860 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_F34DF184-3176-4659-9C68-8B42F9E258C4</key>
@@ -1368,7 +1368,7 @@ Maximize Active Pane</string>
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>145</integer>
+			<integer>175</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -1792,7 +1792,7 @@ Maximize Active Pane</string>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>46</integer>
+			<integer>30</integer>
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
@@ -1967,7 +1967,7 @@ Maximize Active Pane</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-14T09:57:44Z</date>
+	<date>2019-02-16T18:34:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2015,7 +2015,7 @@ Maximize Active Pane</string>
 	<key>WindowNumber</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
