@@ -88,9 +88,6 @@
 [submodule "vim/bundle/python-syntax"]
   path = vim/bundle/python-syntax
   url = git@github.com:hdima/python-syntax.git
-[submodule "vim/bundle/fzf"]
-  path = vim/bundle/fzf
-  url = git@github.com:junegunn/fzf.vim.git
 [submodule "vim/bundle/cosmic-barf"]
   path = vim/bundle/cosmic-barf
   url = git@github.com:evturn/cosmic-barf.git
