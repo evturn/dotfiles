@@ -45,11 +45,6 @@
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   },
   {
-    "key": ", s",
-    "command": "sortLines.sortLines",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
-  },
-  {
     "key": "f9",
     "command": "-sortLines.sortLines",
     "when": "editorTextFocus"
@@ -57,7 +52,7 @@
   {
     "key": ", t",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
+    "when": "editorTextFocus && vim.mode = 'Normal'"
   },
   {
     "key": "ctrl+`",
@@ -74,11 +69,6 @@
   {
     "key": "ctrl+s",
     "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "f12",
-    "command": "-editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
@@ -112,5 +102,35 @@
     "key": "ctrl+cmd+s",
     "command": "postcssSorting.execute",
     "when": "editorLangId == css"
-  }
+  },
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus & !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus & !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "l",
+    "command": "list.toggleExpand",
+    "when": "listFocus & !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
 ]
