@@ -4,6 +4,7 @@
 [user]
   name = Evan Turner
   email = ev@evturn.com
+  signingkey = 0EABF91EFD8EEF77
 [core]
   editor = vim
   precomposeunicode = false
