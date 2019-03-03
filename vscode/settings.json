@@ -66,9 +66,44 @@
       "before": ["<C-j>"],
       "after": ["<C-w>", "j"]
     }, {
-      "before":["<CR>"],
+      "before": ["<CR>"],
       "commands": [
-          ":nohl",
+        ":nohl",
+      ]
+    },
+    {
+      "before": ["H"],
+      "after": ["0", "c", "w"]
+    },
+    {
+      "before": ["w"],
+      "commands": [
+        "workbench.action.files.save",
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": [">"],
+      "commands": [
+        "editor.action.indentLines",
+      ]
+    },
+    {
+      "before": ["<"],
+      "commands": [
+        "editor.action.outdentLines",
+      ]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": [
+        "sortLines.sortLines",
+        "workbench.action.files.save",
       ]
     },
   ],
