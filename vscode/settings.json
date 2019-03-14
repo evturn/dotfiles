@@ -76,12 +76,6 @@
       "before": ["H"],
       "after": ["0", "c", "w"]
     },
-    {
-      "before": ["w"],
-      "commands": [
-        "workbench.action.files.save",
-      ]
-    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -145,4 +139,10 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.quickSuggestions": false
   },
+  "gitlens.settings.mode": "advanced",
+  "gitlens.codeLens.scopes": [
+    "containers"
+  ],
+  "gitlens.mode.statusBar.alignment": "left",
+  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
 }
