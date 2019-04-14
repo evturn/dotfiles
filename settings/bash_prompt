@@ -18,23 +18,23 @@ prompt_git() {
   if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
     if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
       git update-index --really-refresh -q &>/dev/null;
-      if ! $(git diff --quiet --ignore-submodules --cached); then
-        s+='+'; # Uncommitted changes
-      fi;
-      if ! $(git diff-files --quiet --ignore-submodules --); then
-        s+='!'; # Unstaged changes
+      if $(git rev-parse --verify refs/stash &>/dev/null); then
+        s+='ⓣ  '; # Stashed files
       fi;
       if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        s+='?'; # Untracked files
+        s+='𝖴 '; # Untracked files
       fi;
-      if $(git rev-parse --verify refs/stash &>/dev/null); then
-        s+='$'; # Stashed files
+      if ! $(git diff --quiet --ignore-submodules --cached); then
+        s+='𝙎 '; # Staged (Uncommitted) changes
+      fi;
+      if ! $(git diff-files --quiet --ignore-submodules --); then
+        s+='𝗠'; # Modified (Unstaged) changes
       fi;
     fi;
     branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
       git rev-parse --short HEAD 2> /dev/null || \
       echo '(unknown)')";
-    [ -n "${s}" ] && s=" [${s}]";
+    [ -n "${s}" ] && s="・$(tput setaf 39)${s}$(tput sgr0)";
     echo -e "${1}${branchName}${2}${s}";
   else
     return;
