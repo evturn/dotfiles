@@ -6,7 +6,7 @@
   },
   "import CSS Module": {
     "prefix": "importstyle",
-		"body": ["import styles from './style.module.css';", ""],
+		"body": ["import styles from './style.css';", ""],
 		"description": "Import styles from relative CSS module file"
 	},
 	"class C extends Component": {
