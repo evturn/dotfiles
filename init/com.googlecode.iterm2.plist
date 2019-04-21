@@ -1074,15 +1074,15 @@ Maximize Active Pane</string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1980 344 665 98 0 0 3440 1417 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>1412 932 616 174 0 0 3440 1417 </string>
+	<string>393 1562 616 174 -579 900 2560 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>453 1668 620 392 -517 900 2560 1417 </string>
+	<string>970 498 620 392 0 0 2560 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1815 367 606 469 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1549 853 918 452 0 0 3440 1417 </string>
+	<string>395 547 958 470 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>924 282 1424 616 0 0 3440 1417 </string>
+	<string>-394 927 2221 880 -579 900 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 17 1170 860 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_F34DF184-3176-4659-9C68-8B42F9E258C4</key>
@@ -1967,13 +1967,17 @@ Maximize Active Pane</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
+<<<<<<< HEAD
 	<date>2019-02-16T18:34:41Z</date>
+=======
+	<date>2019-03-24T23:05:31Z</date>
+>>>>>>> 79c7f98... Update iterm config
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
