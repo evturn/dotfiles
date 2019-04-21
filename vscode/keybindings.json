@@ -133,4 +133,12 @@
     "command": "-renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.nextEditor",
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.previousEditor",
+  }
 ]
