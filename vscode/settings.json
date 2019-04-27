@@ -157,5 +157,5 @@
   "explorer.decorations.colors": false,
   "explorer.decorations.badges": false,
   "diffEditor.renderSideBySide": false,
-  "workbench.editor.enablePreview": false,
+  "explorer.confirmDragAndDrop": false,
 }
