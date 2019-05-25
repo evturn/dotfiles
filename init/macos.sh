@@ -210,6 +210,9 @@ chflags nohidden ~/Library
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
 
+# Remove 'Move to Dropbox' from context menu
+/Applications/Dropbox.app/Contents/MacOS/Dropbox --move-to-dropbox=False
+
 # Remove Dropbox’s green checkmark icons in Finder
 file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 [ -e "${file}" ] && mv -f "${file}" "${file}.bak"
